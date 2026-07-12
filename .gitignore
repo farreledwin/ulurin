@@ -22,6 +22,9 @@
 /.next/
 /out/
 
+# rust
+/target/
+
 # production
 /build
 

@@ -16,16 +16,71 @@ and organizer income are explicit from the start.
 - Donor-facing breakdown before pledge
 - Organizer dashboard preview
 - Optional Supabase waitlist storage for preview pledges
+- Soroban smart contract for testnet campaign vaults
 
 ## Current Status
 
 This repo is a preview UI extracted from the Salapi codebase and narrowed to
-Bagibagi's donation marketplace model. It does **not** move real money yet and
-does **not** deploy a donation smart contract in this repo.
+Bagibagi's donation marketplace model. The app flow still uses preview pledges,
+but the repo now includes a Soroban contract that can run on Stellar testnet.
 
 The pledge flow stores a waitlist entry when Supabase service-role credentials
 are configured. Without Supabase, it logs the pledge on the server and keeps the
 preview clickable.
+
+## Smart Contract
+
+The contract lives in:
+
+```text
+contracts/bagibagi-campaign
+```
+
+It is one multi-campaign vault with the core Bagibagi mechanics:
+
+- admin initializes the contract with a token
+- admin sets organizer verification tier
+- organizer creates a campaign
+- tier caps organizer allowance:
+  - Tier 0: 0%
+  - Tier 1: up to 5%
+  - Tier 2: up to 10%
+- donor donation is split immediately into beneficiary balance and organizer allowance escrow
+- beneficiary can withdraw the beneficiary portion
+- organizer uploads proof
+- admin releases allowance after proof exists
+
+Run contract tests:
+
+```bash
+cargo test --workspace
+```
+
+Build optimized WASM:
+
+```bash
+rustup target add wasm32v1-none
+stellar contract build --package bagibagi-campaign
+```
+
+Deploy and initialize on Stellar testnet:
+
+```bash
+chmod +x scripts/deploy-testnet.sh
+./scripts/deploy-testnet.sh
+```
+
+The deploy script prints:
+
+```text
+BAGIBAGI_CAMPAIGN_CONTRACT=...
+BAGIBAGI_TOKEN_CONTRACT=...
+BAGIBAGI_ADMIN=...
+STELLAR_NETWORK=testnet
+```
+
+Current testnet deployment and smoke transactions are recorded in
+[`DEPLOYMENTS.md`](DEPLOYMENTS.md).
 
 ## Tech Stack
 
