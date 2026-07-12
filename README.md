@@ -8,7 +8,7 @@ contract, and every rupiah is traceable on Stellar.
 > no mainnet money is implied. Powered by Stellar as an ecosystem, not affiliated
 > with the Stellar Development Foundation or Stellar Aid Assist.
 
-📖 **Full concept**, vision, market analysis, workflow, and roadmap: [`docs/KONSEP.md`](docs/KONSEP.md)
+📖 **Full concept** (vision, market analysis, workflow, roadmap): [Bahasa Indonesia](docs/KONSEP.md) · [English](docs/KONSEP.en.md)
 
 ---
 
