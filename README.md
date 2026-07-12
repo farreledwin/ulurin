@@ -8,6 +8,8 @@ contract, and every rupiah is traceable on Stellar.
 > no mainnet money is implied. Powered by Stellar as an ecosystem, not affiliated
 > with the Stellar Development Foundation or Stellar Aid Assist.
 
+📖 **Full concept** — vision, market analysis, workflow, and roadmap: [`docs/KONSEP.md`](docs/KONSEP.md)
+
 ---
 
 ## The problem: the money flows, the proof disappears
@@ -46,20 +48,37 @@ without a limit, without proof.** That is exactly what Ulurin fixes.
   - *Off-chain* proves the **spending** — the organizer uploads invoices/photos and
     donors get an update. On-chain does **not** by itself prove "the money bought X."
 
+## Vision & mission
+
+**Vision:** a future where doing good can be a real job — where anyone can make a
+living by helping others, and every good deed can be *proven*, not just trusted.
+
+**Mission:**
+1. **Make helping a profession** — a stage and transparent income for *Kreator Kebaikan* (Good-Deed Creators).
+2. **Give without friction or doubt** — moved by a story, donate on the same screen, get proof instantly.
+3. **Protect the beneficiary's dignity** — told as a person with a plan, not an object of pity.
+4. **Prove every rupiah arrives** — escrow + public receipts, closing the trust wound left by Cak Budi and ACT.
+
 ## Who it's for
 
-Ulurin gives people who already do good work a **transparent, recurring engine** —
-so helping others can become a real job instead of a sponsor-dependent hustle.
+Across Indonesia there's a recurring pattern: people who *already* do the good work —
+rich in followers or goodwill — but whose income comes and goes with sponsors. Ulurin
+turns that trust into **steady, transparent income**, so doing good can be a livelihood
+instead of a sponsor-dependent hustle.
 
-- **Field volunteers** — river-cleanup movements (the scale of Pandawara), road-hole
-  patchers (like Nanda, ~79 potholes), waterway cleanups. Already working, but living
-  on seasonal sponsors.
-- **People in need** — a gig driver who lost their motorbike / fell ill / passed away,
-  someone wronged who can't afford legal aid, families of accident victims.
-- **Organizations / foundations** — orphanages, animal shelters, a mosque running a
-  free kitchen: with recurring donors, the kitchen keeps cooking every day.
-- **Disaster relief** — fast, large-scale emergency fundraising. The format closest to
-  Stellar Aid Assist's transparent crisis-aid model.
+**Creators who share kindness**
+- **River-cleanup movements** at the scale of *Pandawara* — 12M+ TikTok followers, 1.3M+ kg of trash pulled from rivers, a Guinness record — yet funded event-by-event by CSR sponsors (one campaign, then it's over). Imagine that funded *monthly* by even a fraction of those followers.
+- **Road-hole patchers** like *Nanda* (@relawan.jalan.rusak), who filled ~79 potholes over two years out of his own pocket plus follower donations — or *Suted*, a gig driver who patches roads on live-stream. Today they must perform on social media, because that's the only way support (and safety) arrives.
+- **Free community kitchens** run with mosques: with recurring donors, the kitchen keeps cooking *every day* — not only when a big sponsor shows up.
+
+**People in a hard moment**
+A gig driver whose motorbike was stolen — or who fell ill or died from overwork, leaving a family without income. Someone wronged who can't afford a lawyer. Families of accident victims. One-off cases, verified and told with dignity.
+
+**Organizations & foundations**
+Orphanages, animal shelters, elderly homes, cancer/rehab foundations, legal-aid bodies — the ones that need *recurring* donors to keep going.
+
+**Disaster relief**
+Fast, large-scale emergency fundraising — the format closest to Stellar Aid Assist's transparent crisis-aid model.
 
 > These movements are cited as **public examples/inspiration, not partners or users
 > of Ulurin.**
@@ -80,6 +99,8 @@ so helping others can become a real job instead of a sponsor-dependent hustle.
 - Total philanthropy potential is estimated at **Rp 650–665 trillion/year** (Bappenas).
 - Kitabisa alone has moved **Rp 830 billion across 8 million donors** — proof the
   demand is real; the trust layer is what's missing.
+
+*Full market breakdown, sources, and the zakat + CSR expansion are in [`docs/KONSEP.md`](docs/KONSEP.md).*
 
 ## Built on Stellar
 
