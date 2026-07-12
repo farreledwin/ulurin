@@ -1,9 +1,18 @@
-# Ulurin — Konsep & Alignment Stellar
+# Ulurin: Konsep & Alignment Stellar
 
 > Dokumen konsep produk. Status: konsep + MVP testnet.
 > Catatan jujur dipegang di seluruh dokumen: angka demo/testnet dilabeli, tidak
 > ada metrik fiktif, tidak mengklaim "pertama di dunia", dan tidak mengklaim
 > afiliasi dengan Stellar/SDF/Stellar Aid Assist.
+
+> **In English (summary):** Ulurin is a transparent, creator-cut donation app on
+> Stellar/Soroban. A verified *Kreator Kebaikan* (good-deed creator) surfaces a real
+> case, tells its story (video and/or photo), channels the aid, and earns a disclosed,
+> capped 0-10% fee, while every rupiah's flow is provable on-chain. It brings the
+> transparent-aid model proven by Stellar Aid Assist down to the grassroots: everyday
+> donor to real beneficiary. The rest of this document is intentionally in Indonesian,
+> because its market, cases, and cultural context (zakat, the Cak Budi and ACT
+> scandals, grassroots movements) are Indonesia-specific.
 
 ---
 
@@ -192,7 +201,7 @@ yang bisa diaudit**, bukan imbal hasil finansial.
 - **Buat perusahaan:** CSR jadi mudah, terkurasi, dan terbukti, dengan laporan on-chain untuk audit + kredibilitas ESG/branding.
 - **Buat gerakan/penerima:** pendanaan **rutin** dari CSR, bukan sponsor sekali-kali.
 - **Buat Ulurin:** revenue B2B (fee kurasi/manajemen program), berskala besar.
-- **Konteks pasar (bersumber):** potensi CSR Indonesia diperkirakan **~Rp 80-96 triliun/tahun** (Bappenas, 2025 — [CNBC Indonesia](https://www.cnbcindonesia.com/news/20250804121649-4-654804/bappenas-potensi-filantropi-ri-capai-rp-6655-triliun-per-tahun)). Tapi yang benar-benar terkelola rapi jauh lebih kecil: **TJSL BUMN terealisasi ~Rp 11,2 triliun** (2023). Selisih potensi vs terkelola + keluhan lama bahwa dana CSR "belum dikelola maksimal" = **persis celah** yang platform kurasi ini isi.
+- **Konteks pasar (bersumber):** potensi CSR Indonesia diperkirakan **~Rp 80-96 triliun/tahun** (Bappenas, 2025, [CNBC Indonesia](https://www.cnbcindonesia.com/news/20250804121649-4-654804/bappenas-potensi-filantropi-ri-capai-rp-6655-triliun-per-tahun)). Tapi yang benar-benar terkelola rapi jauh lebih kecil: **TJSL BUMN terealisasi ~Rp 11,2 triliun** (2023). Selisih potensi vs terkelola + keluhan lama bahwa dana CSR "belum dikelola maksimal" = **persis celah** yang platform kurasi ini isi.
 
 **Catatan jujur:** butuh struktur legal + kepatuhan (aturan penggunaan dana CSR,
 pelaporan TJSL), kemungkinan izin/registrasi sebagai lembaga penyalur, dan **jangan
@@ -240,17 +249,17 @@ mode sandbox Sumsub; KYC penuh menyala saat mendekati uang sungguhan (mainnet).
 
 ## 6. Workflow hulu ke hilir
 
-**HULU — temukan dan verifikasi**
+**HULU, temukan dan verifikasi**
 1. Kreator Kebaikan menemukan penerima nyata: perorangan (operasi, kecelakaan, obat, lansia terlantar, hewan sakit/terlantar) atau organisasi/yayasan (lihat bagian 3, mis. rumah yatim, shelter hewan, panti jompo, yayasan kanker/rehab, gerakan anti-kekerasan seksual).
 2. Verifikasi: identitas Penerima Manfaat + bukti kebutuhan (nota/surat) + consent penerima.
 3. Set target dana + Imbalan Kreator (slider 0-10%, default 0%, tampil jelas ke donatur).
 
-**TENGAH — ceritakan dan galang**
+**TENGAH, ceritakan dan galang**
 4. Kreator membuat Cerita Kebaikan (video dan/atau foto yang bermartabat: siapa, kebutuhannya, rencananya) lalu masuk feed.
 5. Feed di-ranking berdasarkan verifikasi + kejelasan goal + update hasil. BUKAN air mata atau kecepatan-donasi.
 6. Donatur menonton, tersentuh, lalu one-tap donasi di layar yang sama (nominal, nama/@username/Anonim, komentar). Dana masuk escrow smart contract.
 
-**HILIR — salurkan dan buktikan**
+**HILIR, salurkan dan buktikan**
 7. Dana ditahan escrow Soroban, dilepas per milestone/bukti (bukan instan cair; mematikan pola "ambil lagi").
 8. Kreator salurkan bantuan, lalu upload bukti (foto/nota/video hasil).
 9. Split otomatis on-chain: mayoritas ke Penerima, Imbalan Kreator (capped), fee platform kecil. Semua angka tampil.
