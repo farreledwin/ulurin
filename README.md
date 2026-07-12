@@ -1,135 +1,159 @@
-# Bagibagi
+# Ulurin
 
-Bagibagi is a focused donation marketplace preview for a simple idea:
-helping others can become a real, transparent profession.
+**Helping others, made an honest profession.** A donation platform where the
+organizer's cut is disclosed up front, capped at 0–10%, enforced by a smart
+contract, and every rupiah is traceable on Stellar.
 
-Organizers can start a campaign and set an optional **0%-10% operational
-allowance**. Donors see the split before pledging, so the beneficiary amount
-and organizer income are explicit from the start.
+> Status: **testnet preview**. All demo figures are labelled testnet/sandbox —
+> no mainnet money is implied. Powered by Stellar as an ecosystem, not affiliated
+> with the Stellar Development Foundation or Stellar Aid Assist.
 
-## Included Features
+---
 
-- Marketplace / discover donation campaigns
-- Create campaign / start a circle
-- Organizer allowance setting from 0%-10%
-- Transparent donation split calculation
-- Donor-facing breakdown before pledge
-- Organizer dashboard preview
-- Optional Supabase waitlist storage for preview pledges
+## The problem: the money flows, the proof disappears
+
+Indonesia is the most generous country in the world seven years running — yet
+trust in online giving keeps breaking on the same fault line: **cuts that are
+hidden, uncapped, and unproven.**
+
+- **Cak Budi (2017)** — a well-known social-media fundraiser collected **~Rp 1.2
+  billion** and spent it on a Toyota Fortuner and an iPhone 7. There was never an
+  honest, up-front disclosure of what share was his.
+  ([Detik](https://news.detik.com/berita/d-3488851/heboh-pengakuan-cak-budi-pakai-uang-donasi-untuk-beli-fortuner))
+- **ACT (2022)** — of **Rp 138.5 billion** in Boeing funds meant for the families
+  of the **Lion Air JT610** crash, only **Rp 20.5 billion** reached its purpose.
+  Investigators found ACT skimmed **13.7%** — above the legal 10% cap — and its
+  permit was revoked.
+  ([The Jakarta Post](https://www.thejakartapost.com/indonesia/2022/08/05/more-than-half-of-act-donations-went-into-execs-pockets-investigators-say.html)
+  · [Kompas](https://nasional.kompas.com/read/2022/07/06/13183861/izin-act-dicabut-karena-dugaan-penyelewengan-dana-bagaimana-aturan-donasi-di))
+
+**The problem was never being paid to do good — it was being paid in secret,
+without a limit, without proof.** That is exactly what Ulurin fixes.
+
+## The solution
+
+- **Cut disclosed before you give.** Donors see the split (beneficiary / organizer
+  allowance / platform fee) before confirming — informed consent, not a hidden fee.
+- **Capped 0–10%, enforced on-chain.** The allowance is a contract parameter, not
+  a promise. It cannot be changed silently. It grounds the centuries-old principle
+  of the *amil* (who may take up to 12.5% under DSN-MUI) in a modern, capped,
+  transparent mechanism.
+- **Escrow with milestone release.** Donations sit in a Soroban escrow and the
+  organizer's allowance is only released **after proof of distribution is
+  uploaded** — killing the "take the money and run" pattern.
+- **Two-layer transparency (honest):**
+  - *On-chain* proves the **money flow** — collected, cut, disbursed.
+  - *Off-chain* proves the **spending** — the organizer uploads invoices/photos and
+    donors get an update. On-chain does **not** by itself prove "the money bought X."
+
+## Who it's for
+
+Ulurin gives people who already do good work a **transparent, recurring engine** —
+so helping others can become a real job instead of a sponsor-dependent hustle.
+
+- **Field volunteers** — river-cleanup movements (the scale of Pandawara), road-hole
+  patchers (like Nanda, ~79 potholes), waterway cleanups. Already working, but living
+  on seasonal sponsors.
+- **People in need** — a gig driver who lost their motorbike / fell ill / passed away,
+  someone wronged who can't afford legal aid, families of accident victims.
+- **Organizations / foundations** — orphanages, animal shelters, a mosque running a
+  free kitchen: with recurring donors, the kitchen keeps cooking every day.
+- **Disaster relief** — fast, large-scale emergency fundraising. The format closest to
+  Stellar Aid Assist's transparent crisis-aid model.
+
+> These movements are cited as **public examples/inspiration, not partners or users
+> of Ulurin.**
+
+## Why it's different from Kitabisa / GoFundMe
+
+- The cut goes to the **organizer** (as their income — doing good as a job), not the
+  platform.
+- Trust is **on-chain proof**, not "trust the report."
+- Stories are **native** (short video and/or photo — *Cerita Kebaikan*), not an ad
+  that bounces you to a web form.
+
+## Why it's big
+
+- Zakat potential in Indonesia is **~Rp 327.6 trillion/year**, with only **~10%**
+  formally collected — a market ~90% untapped and barely digitized
+  ([Kompas](https://www.kompas.id/artikel/en-potensi-zakat-rp-327-triliun-yang-terkumpul-baru-rp-41-triliun)).
+- Total philanthropy potential is estimated at **Rp 650–665 trillion/year** (Bappenas).
+- Kitabisa alone has moved **Rp 830 billion across 8 million donors** — proof the
+  demand is real; the trust layer is what's missing.
+
+## Built on Stellar
+
+- **Soroban smart contract** holds the escrow, enforces the 0–10% cap, and splits
+  every donation automatically — logic runs on Stellar, not on our server.
+- **Public ledger** = auditable receipts anyone can check without logging in.
+- **USDC** settles underneath; the UI stays in rupiah, crypto-invisible.
+- Aligns with Stellar's mission of *equitable access to the global financial system*
+  and mirrors **Stellar Aid Assist** (instant, transparent, low-cost aid) — bringing
+  that institutional model down to the grassroots. *Inspired by, not affiliated with.*
+
+## Features
+
+- Discover / marketplace of donation campaigns
+- Create a campaign, set the organizer allowance (0–10%, tier-capped)
+- Transparent donation split + donor-facing breakdown **before** pledging
+- Organizer dashboard
+- Public transparency / receipt page (no login)
+- Creator KYC tier page
+- Optional Supabase-backed pledge storage for the preview
 - Soroban smart contract for testnet campaign vaults
 
-## Current Status
+## Smart contract
 
-This repo is a preview UI extracted from the Salapi codebase and narrowed to
-Bagibagi's donation marketplace model. The app flow still uses preview pledges,
-but the repo now includes a Soroban contract that can run on Stellar testnet.
+One multi-campaign vault (`contracts/bagibagi-campaign`) with the core mechanics:
 
-The pledge flow stores a waitlist entry when Supabase service-role credentials
-are configured. Without Supabase, it logs the pledge on the server and keeps the
-preview clickable.
+- `initialize(admin, token)` — set up the contract with a settlement token
+- `set_tier(organizer, tier)` — verification tier caps the allowance:
+  - Tier 0 → 0% · Tier 1 → up to 5% · Tier 2 → up to 10%
+- `create_campaign(organizer, beneficiary, allowance_bps)` — `allowance_bps` ≤ 1000
+  (10%) **and** ≤ the tier ceiling
+- `donate(donor, campaign_id, amount)` — split immediately into beneficiary balance
+  and organizer-allowance escrow
+- beneficiary withdraws their portion
+- organizer uploads proof → admin releases the allowance **only after proof exists**
 
-## Smart Contract
+All state transitions emit events for on-chain traceability.
 
-The contract lives in:
-
-```text
-contracts/bagibagi-campaign
-```
-
-It is one multi-campaign vault with the core Bagibagi mechanics:
-
-- admin initializes the contract with a token
-- admin sets organizer verification tier
-- organizer creates a campaign
-- tier caps organizer allowance:
-  - Tier 0: 0%
-  - Tier 1: up to 5%
-  - Tier 2: up to 10%
-- donor donation is split immediately into beneficiary balance and organizer allowance escrow
-- beneficiary can withdraw the beneficiary portion
-- organizer uploads proof
-- admin releases allowance after proof exists
-
-Run contract tests:
+## Build & run
 
 ```bash
+# Contract tests
 cargo test --workspace
-```
 
-Build optimized WASM:
-
-```bash
+# Build optimized WASM
 rustup target add wasm32v1-none
 stellar contract build --package bagibagi-campaign
-```
 
-Deploy and initialize on Stellar testnet:
-
-```bash
+# Deploy + initialize on Stellar testnet
 chmod +x scripts/deploy-testnet.sh
 ./scripts/deploy-testnet.sh
-```
 
-The deploy script prints:
-
-```text
-BAGIBAGI_CAMPAIGN_CONTRACT=...
-BAGIBAGI_TOKEN_CONTRACT=...
-BAGIBAGI_ADMIN=...
-STELLAR_NETWORK=testnet
-```
-
-Current testnet deployment and smoke transactions are recorded in
-[`DEPLOYMENTS.md`](DEPLOYMENTS.md).
-
-Provision local server actions for the deployed testnet contract:
-
-```bash
-chmod +x scripts/provision-testnet-env.sh
-./scripts/provision-testnet-env.sh
-```
-
-This writes `.env.local` with server-managed demo signers for admin,
-organizer, donor, and beneficiary. The app can then call the testnet contract
-from the create, donate, and organizer dashboard screens.
-
-## Tech Stack
-
-- Next.js 16
-- React 19
-- TypeScript
-- Supabase optional server-side storage
-
-## Local Development
-
-```bash
+# Web app
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+## Roadmap
 
-## Optional Supabase Setup
+- **Now (testnet):** creator-cut donations, escrow + proof-gated split, transparent
+  donor breakdown, public receipt page.
+- **Next:** native *Cerita Kebaikan* video/photo feed, in-feed one-tap donate with an
+  on-chain "verified donor" badge, full Sumsub KYC, creator rating + track record,
+  recurring (subscription) donations.
+- **Later:** a transparent zakat rail (with registered amil/LAZ), curated CSR/TJSL
+  funds, and licensed fiat on/off-ramp via a Stellar anchor (VASP) for real money.
 
-Create the table from:
+## Honesty notes
 
-```text
-supabase/circles_waitlist.sql
-```
-
-Then set:
-
-```bash
-NEXT_PUBLIC_SUPABASE_URL=...
-SUPABASE_SERVICE_ROLE_KEY=...
-```
-
-## Useful Routes
-
-- `/` and `/circles` - discover donation campaigns
-- `/circles/create` - create a campaign
-- `/circles/[id]` - campaign detail with donor breakdown
-- `/circles/[id]/donate` - pledge / waitlist flow
-- `/circles/[id]/manage` - organizer dashboard preview
-- `/you/kyc-tier` - allowance tier preview
-- `/transparency` - transparency model notes
+- Everything here runs on **testnet**; demo numbers are labelled, never presented as
+  traction.
+- The organizer cut is **always disclosed and capped at 0–10%** — donors can zero it
+  where enabled.
+- Sourced figures link to their primary reporting. "Potential" figures are official
+  estimates (BAZNAS/Bappenas), not amounts actually collected.
+- Ulurin is inspired by Stellar Aid Assist's transparency; it does **not** claim
+  affiliation with the SDF, Aid Assist, SDP, UNHCR, or IRC.
