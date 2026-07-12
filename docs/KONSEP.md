@@ -1,18 +1,16 @@
 # Ulurin: Konsep & Alignment Stellar
 
+🌐 **Bahasa:** Bahasa Indonesia (dokumen ini) · [English](KONSEP.en.md)
+
 > Dokumen konsep produk. Status: konsep + MVP testnet.
 > Catatan jujur dipegang di seluruh dokumen: angka demo/testnet dilabeli, tidak
 > ada metrik fiktif, tidak mengklaim "pertama di dunia", dan tidak mengklaim
 > afiliasi dengan Stellar/SDF/Stellar Aid Assist.
 
-> **In English (summary):** Ulurin is a transparent, creator-cut donation app on
-> Stellar/Soroban. A verified *Kreator Kebaikan* (good-deed creator) surfaces a real
-> case, tells its story (video and/or photo), channels the aid, and earns a disclosed,
-> capped 0-10% fee, while every rupiah's flow is provable on-chain. It brings the
-> transparent-aid model proven by Stellar Aid Assist down to the grassroots: everyday
-> donor to real beneficiary. The rest of this document is intentionally in Indonesian,
-> because its market, cases, and cultural context (zakat, the Cak Budi and ACT
-> scandals, grassroots movements) are Indonesia-specific.
+> **English:** a full English version of this document is at
+> [`KONSEP.en.md`](KONSEP.en.md). The body below is in Indonesian because its market,
+> cases, and cultural context (zakat, the Cak Budi and ACT scandals, grassroots
+> movements) are Indonesia-specific.
 
 ---
 
