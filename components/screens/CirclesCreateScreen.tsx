@@ -1,10 +1,8 @@
 "use client";
 
-// Bagibagi - Create-a-circle multi-step preview (public launch scope).
-// Nothing is persisted to a contract; the only persistence is the optional
-// waitlist email captured at the share-screen, via joinCirclesWaitlist (same
-// server action as the Donate flow). Real organizer verification + open-cause
-// moderation ship at public launch.
+// Bagibagi - Create-a-circle multi-step flow.
+// The story/title/photo remain preview metadata, while the share step can now
+// create the financial campaign on the deployed testnet contract.
 //
 // Step 3 "Operational Allowance" is the public launch STAGE 2 extension (SOW
 // Section 8 "Honest creator economy"). The selector is preview-only; no
@@ -13,7 +11,7 @@
 
 import { useMemo, useState, useTransition, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
-import { joinCirclesWaitlist } from "@/app/actions";
+import { bagibagiCreateCampaign, joinCirclesWaitlist } from "@/app/actions";
 import {
   T,
   Ico,
@@ -123,6 +121,10 @@ export default function CirclesCreateScreen() {
   const [err, setErr] = useState("");
   const [pending, start] = useTransition();
   const [waitlisted, setWaitlisted] = useState(false);
+  const [chainPending, startChain] = useTransition();
+  const [chainMsg, setChainMsg] = useState("");
+  const [chainLink, setChainLink] = useState("");
+  const [chainId, setChainId] = useState("");
 
   const slug = useMemo(() => slugify(title || "your-circle"), [title]);
   const previewUrl = `bagibagi.app/circles/${slug}`;
@@ -177,6 +179,26 @@ export default function CirclesCreateScreen() {
       });
       if (r.ok) setWaitlisted(true);
       else setErr(r.error || t("circles.saveDraftFailed"));
+    });
+  }
+
+  function submitOnchainCampaign() {
+    setErr("");
+    setChainMsg("");
+    setChainLink("");
+    const tier = Math.max(
+      previewTier,
+      allowancePct > 5 ? 2 : allowancePct > 0 ? 1 : 0,
+    );
+    startChain(async () => {
+      const r = await bagibagiCreateCampaign({ allowancePct, tier });
+      if (r.ok) {
+        setChainId(String(r.value ?? ""));
+        setChainMsg(`Campaign created on testnet: #${String(r.value ?? "")}`);
+        setChainLink(r.link);
+      } else {
+        setChainMsg(r.error);
+      }
     });
   }
 
@@ -1238,6 +1260,43 @@ export default function CirclesCreateScreen() {
               })}
             </div>
           )}
+        </Card>
+      </div>
+
+      <div style={{ padding: "16px 16px 0" }}>
+        <Card>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
+            <div>
+              <div style={{ fontSize: 15, fontWeight: 700 }}>Create testnet vault</div>
+              <div style={{ marginTop: 3, fontSize: 12, color: T.slate, lineHeight: 1.45 }}>
+                Creates the financial campaign on Stellar testnet. Story, title, and photos stay off-chain.
+              </div>
+            </div>
+            <Chip kind="success" size="sm">LIVE</Chip>
+          </div>
+
+          {chainMsg && (
+            <div style={{ marginTop: 12, fontSize: 12, color: chainLink ? T.moneyIn : T.warn, lineHeight: 1.45, wordBreak: "break-word" }}>
+              {chainMsg}{" "}
+              {chainLink && (
+                <a href={chainLink} target="_blank" rel="noreferrer" style={{ color: T.action, fontWeight: 700 }}>
+                  View tx
+                </a>
+              )}
+            </div>
+          )}
+
+          {chainId && (
+            <div style={{ marginTop: 10, padding: "9px 10px", borderRadius: 10, background: T.canvas, fontSize: 12, fontFamily: T.fontMono }}>
+              BAGIBAGI_TESTNET_CAMPAIGN_ID={chainId}
+            </div>
+          )}
+
+          <div style={{ marginTop: 14 }}>
+            <Btn kind="success" size="md" disabled={chainPending} loading={chainPending} onClick={submitOnchainCampaign}>
+              Create on testnet
+            </Btn>
+          </div>
         </Card>
       </div>
 

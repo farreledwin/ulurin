@@ -1,11 +1,9 @@
 "use client";
 
-// Bagibagi — Donate flow (PREVIEW, public launch).
-// Option (b) waitlist: amount picker + method + toggles, then a waitlist
-// signup screen. No on-chain transfer happens here. The email is saved to
-// the Supabase `circles_waitlist` table via the joinCirclesWaitlist server
-// action; if Supabase is not configured the action gracefully degrades to a
-// server-side console log and the UI still confirms the pledge.
+// Bagibagi — Donate flow.
+// Keeps the original waitlist pledge flow, and now adds a testnet rail that
+// submits a real donation to the deployed Bagibagi campaign contract using
+// server-managed demo signers.
 //
 // V10 revamp: matches the photo-forward Circle Detail it routes from — a photo
 // cause-context card, a big centered amount display (like Send / Top up), pill
@@ -15,7 +13,12 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { joinCirclesWaitlist } from "@/app/actions";
+import {
+  bagibagiDonate,
+  bagibagiFundDemoAccounts,
+  bagibagiGetCampaign,
+  joinCirclesWaitlist,
+} from "@/app/actions";
 import { useGoBack } from "@/lib/ui/useGoBack";
 import {
   T,
@@ -34,6 +37,12 @@ import type { Circle, CircleCategory } from "@/lib/circles/types";
 
 type Phase = "amount" | "waitlist" | "done";
 type Method = "balance" | "gcash" | "qris";
+type OnchainState = {
+  raisedStroops: string;
+  beneficiaryAvailableStroops: string;
+  allowanceEscrowStroops: string;
+  allowancePct: number;
+};
 
 // Quick chips in PHP app-units. Display layer converts to user's locale.
 const QUICK = [100, 250, 500, 1000, 2500];
@@ -71,6 +80,26 @@ function StickyBar({ children }: { children: React.ReactNode }) {
   );
 }
 
+function MiniStat({ label, value }: { label: string; value: string }) {
+  return (
+    <div
+      style={{
+        padding: "9px 10px",
+        borderRadius: 10,
+        background: T.canvas,
+        boxShadow: "inset 0 0 0 1px " + T.hairline,
+      }}
+    >
+      <div style={{ fontSize: 10, color: T.slate, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em" }}>
+        {label}
+      </div>
+      <div style={{ marginTop: 3, fontSize: 12, fontFamily: T.fontMono, color: T.ink, overflow: "hidden", textOverflow: "ellipsis" }}>
+        {value}
+      </div>
+    </div>
+  );
+}
+
 export default function CirclesDonateScreen({ circle }: { circle: Circle }) {
   const router = useRouter();
   const goBack = useGoBack(`/circles/${circle.id}`);
@@ -85,6 +114,10 @@ export default function CirclesDonateScreen({ circle }: { circle: Circle }) {
   const [email, setEmail] = useState("");
   const [err, setErr] = useState("");
   const [pending, start] = useTransition();
+  const [chainPending, startChain] = useTransition();
+  const [chainState, setChainState] = useState<OnchainState | null>(null);
+  const [chainMsg, setChainMsg] = useState("");
+  const [chainLink, setChainLink] = useState("");
 
   const shell: React.CSSProperties = {
     fontFamily: T.fontSans,
@@ -136,6 +169,42 @@ export default function CirclesDonateScreen({ circle }: { circle: Circle }) {
       if (r.ok) setPhase("done");
       else setErr(r.error || t("circles.saveFailed"));
     });
+  }
+
+  async function loadOnchainState() {
+    const state = await bagibagiGetCampaign();
+    if (state.ok) setChainState(state.state);
+    else setChainMsg(state.error);
+  }
+
+  function fundDemo() {
+    setChainMsg("");
+    setChainLink("");
+    startChain(async () => {
+      const r = await bagibagiFundDemoAccounts();
+      setChainMsg(r.ok ? "Demo testnet accounts funded." : r.error);
+    });
+  }
+
+  function donateTestnet() {
+    setChainMsg("");
+    setChainLink("");
+    startChain(async () => {
+      const r = await bagibagiDonate({ campaignId: 1, displayAmount: amount });
+      if (r.ok) {
+        setChainMsg(`Testnet donation sent: ${r.hash.slice(0, 10)}...`);
+        setChainLink(r.link);
+        await loadOnchainState();
+      } else {
+        setChainMsg(r.error);
+      }
+    });
+  }
+
+  function refreshTestnet() {
+    setChainMsg("");
+    setChainLink("");
+    startChain(loadOnchainState);
   }
 
   // ── PHASE: amount picker + method + toggles ──
@@ -428,6 +497,54 @@ export default function CirclesDonateScreen({ circle }: { circle: Circle }) {
               value={marketingOk}
               onChange={setMarketingOk}
             />
+          </Card>
+        </div>
+
+        <div style={{ padding: "16px 16px 0" }}>
+          <Card>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
+              <div>
+                <div style={{ fontSize: 15, fontWeight: 700 }}>Testnet rail</div>
+                <div style={{ marginTop: 3, fontSize: 12, color: T.slate, lineHeight: 1.45 }}>
+                  Sends a real Stellar testnet donation to campaign #1 using demo accounts.
+                </div>
+              </div>
+              <Chip kind="success" size="sm">LIVE</Chip>
+            </div>
+
+            {chainState && (
+              <div style={{ marginTop: 12, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+                <MiniStat label="Raised" value={chainState.raisedStroops} />
+                <MiniStat label="Escrow" value={chainState.allowanceEscrowStroops} />
+                <MiniStat label="Beneficiary" value={chainState.beneficiaryAvailableStroops} />
+                <MiniStat label="Allowance" value={`${chainState.allowancePct}%`} />
+              </div>
+            )}
+
+            {chainMsg && (
+              <div style={{ marginTop: 12, fontSize: 12, color: chainLink ? T.moneyIn : T.warn, lineHeight: 1.45, wordBreak: "break-word" }}>
+                {chainMsg}{" "}
+                {chainLink && (
+                  <a href={chainLink} target="_blank" rel="noreferrer" style={{ color: T.action, fontWeight: 700 }}>
+                    View tx
+                  </a>
+                )}
+              </div>
+            )}
+
+            <div style={{ marginTop: 14, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+              <Btn kind="secondary" size="sm" disabled={chainPending} onClick={fundDemo}>
+                Fund demo
+              </Btn>
+              <Btn kind="secondary" size="sm" disabled={chainPending} onClick={refreshTestnet}>
+                Refresh
+              </Btn>
+            </div>
+            <div style={{ marginTop: 8 }}>
+              <Btn kind="success" size="md" disabled={chainPending || amount <= 0} loading={chainPending} onClick={donateTestnet}>
+                Donate on testnet
+              </Btn>
+            </div>
           </Card>
         </div>
 

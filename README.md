@@ -82,6 +82,17 @@ STELLAR_NETWORK=testnet
 Current testnet deployment and smoke transactions are recorded in
 [`DEPLOYMENTS.md`](DEPLOYMENTS.md).
 
+Provision local server actions for the deployed testnet contract:
+
+```bash
+chmod +x scripts/provision-testnet-env.sh
+./scripts/provision-testnet-env.sh
+```
+
+This writes `.env.local` with server-managed demo signers for admin,
+organizer, donor, and beneficiary. The app can then call the testnet contract
+from the create, donate, and organizer dashboard screens.
+
 ## Tech Stack
 
 - Next.js 16

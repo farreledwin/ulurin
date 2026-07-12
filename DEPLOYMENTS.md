@@ -31,6 +31,9 @@ Campaign `1` was exercised end to end with a 10% organizer allowance.
 | Withdraw beneficiary `9,000,000` stroops | [`45f9a17ab5fbe88aae6fa00af62c1163c6f0e2a6d104028d04cfcda65132515b`](https://stellar.expert/explorer/testnet/tx/45f9a17ab5fbe88aae6fa00af62c1163c6f0e2a6d104028d04cfcda65132515b) |
 | Upload proof hash | [`213007c21551d97effb594c5179656ab59d49f09b3ab71ad3a4df83c514a9dd6`](https://stellar.expert/explorer/testnet/tx/213007c21551d97effb594c5179656ab59d49f09b3ab71ad3a4df83c514a9dd6) |
 | Release allowance `1,000,000` stroops | [`914b981157273c3c69ef9ccf2dc1d935fbdb40a80e5504b785c152ba70bbb8f3`](https://stellar.expert/explorer/testnet/tx/914b981157273c3c69ef9ccf2dc1d935fbdb40a80e5504b785c152ba70bbb8f3) |
+| App helper donate `123` stroops | [`0d7d47cfe8c8a3811fdf8ced201e8f78d47dcc644b344ec36a1b510a7c2acd8b`](https://stellar.expert/explorer/testnet/tx/0d7d47cfe8c8a3811fdf8ced201e8f78d47dcc644b344ec36a1b510a7c2acd8b) |
+| App helper withdraw `111` stroops | [`5237b7b1691cba2d7850751a08415156b13e1a1502e9b9c347d9e7c44f751e69`](https://stellar.expert/explorer/testnet/tx/5237b7b1691cba2d7850751a08415156b13e1a1502e9b9c347d9e7c44f751e69) |
+| App helper release `12` stroops | [`8758c019d3f862d02725c6e788539d9faa51b1d1761ee87280cca7df93f3cc32`](https://stellar.expert/explorer/testnet/tx/8758c019d3f862d02725c6e788539d9faa51b1d1761ee87280cca7df93f3cc32) |
 
 Final campaign state:
 
@@ -40,7 +43,16 @@ Final campaign state:
   "allowance_escrow": "0",
   "beneficiary_available": "0",
   "proof_uploaded": true,
-  "raised": "10000000",
+  "raised": "10000123",
   "tier": 2
 }
 ```
+
+## App Wiring Smoke
+
+The server helper used by the Next.js app also created campaign `2` with a 5%
+allowance:
+
+| Step | Transaction |
+|---|---|
+| Create campaign `2` from app helper | [`6aa2aac6d4e873dd19bb78700799546de61a3c6729d711c3da2b8ec19dd4126b`](https://stellar.expert/explorer/testnet/tx/6aa2aac6d4e873dd19bb78700799546de61a3c6729d711c3da2b8ec19dd4126b) |

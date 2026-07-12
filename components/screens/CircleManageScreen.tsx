@@ -1,13 +1,18 @@
 "use client";
 
-// Bagibagi - Organizer dashboard (public launch STAGE 2 preview).
-// Shows allowance status (accrued / escrow / blocked), the "Upload proof of
-// delivery" affordance (preview-only, no real upload), reputation score, and
-// the seven-day dispute window countdown (mock). Nothing here is on-chain
-// today. SOW Section 8.
+// Bagibagi - Organizer dashboard.
+// Shows the preview organizer dashboard and a small testnet contract panel for
+// campaign #1: refresh, withdraw beneficiary balance, upload proof, and release
+// allowance using server-managed demo signers.
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import {
+  bagibagiGetCampaign,
+  bagibagiReleaseAllowance,
+  bagibagiUploadProof,
+  bagibagiWithdrawBeneficiary,
+} from "@/app/actions";
 import {
   T,
   Ico,
@@ -48,6 +53,12 @@ function mockDisputeWindowEndsAt(): string {
 
 // Translation fn type, mirrors useT()'s `t`.
 type TFn = (key: string, vars?: Record<string, string | number>) => string;
+type OnchainState = {
+  raisedStroops: string;
+  beneficiaryAvailableStroops: string;
+  allowanceEscrowStroops: string;
+  proofUploaded: boolean;
+};
 
 function formatRemaining(iso: string, t: TFn): string {
   const target = new Date(iso).getTime();
@@ -59,6 +70,26 @@ function formatRemaining(iso: string, t: TFn): string {
   if (days > 0)
     return t("circles.remainingDh", { days, hours: remainingHours });
   return t("circles.remainingH", { hours });
+}
+
+function ChainStat({ label, value }: { label: string; value: string }) {
+  return (
+    <div
+      style={{
+        padding: "9px 10px",
+        borderRadius: 10,
+        background: T.canvas,
+        boxShadow: "inset 0 0 0 1px " + T.hairline,
+      }}
+    >
+      <div style={{ fontSize: 10, color: T.slate, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em" }}>
+        {label}
+      </div>
+      <div style={{ marginTop: 3, fontSize: 12, fontFamily: T.fontMono, color: T.ink, overflow: "hidden", textOverflow: "ellipsis" }}>
+        {value}
+      </div>
+    </div>
+  );
 }
 
 export default function CircleManageScreen({ circle }: { circle: Circle }) {
@@ -113,6 +144,43 @@ export default function CircleManageScreen({ circle }: { circle: Circle }) {
   const pct = progressPct(circle);
   const raised = formatParts(circle.pesoRaised, currency);
   const accrued = formatParts(allowance?.pesoAccrued ?? 0, currency);
+  const [chainPending, startChain] = useTransition();
+  const [chainState, setChainState] = useState<OnchainState | null>(null);
+  const [chainMsg, setChainMsg] = useState("");
+  const [chainLink, setChainLink] = useState("");
+
+  async function loadOnchainState() {
+    const r = await bagibagiGetCampaign();
+    if (r.ok) setChainState(r.state);
+    else setChainMsg(r.error);
+  }
+
+  function runChain(action: "refresh" | "withdraw" | "proof" | "release") {
+    setChainMsg("");
+    setChainLink("");
+    startChain(async () => {
+      if (action === "refresh") {
+        await loadOnchainState();
+        return;
+      }
+      const result =
+        action === "withdraw"
+          ? await bagibagiWithdrawBeneficiary()
+          : action === "proof"
+            ? await bagibagiUploadProof({
+                campaignId: 1,
+                proofText: `Proof uploaded from ${circle.id}`,
+              })
+            : await bagibagiReleaseAllowance();
+      if (result.ok) {
+        setChainMsg(`${action} tx: ${result.hash.slice(0, 10)}...`);
+        setChainLink(result.link);
+        await loadOnchainState();
+      } else {
+        setChainMsg(result.error);
+      }
+    });
+  }
 
   return (
     <div
@@ -166,6 +234,55 @@ export default function CircleManageScreen({ circle }: { circle: Circle }) {
             </Chip>
           )}
         </div>
+      </div>
+
+      <div style={{ padding: "14px 16px 0" }}>
+        <Card>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
+            <div>
+              <div style={{ fontSize: 15, fontWeight: 700 }}>Testnet contract</div>
+              <div style={{ marginTop: 3, fontSize: 12, color: T.slate, lineHeight: 1.45 }}>
+                Campaign #1 live state and settlement actions.
+              </div>
+            </div>
+            <Chip kind="success" size="sm">LIVE</Chip>
+          </div>
+
+          {chainState && (
+            <div style={{ marginTop: 12, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+              <ChainStat label="Raised" value={chainState.raisedStroops} />
+              <ChainStat label="Beneficiary" value={chainState.beneficiaryAvailableStroops} />
+              <ChainStat label="Escrow" value={chainState.allowanceEscrowStroops} />
+              <ChainStat label="Proof" value={chainState.proofUploaded ? "uploaded" : "missing"} />
+            </div>
+          )}
+
+          {chainMsg && (
+            <div style={{ marginTop: 12, fontSize: 12, color: chainLink ? T.moneyIn : T.warn, lineHeight: 1.45, wordBreak: "break-word" }}>
+              {chainMsg}{" "}
+              {chainLink && (
+                <a href={chainLink} target="_blank" rel="noreferrer" style={{ color: T.action, fontWeight: 700 }}>
+                  View tx
+                </a>
+              )}
+            </div>
+          )}
+
+          <div style={{ marginTop: 14, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+            <Btn kind="secondary" size="sm" disabled={chainPending} onClick={() => runChain("refresh")}>
+              Refresh
+            </Btn>
+            <Btn kind="secondary" size="sm" disabled={chainPending} onClick={() => runChain("withdraw")}>
+              Withdraw
+            </Btn>
+            <Btn kind="secondary" size="sm" disabled={chainPending} onClick={() => runChain("proof")}>
+              Proof
+            </Btn>
+            <Btn kind="success" size="sm" disabled={chainPending} loading={chainPending} onClick={() => runChain("release")}>
+              Release
+            </Btn>
+          </div>
+        </Card>
       </div>
 
       {/* Raised summary mini-card */}
