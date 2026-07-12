@@ -85,8 +85,10 @@ Fast, large-scale emergency fundraising — the format closest to Stellar Aid As
 
 ## Why it's different from Kitabisa / GoFundMe
 
-- The cut goes to the **organizer** (as their income — doing good as a job), not the
-  platform.
+- The disclosed 0–10% cut is the **organizer's income** — doing good as a job. On
+  Kitabisa/GoFundMe the fundraiser usually works unpaid and only the platform earns;
+  here the person doing the work gets paid, in the open. Ulurin also takes a **small,
+  transparent platform fee**, shown in every donation split — never hidden.
 - Trust is **on-chain proof**, not "trust the report."
 - Stories are **native** (short video and/or photo — *Cerita Kebaikan*), not an ad
   that bounces you to a web form.
