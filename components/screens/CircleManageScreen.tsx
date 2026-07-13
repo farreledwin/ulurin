@@ -142,8 +142,8 @@ export default function CircleManageScreen({ circle }: { circle: Circle }) {
   }, [toast]);
 
   const pct = progressPct(circle);
-  const raised = formatParts(circle.pesoRaised, currency);
-  const accrued = formatParts(allowance?.pesoAccrued ?? 0, currency);
+  const raised = formatParts(circle.raisedAmount, currency);
+  const accrued = formatParts(allowance?.accruedAmount ?? 0, currency);
   const [chainPending, startChain] = useTransition();
   const [chainState, setChainState] = useState<OnchainState | null>(null);
   const [chainMsg, setChainMsg] = useState("");

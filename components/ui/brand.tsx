@@ -40,7 +40,7 @@ export function SalapiMark({
   );
 }
 
-// Alternative concept, quiet ₱ roundel (kept on file; used by the mascot family).
+// Alternative concept, quiet rupiah roundel (kept on file; used by the mascot family).
 export function SalapiMarkAlt({
   size = 64,
   c = "#fff",

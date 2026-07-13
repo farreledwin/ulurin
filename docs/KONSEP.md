@@ -326,7 +326,7 @@ teknologinya benar-benar Stellar (bukan cuma "nampung koin"):
 - **Soroban smart contract** (escrow + cap + split) = logika berjalan DI Stellar, bukan di server kita.
 - **Public ledger** = transparansi (nilai jual inti Stellar).
 - **Anchor standards (SEP-24/SEP-31/SEP-38)** = pakai standar resmi Stellar untuk jembatan fiat.
-- **Path payment** kalau lintas-aset (mis. rupiah → peso), dan pola **Stellar Disbursement Platform** cocok untuk penyaluran rutin/massal ke yayasan.
+- **Path payment** kalau lintas-aset (mis. rupiah → rupiah), dan pola **Stellar Disbursement Platform** cocok untuk penyaluran rutin/massal ke yayasan.
 
 **Catatan jujur:** fiat cash-in/out ASLI butuh **anchor berlisensi (VASP)**. Indonesia
 belum punya anchor Stellar yang live → ini bagian terberat. MVP/testnet: pakai

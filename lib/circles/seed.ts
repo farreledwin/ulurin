@@ -1,67 +1,10 @@
-// Bagibagi — preview SEED data for the Discover screen and detail pages.
-// NOT real causes, NOT live, NOT on-chain. Names are illustrative placeholders
-// crafted to mirror the PH/ID context the SOW Section 7 describes (typhoon
-// recovery, medical relief, school supplies, OFW family support, creator
-// patronage). Numbers are in PHP app-units; the Money component renders them
-// in the user's locale. Do not display tx hashes or contract IDs against any
-// of these circles — Circles is public launch scope.
+// Bagibagi — Indonesia-first preview seed data.
+// NOT real causes, NOT live, NOT on-chain. Numbers are IDR-first app units;
+// the Money component renders them in the user's selected display currency.
 
 import type { Circle } from "./types";
 
-// preview seed data, public launch stage 2 - operational allowance on a
-// subset of circles. SOW Section 8: capped at 10 percent, default 0 percent,
-// gated by KYC tier. None of these are on-chain today.
-
 export const SEED_CIRCLES: Circle[] = [
-  {
-    id: "tino-relief",
-    title: "Tino survivors, Cebu - rebuild a fishing barangay",
-    organizer: "Maria S.",
-    organizerLocation: "Cebu, PH",
-    category: "disaster",
-    story:
-      "Typhoon Tino tore through our barangay in November. Twenty-two families lost their boats and their roofs in one night. The fish landing center is gone. We are not waiting for the government to come; we are rebuilding with our own hands, but we need materials.\n\nEvery peso you pledge in this preview shows the transparent Bagibagi split. At public launch, donors should be able to inspect every contribution, proof upload, and disbursement here.\n\nMabuhay po, and salamat sa tulong.",
-    pesoRaised: 184_500,
-    pesoTarget: 250_000,
-    donorCount: 312,
-    daysRemaining: 18,
-    coverGradient: ["#B45309", "#F59E0B"],
-    recentDonations: [
-      { id: "d1", donorLabel: "Anonymous", pesoAmount: 1000, whenLabel: "2 hours ago", note: "Para sa mga bata. Stay strong." },
-      { id: "d2", donorLabel: "Jen R.", pesoAmount: 500, whenLabel: "5 hours ago" },
-      { id: "d3", donorLabel: "Ariq H.", pesoAmount: 2500, whenLabel: "yesterday", note: "Sending love from Jakarta - one rail, two countries." },
-      { id: "d4", donorLabel: "Anonymous", pesoAmount: 250, whenLabel: "yesterday" },
-      { id: "d5", donorLabel: "Carlos M.", pesoAmount: 5000, whenLabel: "2 days ago" },
-    ],
-  },
-  {
-    id: "ate-mei-dialysis",
-    title: "Ate Mei needs dialysis - 12 sessions to stabilize",
-    organizer: "Mei's family",
-    organizerLocation: "Quezon City, PH",
-    category: "medical",
-    story:
-      "Our Ate Mei is 54 and was just diagnosed with end-stage kidney disease. PhilHealth covers part of her dialysis, but we still need to fund 12 sessions while we wait for the transplant queue.\n\nWe are a family of teachers and a tricycle driver. Our circle is a small one but every contribution buys her another week of stability. We will post receipts here at every milestone once Bagibagi launches.",
-    pesoRaised: 62_300,
-    pesoTarget: 180_000,
-    donorCount: 87,
-    daysRemaining: 25,
-    coverGradient: ["#059669", "#10B981"],
-    recentDonations: [
-      { id: "d1", donorLabel: "Anonymous", pesoAmount: 300, whenLabel: "6 hours ago" },
-      { id: "d2", donorLabel: "Bea G.", pesoAmount: 1000, whenLabel: "yesterday", note: "Praying for Ate Mei." },
-      { id: "d3", donorLabel: "Ruth T.", pesoAmount: 200, whenLabel: "2 days ago" },
-      { id: "d4", donorLabel: "Anonymous", pesoAmount: 5000, whenLabel: "3 days ago" },
-    ],
-    allowance: {
-      percentage: 5,
-      tier: 1,
-      organizerName: "Mei's family",
-      proofRequired: true,
-      escrowed: true,
-      pesoAccrued: 3_115, // 5 percent of pesoRaised 62_300
-    },
-  },
   {
     id: "banjir-jakarta-utara",
     title: "Banjir Jakarta Utara - dapur umum untuk 200 keluarga",
@@ -69,91 +12,138 @@ export const SEED_CIRCLES: Circle[] = [
     organizerLocation: "Jakarta Utara, ID",
     category: "disaster",
     story:
-      "Banjir besar di RW 06 membuat 200 keluarga mengungsi ke balai warga. Listrik mati tiga hari. Kami buka dapur umum 24 jam, masak nasi bungkus untuk yang masih bertahan di rumah panggung dan yang di pengungsian.\n\nSetiap rupiah yang masuk lewat Bagibagi harus terlihat transparan saat public launch. Untuk sekarang ini adalah preview - kontribusi belum akan dipungut.\n\nTerima kasih untuk teman-teman di seluruh nusantara dan diaspora.",
-    pesoRaised: 96_750,
-    pesoTarget: 200_000,
+      "Banjir besar di RW 06 membuat 200 keluarga mengungsi ke balai warga. Listrik mati tiga hari. Kami membuka dapur umum 24 jam untuk warga yang masih bertahan di rumah dan di pengungsian.\n\nSetiap rupiah yang masuk lewat Bagibagi harus terlihat transparan saat public launch. Untuk sekarang ini adalah pratinjau: kontribusi belum dipungut.\n\nTerima kasih untuk teman-teman di seluruh nusantara dan diaspora.",
+    raisedAmount: 96_750_000,
+    targetAmount: 200_000_000,
     donorCount: 421,
     daysRemaining: 11,
     coverGradient: ["#1D4ED8", "#3B82F6"],
     recentDonations: [
-      { id: "d1", donorLabel: "Anonymous", pesoAmount: 150, whenLabel: "1 hour ago" },
-      { id: "d2", donorLabel: "Putri W.", pesoAmount: 500, whenLabel: "4 hours ago", note: "Dari Surabaya. Tetap semangat." },
-      { id: "d3", donorLabel: "Anonymous", pesoAmount: 1000, whenLabel: "yesterday" },
-      { id: "d4", donorLabel: "Anggi P.", pesoAmount: 750, whenLabel: "yesterday" },
+      { id: "d1", donorLabel: "Anonymous", amount: 150_000, whenLabel: "1 jam lalu" },
+      { id: "d2", donorLabel: "Putri W.", amount: 500_000, whenLabel: "4 jam lalu", note: "Dari Surabaya. Tetap semangat." },
+      { id: "d3", donorLabel: "Anonymous", amount: 1_000_000, whenLabel: "kemarin" },
+      { id: "d4", donorLabel: "Anggi P.", amount: 750_000, whenLabel: "kemarin" },
     ],
   },
   {
-    id: "barangay-library",
-    title: "Build a barangay library for 300 kids in Bohol",
-    organizer: "Teachers' Circle, Tubigon",
-    organizerLocation: "Bohol, PH",
+    id: "pak-rahmat-dialisis",
+    title: "Pak Rahmat butuh 12 sesi dialisis bulan ini",
+    organizer: "Keluarga Pak Rahmat",
+    organizerLocation: "Bandung, ID",
+    category: "medical",
+    story:
+      "Pak Rahmat, 58 tahun, baru didiagnosis gagal ginjal stadium akhir. BPJS membantu sebagian biaya, tapi keluarga masih perlu menutup transportasi, obat pendamping, dan biaya sesi tambahan selama menunggu jadwal rujukan.\n\nKami akan mengunggah struk dan update setiap milestone saat Bagibagi live. Di pratinjau ini, kamu bisa melihat bagaimana pembagian donasi dan allowance operasional ditampilkan sebelum donatur berkomitmen.",
+    raisedAmount: 62_300_000,
+    targetAmount: 180_000_000,
+    donorCount: 87,
+    daysRemaining: 25,
+    coverGradient: ["#059669", "#10B981"],
+    recentDonations: [
+      { id: "d1", donorLabel: "Anonymous", amount: 300_000, whenLabel: "6 jam lalu" },
+      { id: "d2", donorLabel: "Bima G.", amount: 1_000_000, whenLabel: "kemarin", note: "Semoga Pak Rahmat segera stabil." },
+      { id: "d3", donorLabel: "Ruth T.", amount: 200_000, whenLabel: "2 hari lalu" },
+      { id: "d4", donorLabel: "Anonymous", amount: 5_000_000, whenLabel: "3 hari lalu" },
+    ],
+    allowance: {
+      percentage: 5,
+      tier: 1,
+      organizerName: "Keluarga Pak Rahmat",
+      proofRequired: true,
+      escrowed: true,
+      accruedAmount: 3_115_000,
+    },
+  },
+  {
+    id: "perpustakaan-desa-gunungkidul",
+    title: "Bangun perpustakaan desa untuk 300 anak di Gunungkidul",
+    organizer: "Komunitas Guru Desa",
+    organizerLocation: "Gunungkidul, ID",
     category: "education",
     story:
-      "Our barangay has no library. The kids share four storybooks among 300 students. We have an empty room next to the chapel and a carpenter willing to build the shelves at cost. We need books, paint, and a small generator.\n\nThis is a long campaign. Every milestone we hit will be posted here transparently at public launch. For now we are gathering pledges in this preview.",
-    pesoRaised: 38_900,
-    pesoTarget: 150_000,
+      "Sekolah dasar di desa kami hanya punya beberapa rak buku lama. Anak-anak bergantian membaca buku yang sama setiap minggu. Ruang kosong di balai dusun sudah disiapkan; kami butuh rak, buku bacaan, cat, dan kipas.\n\nIni campaign jangka menengah. Setiap pembelian buku dan material akan dipublikasikan sebagai bukti saat Bagibagi live.",
+    raisedAmount: 38_900_000,
+    targetAmount: 150_000_000,
     donorCount: 54,
     daysRemaining: 60,
     coverGradient: ["#4C2F8A", "#7C3AED"],
     recentDonations: [
-      { id: "d1", donorLabel: "Anonymous", pesoAmount: 500, whenLabel: "yesterday" },
-      { id: "d2", donorLabel: "Lola Linda", pesoAmount: 2000, whenLabel: "3 days ago", note: "Para sa mga apo ko." },
-      { id: "d3", donorLabel: "Anonymous", pesoAmount: 100, whenLabel: "4 days ago" },
+      { id: "d1", donorLabel: "Anonymous", amount: 500_000, whenLabel: "kemarin" },
+      { id: "d2", donorLabel: "Ibu Linda", amount: 2_000_000, whenLabel: "3 hari lalu", note: "Untuk anak-anak yang suka membaca." },
+      { id: "d3", donorLabel: "Anonymous", amount: 100_000, whenLabel: "4 hari lalu" },
     ],
     allowance: {
       percentage: 8,
       tier: 2,
-      organizerName: "Teachers' Circle, Tubigon",
+      organizerName: "Komunitas Guru Desa",
       proofRequired: true,
       escrowed: true,
-      pesoAccrued: 3_112, // 8 percent of pesoRaised 38_900
+      accruedAmount: 3_112_000,
     },
   },
   {
-    id: "ofw-family-tuition",
-    title: "Help Tita Ana keep her three kids in school this term",
-    organizer: "Family of Ana D.",
-    organizerLocation: "Tarlac, PH",
+    id: "motor-ojol-hilang-bekasi",
+    title: "Bantu driver ojol Bekasi mengganti motor yang hilang",
+    organizer: "Tetangga Pak Deni",
+    organizerLocation: "Bekasi, ID",
     category: "family",
     story:
-      "My mother works in Riyadh as a domestic helper. Her employer delayed her last three months of salary. The tuition deadline for my two younger siblings and me is in 14 days.\n\nThis is exactly the cross-border use case Bagibagi is built for: an OFW in the Gulf, three kids in Tarlac, donors anywhere in the world, one Google login. At public launch you will see every peso land on-chain.",
-    pesoRaised: 47_200,
-    pesoTarget: 75_000,
+      "Motor Pak Deni hilang saat ia mengantar pesanan malam. Motor itu satu-satunya alat kerja keluarga. Tanpa motor, penghasilan harian berhenti dan cicilan sekolah dua anaknya ikut terancam.\n\nDana akan dipakai untuk DP motor pengganti, helm, dan biaya administrasi. Bukti pembelian akan dipublikasikan saat Bagibagi live.",
+    raisedAmount: 47_200_000,
+    targetAmount: 75_000_000,
     donorCount: 138,
     daysRemaining: 9,
     coverGradient: ["#2E5DA0", "#0EA5E9"],
     recentDonations: [
-      { id: "d1", donorLabel: "Anonymous", pesoAmount: 500, whenLabel: "3 hours ago" },
-      { id: "d2", donorLabel: "Kuya Marvin", pesoAmount: 1500, whenLabel: "yesterday", note: "Kapit lang, Tita." },
-      { id: "d3", donorLabel: "Anonymous", pesoAmount: 300, whenLabel: "2 days ago" },
+      { id: "d1", donorLabel: "Anonymous", amount: 500_000, whenLabel: "3 jam lalu" },
+      { id: "d2", donorLabel: "Marvin", amount: 1_500_000, whenLabel: "kemarin", note: "Semoga cepat narik lagi, Pak." },
+      { id: "d3", donorLabel: "Anonymous", amount: 300_000, whenLabel: "2 hari lalu" },
     ],
   },
   {
-    id: "creator-baybayin",
-    title: "Print 1,000 free Baybayin learning zines",
-    organizer: "@kapatid.tinta",
-    organizerLocation: "Manila, PH",
-    category: "creator",
+    id: "tambal-jalan-demak",
+    title: "Relawan tambal jalan berlubang di Demak",
+    organizer: "@relawan.jalan",
+    organizerLocation: "Demak, ID",
+    category: "community",
     story:
-      "I make small zines that teach Baybayin to kids who cannot afford workshops. I want to print 1,000 copies and ship them free to public schools in Mindanao.\n\nCreators on Bagibagi should keep more of every contribution than on platforms that hide the economics. This preview makes the donor split explicit before launch: beneficiary first, operational allowance only when configured.",
-    pesoRaised: 24_400,
-    pesoTarget: 60_000,
+      "Tim kecil kami menambal lubang jalan yang sering membuat pengendara jatuh. Biaya aspal dingin, rompi, cone, dan transport selama ini patungan sendiri.\n\nBagibagi cocok untuk kerja seperti ini: donor melihat biaya operasional sejak awal, sementara setiap pembelian material dan lokasi pengerjaan bisa dilaporkan terbuka.",
+    raisedAmount: 24_400_000,
+    targetAmount: 60_000_000,
     donorCount: 92,
     daysRemaining: 22,
     coverGradient: ["#9C4221", "#F97316"],
     recentDonations: [
-      { id: "d1", donorLabel: "Anonymous", pesoAmount: 250, whenLabel: "yesterday" },
-      { id: "d2", donorLabel: "Iya R.", pesoAmount: 1000, whenLabel: "2 days ago", note: "Salamat for keeping the script alive." },
-      { id: "d3", donorLabel: "Anonymous", pesoAmount: 500, whenLabel: "4 days ago" },
+      { id: "d1", donorLabel: "Anonymous", amount: 250_000, whenLabel: "kemarin" },
+      { id: "d2", donorLabel: "Ira R.", amount: 1_000_000, whenLabel: "2 hari lalu", note: "Biar jalan kampung lebih aman." },
+      { id: "d3", donorLabel: "Anonymous", amount: 500_000, whenLabel: "4 hari lalu" },
     ],
     allowance: {
       percentage: 7,
       tier: 1,
-      organizerName: "@kapatid.tinta",
+      organizerName: "@relawan.jalan",
       proofRequired: true,
       escrowed: true,
-      pesoAccrued: 1_708, // 7 percent of pesoRaised 24_400
+      accruedAmount: 1_708_000,
     },
+  },
+  {
+    id: "zine-aksara-nusantara",
+    title: "Cetak 1.000 zine belajar aksara Nusantara gratis",
+    organizer: "@kertasbaik",
+    organizerLocation: "Yogyakarta, ID",
+    category: "creator",
+    story:
+      "Saya membuat zine kecil untuk mengenalkan aksara Nusantara ke anak-anak sekolah dasar. Target berikutnya: cetak 1.000 eksemplar dan kirim gratis ke taman baca di Jawa, Bali, dan Nusa Tenggara.\n\nDi Bagibagi, kreator sosial bisa menjelaskan biaya kerja secara terbuka. Penerima tetap prioritas, allowance operasional hanya berjalan jika dikonfigurasi dan berbukti.",
+    raisedAmount: 31_800_000,
+    targetAmount: 80_000_000,
+    donorCount: 116,
+    daysRemaining: 28,
+    coverGradient: ["#B45309", "#F59E0B"],
+    recentDonations: [
+      { id: "d1", donorLabel: "Anonymous", amount: 250_000, whenLabel: "5 jam lalu" },
+      { id: "d2", donorLabel: "Nadia", amount: 750_000, whenLabel: "kemarin", note: "Untuk taman baca di timur." },
+      { id: "d3", donorLabel: "Anonymous", amount: 500_000, whenLabel: "2 hari lalu" },
+    ],
   },
 ];
 

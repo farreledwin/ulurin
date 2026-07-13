@@ -1,15 +1,14 @@
-export const LOCALES = ["en", "tl", "id", "vi"] as const;
+export const LOCALES = ["id", "en", "vi"] as const;
 export type Locale = (typeof LOCALES)[number];
-export const DEFAULT_LOCALE: Locale = "en";
+export const DEFAULT_LOCALE: Locale = "id";
 export const LOCALE_COOKIE = "bagibagi_locale";
 
 export const LOCALE_META: Record<
   Locale,
   { native: string; english: string; flag: string }
 > = {
-  en: { native: "English", english: "English", flag: "🇬🇧" },
-  tl: { native: "Tagalog", english: "Filipino", flag: "🇵🇭" },
   id: { native: "Bahasa Indonesia", english: "Indonesian", flag: "🇮🇩" },
+  en: { native: "English", english: "English", flag: "🇬🇧" },
   vi: { native: "Tiếng Việt", english: "Vietnamese", flag: "🇻🇳" },
 };
 

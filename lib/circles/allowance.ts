@@ -43,9 +43,9 @@ export type AllowanceConfig = {
   // Whether allowance currently sits in escrow waiting for proof. Mocked for
   // the preview; in production the contract is the source of truth.
   escrowed: boolean;
-  // Mocked accrued amount in PHP app-units (only meaningful when
+  // Mocked accrued amount in IDR-first app units (only meaningful when
   // percentage > 0). Drives the manage-circle dashboard preview.
-  pesoAccrued?: number;
+  accruedAmount?: number;
 };
 
 // Clamp the percentage to the organizer's tier ceiling. Used by the create
@@ -56,22 +56,21 @@ export function clampToTier(percentage: number, tier: KycTier): number {
 }
 
 // Split a donation amount into beneficiary / allowance components, in the
-// same app-currency unit (PHP). Display layer renders both via formatParts.
+// same IDR-first app unit. Display layer renders both via formatParts.
 export function splitDonation(
-  pesoAmount: number,
+  amount: number,
   allowancePct: number
 ): { beneficiary: number; allowance: number } {
-  if (!(pesoAmount > 0)) return { beneficiary: 0, allowance: 0 };
+  if (!(amount > 0)) return { beneficiary: 0, allowance: 0 };
   const pct = Math.max(0, Math.min(10, allowancePct));
-  const allowance = Math.round((pesoAmount * pct) / 100);
-  const beneficiary = pesoAmount - allowance;
+  const allowance = Math.round((amount * pct) / 100);
+  const beneficiary = amount - allowance;
   return { beneficiary, allowance };
 }
 
 // "Of every X" preview sample formatted in the user's locale with a value
-// that reads naturally there (100 in en/tl, 100_000 in id/vi). Avoids the
-// awkward conversion of "100 PHP" via formatParts which yields non-round
-// numbers like "Rp 27,586" in IDR. Display-only; no contract round-trip.
+// that reads naturally there (100 in en, 100_000 in id/vi). Avoids the
+// awkward conversion from a tiny non-local value. Display-only; no contract round-trip.
 import { CURRENCY } from "@/lib/ui/currency";
 import type { Locale } from "@/lib/i18n/config";
 
@@ -128,8 +127,8 @@ export function mockReputation(c: { tier: KycTier; closes: number }): Reputation
 // Mock organizer-allowance status for the /circles/[id]/manage preview. The
 // values are illustrative; nothing is read from a contract.
 export type AllowanceStatus = {
-  pesoAccrued: number;
-  pesoReleasable: number; // released once proof of delivery uploaded
+  accruedAmount: number;
+  releasableAmount: number; // released once proof of delivery uploaded
   proofUploaded: boolean;
   disputeWindowEndsAt: string | null; // ISO; null when no window
 };

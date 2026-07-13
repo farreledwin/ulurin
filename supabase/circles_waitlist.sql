@@ -9,10 +9,10 @@ create table if not exists public.circles_waitlist (
   id              uuid primary key default gen_random_uuid(),
   email           text not null,
   circle_id       text,            -- seed circle id, or "draft:<slug>" for creators
-  peso_pledge     integer,         -- app-internal currency unit (PHP); informational
+  rupiah_pledge     integer,         -- IDR-first app unit; informational
   anonymous       boolean not null default false,
   marketing_ok    boolean not null default true,
-  locale          text,            -- en / tl / id / vi at time of pledge
+  locale          text,            -- id / en / vi at time of pledge
   created_at      timestamptz not null default now()
 );
 

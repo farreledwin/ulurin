@@ -22,7 +22,7 @@ export async function joinCirclesWaitlist(input: {
   email: string;
   circleId: string;
   locale: string;
-  pesoPledge: number;
+  rupiahPledge: number;
   anonymous: boolean;
   marketingOk: boolean;
 }): Promise<{ ok: true } | { ok: false; error: string }> {
@@ -44,9 +44,9 @@ export async function joinCirclesWaitlist(input: {
     typeof input.locale === "string" && input.locale.length <= 8
       ? input.locale
       : null;
-  const pesoPledge =
-    Number.isFinite(input.pesoPledge) && input.pesoPledge >= 0
-      ? Math.min(10_000_000, Math.floor(input.pesoPledge))
+  const rupiahPledge =
+    Number.isFinite(input.rupiahPledge) && input.rupiahPledge >= 0
+      ? Math.min(10_000_000_000, Math.floor(input.rupiahPledge))
       : 0;
   const anonymous = Boolean(input.anonymous);
   const marketingOk = Boolean(input.marketingOk);
@@ -55,7 +55,7 @@ export async function joinCirclesWaitlist(input: {
     console.log("[bagibagi/waitlist] preview, no Supabase configured", {
       email,
       circleId,
-      pesoPledge,
+      rupiahPledge,
       anonymous,
       marketingOk,
       locale,
@@ -68,7 +68,7 @@ export async function joinCirclesWaitlist(input: {
     const { error } = await admin.from("circles_waitlist").insert({
       email,
       circle_id: circleId,
-      peso_pledge: pesoPledge,
+      rupiah_pledge: rupiahPledge,
       anonymous,
       marketing_ok: marketingOk,
       locale,

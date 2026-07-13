@@ -108,7 +108,7 @@ export default function CirclesCreateScreen() {
   const [title, setTitle] = useState("");
   const [story, setStory] = useState("");
   const [category, setCategory] = useState<CircleCategory>("community");
-  const [pesoTarget, setPesoTarget] = useState<number>(50_000);
+  const [targetAmount, setRupiahTarget] = useState<number>(50_000_000);
   const [days, setDays] = useState<number>(30);
   const [gradient, setGradient] = useState<[string, string]>(GRADIENTS[0]);
 
@@ -146,7 +146,7 @@ export default function CirclesCreateScreen() {
       setErr(t("circles.errStory"));
       return;
     }
-    if (step === 2 && !(pesoTarget > 0)) {
+    if (step === 2 && !(targetAmount > 0)) {
       setErr(t("circles.errGoal"));
       return;
     }
@@ -173,7 +173,7 @@ export default function CirclesCreateScreen() {
         email: trimmed,
         circleId: `draft:${slug}`,
         locale,
-        pesoPledge: pesoTarget,
+        rupiahPledge: targetAmount,
         anonymous: false,
         marketingOk: true,
       });
@@ -341,7 +341,7 @@ export default function CirclesCreateScreen() {
 
   // ── STEP 2: Goal + category + duration ──
   if (step === 2) {
-    const amt = formatParts(pesoTarget, currency);
+    const amt = formatParts(targetAmount, currency);
     return (
       <div style={shell}>
         <Header pill={<PreviewBadge />} step={step} onBack={back} onExit={onExit} t={t} />
@@ -390,16 +390,16 @@ export default function CirclesCreateScreen() {
               {amt.symbol.trim()}
             </span>
             <input
-              value={String(pesoTarget)}
+              value={String(targetAmount)}
               onChange={(e) => {
                 const raw = e.target.value.replace(/[^0-9]/g, "");
-                setPesoTarget(
-                  raw === "" ? 0 : Math.min(10_000_000, Number(raw))
+                setRupiahTarget(
+                  raw === "" ? 0 : Math.min(10_000_000_000, Number(raw))
                 );
               }}
               inputMode="numeric"
               style={{
-                width: Math.max(2, String(pesoTarget).length || 1) + "ch",
+                width: Math.max(2, String(targetAmount).length || 1) + "ch",
                 border: "none",
                 outline: "none",
                 background: "transparent",
@@ -536,7 +536,7 @@ export default function CirclesCreateScreen() {
   if (step === 3) {
     const ceiling = KYC_TIER_CEILING[previewTier];
     const clamped = clampToTier(allowancePct, previewTier);
-    // Locale-aware round sample - ₱100 / Rp 100,000 / $100 / ₫100,000.
+    // Locale-aware round sample - Rp 100,000 / $100 / ₫100,000.
     const preview = localePreviewSplit(currency, clamped);
     return (
       <div style={shell}>
@@ -1396,8 +1396,8 @@ export default function CirclesCreateScreen() {
                 </div>
                 <div style={{ fontSize: 12, color: T.slate, marginTop: 2 }}>
                   {t("circles.draftSavedDetail", {
-                    amount: `${formatParts(pesoTarget, currency).symbol}${
-                      formatParts(pesoTarget, currency).int
+                    amount: `${formatParts(targetAmount, currency).symbol}${
+                      formatParts(targetAmount, currency).int
                     }`,
                     days,
                     pct: allowancePct,

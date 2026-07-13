@@ -81,8 +81,8 @@ function CircleCard({ circle }: { circle: Circle }) {
   const router = useRouter();
   const { currency, t } = useT();
   const pct = progressPct(circle);
-  const raised = formatParts(circle.pesoRaised, currency);
-  const target = formatParts(circle.pesoTarget, currency);
+  const raised = formatParts(circle.raisedAmount, currency);
+  const target = formatParts(circle.targetAmount, currency);
   const [from, to] = circle.coverGradient;
   return (
     <Card

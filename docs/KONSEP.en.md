@@ -325,7 +325,7 @@ the scenes, the technology really is Stellar (not just "holding coins"):
 - **Soroban smart contract** (escrow + cap + split) = the logic runs ON Stellar, not on our server.
 - **Public ledger** = transparency (Stellar's core selling point).
 - **Anchor standards (SEP-24/SEP-31/SEP-38)** = using Stellar's official standards for the fiat bridge.
-- **Path payment** for cross-asset (e.g. rupiah to peso), and the **Stellar Disbursement Platform** pattern fits recurring/bulk distribution to foundations.
+- **Path payment** for cross-asset (e.g. rupiah to rupiah), and the **Stellar Disbursement Platform** pattern fits recurring/bulk distribution to foundations.
 
 **Honest note:** REAL fiat cash-in/out needs a **licensed anchor (VASP)**. Indonesia
 has no live Stellar anchor yet, so this is the hardest part. MVP/testnet: use a

@@ -96,8 +96,8 @@ export default function CircleDetailScreen({ circle }: { circle: Circle }) {
   const [tab, setTab] = useState<Tab>("story");
 
   const pct = progressPct(circle);
-  const raised = formatParts(circle.pesoRaised, currency);
-  const target = formatParts(circle.pesoTarget, currency);
+  const raised = formatParts(circle.raisedAmount, currency);
+  const target = formatParts(circle.targetAmount, currency);
   const [from, to] = circle.coverGradient;
   const allowance = circle.allowance;
   const allowancePct = allowance?.percentage ?? 0;
@@ -340,7 +340,7 @@ export default function CircleDetailScreen({ circle }: { circle: Circle }) {
         <div style={{ padding: "16px 16px 0" }}>
           <Card p={0} elevation>
             {circle.recentDonations.map((d, i, arr) => {
-              const amt = formatParts(d.pesoAmount, currency);
+              const amt = formatParts(d.amount, currency);
               return (
                 <div
                   key={d.id}

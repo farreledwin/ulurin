@@ -156,7 +156,7 @@ export function Avatar({ name = "?", size = 36 }: { name?: string; size?: number
   );
 }
 
-export function Peso({ value = 0, size = 44, color, weight = 600, sign }: { value?: number; size?: number; color?: string; weight?: number; sign?: "+" | "-" }) {
+export function Rupiah({ value = 0, size = 44, color, weight = 600, sign }: { value?: number; size?: number; color?: string; weight?: number; sign?: "+" | "-" }) {
   const { currency } = useT();
   const { symbol, int, dec, dp } = formatParts(value, currency);
   return (
@@ -169,7 +169,7 @@ export function Peso({ value = 0, size = 44, color, weight = 600, sign }: { valu
 }
 
 // Locale-aware money: primary amount in the active locale's currency, with a
-// small constant "≈ X USDC" beneath (the real rail). Drop-in for Peso.
+// small constant "≈ X USDC" beneath (the real rail). Drop-in for Rupiah.
 export function Money({
   value = 0,
   size = 44,

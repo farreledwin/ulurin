@@ -10,22 +10,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bagibagi, donation marketplace for philantropreneurs",
+  title: "Bagibagi, marketplace donasi transparan Indonesia",
   description:
-    "A donation marketplace where organizers can transparently set a 0%-10% operational allowance.",
+    "Marketplace donasi Indonesia dengan allowance operasional 0%-10% yang transparan.",
   appleWebApp: { capable: true, title: "Bagibagi", statusBarStyle: "default" },
   openGraph: {
     type: "website",
     siteName: "Bagibagi",
-    title: "Bagibagi, donation marketplace for philantropreneurs",
+    title: "Bagibagi, marketplace donasi transparan Indonesia",
     description:
-      "Discover campaigns, start a circle, and show every donor the donation split before they pledge.",
+      "Temukan campaign, mulai circle, dan tampilkan pembagian donasi sebelum donatur berjanji.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Bagibagi",
     description:
-      "Transparent donation marketplace with optional 0%-10% organizer allowance.",
+      "Marketplace donasi transparan dengan allowance organizer opsional 0%-10%.",
   },
 };
 
@@ -41,7 +41,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang="en"
+      lang="id"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-dvh">

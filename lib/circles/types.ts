@@ -39,7 +39,7 @@ export const DISCOVER_FILTER_LABEL: Record<DiscoverFilter, string> = {
 export type PreviewDonation = {
   id: string;
   donorLabel: string; // first name or "Anonymous"
-  pesoAmount: number; // app-internal currency unit (PHP)
+  amount: number; // IDR-first app unit
   whenLabel: string; // human-friendly ("2 hours ago")
   note?: string;
 };
@@ -49,11 +49,11 @@ export type Circle = {
   id: string;
   title: string;
   organizer: string;
-  organizerLocation: string; // "Cebu, PH" / "Surabaya, ID" — borderless framing
+  organizerLocation: string; // "Surabaya, ID"
   category: CircleCategory;
   story: string; // multi-paragraph long description (\n\n separated)
-  pesoRaised: number; // PHP units (display layer converts to locale)
-  pesoTarget: number; // PHP units
+  raisedAmount: number; // IDR-first app units
+  targetAmount: number; // IDR-first app units
   donorCount: number;
   daysRemaining: number; // negative = ended
   coverGradient: [string, string]; // placeholder cover (preview, no image upload)
@@ -67,7 +67,7 @@ export type Circle = {
   allowance?: AllowanceConfig;
 };
 
-export function progressPct(c: Pick<Circle, "pesoRaised" | "pesoTarget">): number {
-  if (!(c.pesoTarget > 0)) return 0;
-  return Math.min(100, Math.round((c.pesoRaised / c.pesoTarget) * 100));
+export function progressPct(c: Pick<Circle, "raisedAmount" | "targetAmount">): number {
+  if (!(c.targetAmount > 0)) return 0;
+  return Math.min(100, Math.round((c.raisedAmount / c.targetAmount) * 100));
 }

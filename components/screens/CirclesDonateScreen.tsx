@@ -44,8 +44,8 @@ type OnchainState = {
   allowancePct: number;
 };
 
-// Quick chips in PHP app-units. Display layer converts to user's locale.
-const QUICK = [100, 250, 500, 1000, 2500];
+// Quick chips in IDR-first app units. Display layer converts to user's locale.
+const QUICK = [25_000, 50_000, 100_000, 250_000, 500_000];
 
 // Owned cause photography by category — same assets as the Circle Detail hero,
 // so the donate flow keeps the same documentary cover the donor just saw.
@@ -162,7 +162,7 @@ export default function CirclesDonateScreen({ circle }: { circle: Circle }) {
         email: trimmed,
         circleId: circle.id,
         locale,
-        pesoPledge: amount,
+        rupiahPledge: amount,
         anonymous,
         marketingOk,
       });
@@ -364,7 +364,7 @@ export default function CirclesDonateScreen({ circle }: { circle: Circle }) {
               fontFamily: T.fontMono,
             }}
           >
-            {currency === "tl" || currency === "en"
+            {currency === "id"
               ? t("circles.localeRenderNote")
               : t("circles.localeCodeNote", { code: CURRENCY[currency].code })}
           </div>
