@@ -1,6 +1,6 @@
 "use client";
 
-// Bagibagi - Create-a-circle multi-step flow.
+// Ulurin - Create-a-circle multi-step flow.
 // The story/title/photo remain preview metadata, while the share step can now
 // create the financial campaign on the deployed testnet contract.
 //
@@ -11,7 +11,7 @@
 
 import { useMemo, useState, useTransition, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
-import { bagibagiCreateCampaign, joinCirclesWaitlist } from "@/app/actions";
+import { ulurinCreateCampaign, joinCirclesWaitlist } from "@/app/actions";
 import {
   T,
   Ico,
@@ -127,7 +127,7 @@ export default function CirclesCreateScreen() {
   const [chainId, setChainId] = useState("");
 
   const slug = useMemo(() => slugify(title || "your-circle"), [title]);
-  const previewUrl = `bagibagi.app/circles/${slug}`;
+  const previewUrl = `ulurin.app/circles/${slug}`;
 
   const shell: React.CSSProperties = {
     fontFamily: T.fontSans,
@@ -191,7 +191,7 @@ export default function CirclesCreateScreen() {
       allowancePct > 5 ? 2 : allowancePct > 0 ? 1 : 0,
     );
     startChain(async () => {
-      const r = await bagibagiCreateCampaign({ allowancePct, tier });
+      const r = await ulurinCreateCampaign({ allowancePct, tier });
       if (r.ok) {
         setChainId(String(r.value ?? ""));
         setChainMsg(`Campaign created on testnet: #${String(r.value ?? "")}`);
@@ -1288,7 +1288,7 @@ export default function CirclesCreateScreen() {
 
           {chainId && (
             <div style={{ marginTop: 10, padding: "9px 10px", borderRadius: 10, background: T.canvas, fontSize: 12, fontFamily: T.fontMono }}>
-              BAGIBAGI_TESTNET_CAMPAIGN_ID={chainId}
+              ULURIN_TESTNET_CAMPAIGN_ID={chainId}
             </div>
           )}
 

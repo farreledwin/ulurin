@@ -1,9 +1,9 @@
 import { AppBar, Card, Chip, T } from "@/components/ui/kit";
 
 export const metadata = {
-  title: "Transparency · Bagibagi",
+  title: "Transparency · Ulurin",
   description:
-    "How Bagibagi shows donor breakdowns, organizer allowance, and future public receipts.",
+    "How Ulurin shows donor breakdowns, organizer allowance, and future public receipts.",
 };
 
 export default function TransparencyPage() {
@@ -16,7 +16,7 @@ export default function TransparencyPage() {
       />
       <div style={{ padding: "12px 16px 28px", display: "grid", gap: 12 }}>
         <Card>
-          <Chip kind="action">Bagibagi model</Chip>
+          <Chip kind="action">Ulurin model</Chip>
           <h1 style={{ margin: "14px 0 8px", fontSize: 24, lineHeight: 1.12 }}>
             Every donor sees where the donation goes.
           </h1>

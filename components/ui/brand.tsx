@@ -1,7 +1,7 @@
 ﻿// Salapi, V4 brand primitives. Faithful port of salapi/brand.jsx.
-// The Bagibagi logomark (a B monogram on a community cradle), the maker lockup,
+// The Ulurin logomark (a B monogram on a community cradle), the maker lockup,
 // the Stellar kinship mark, and the testnet trust signals. Server-safe SVG/markup.
-// MakerLockup is Title Case "Bagibagi by Catatu".
+// MakerLockup is Title Case "Ulurin by Catatu".
 
 import { T } from "@/lib/ui/tokens";
 
@@ -26,7 +26,7 @@ export function SalapiMark({
       height={size}
       viewBox="0 0 64 64"
       fill="none"
-      aria-label="Bagibagi"
+      aria-label="Ulurin"
       role="img"
       style={{ display: "block" }}
     >
@@ -53,7 +53,7 @@ export function SalapiMarkAlt({
   const s = size;
   const w = ((s * strokeRatio) * 40) / s;
   return (
-    <svg width={s} height={s} viewBox="0 0 40 40" fill="none" aria-label="Bagibagi" role="img" style={{ display: "block" }}>
+    <svg width={s} height={s} viewBox="0 0 40 40" fill="none" aria-label="Ulurin" role="img" style={{ display: "block" }}>
       <g stroke={c} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round" fill="none">
         <circle cx="20" cy="20" r="14.5" />
         <path d="M15.5 13 L15.5 28" />
@@ -65,7 +65,7 @@ export function SalapiMarkAlt({
   );
 }
 
-// Lockup: mark tile + "Bagibagi." wordmark.
+// Lockup: mark tile + "Ulurin." wordmark.
 export function SalapiLockup({
   size = 24,
   c = T.ink,
@@ -97,13 +97,13 @@ export function SalapiLockup({
         <SalapiMark size={m * 0.62} c="#fff" />
       </span>
       <span style={{ fontWeight: 600, fontSize: size, letterSpacing: "-0.02em", lineHeight: 1 }}>
-        Bagibagi<span style={{ color: dot }}>.</span>
+        Ulurin<span style={{ color: dot }}>.</span>
       </span>
     </span>
   );
 }
 
-// "Bagibagi by Catatu", quiet maker attribution. Always subordinate.
+// "Ulurin by Catatu", quiet maker attribution. Always subordinate.
 export function MakerLockup({ c = T.slate, size = 11 }: { c?: string; size?: number }) {
   return (
     <span
@@ -117,7 +117,7 @@ export function MakerLockup({ c = T.slate, size = 11 }: { c?: string; size?: num
         letterSpacing: "0.01em",
       }}
     >
-      <span style={{ fontWeight: 500 }}>Bagibagi</span>
+      <span style={{ fontWeight: 500 }}>Ulurin</span>
       <span style={{ opacity: 0.55, fontWeight: 400 }}>by</span>
       <span style={{ fontWeight: 600 }}>Catatu</span>
     </span>
@@ -217,7 +217,7 @@ export function TestnetStrip({ dark = false }: { dark?: boolean }) {
 }
 
 export {
-  SalapiMark as BagibagiMark,
-  SalapiMarkAlt as BagibagiMarkAlt,
-  SalapiLockup as BagibagiLockup,
+  SalapiMark as UlurinMark,
+  SalapiMarkAlt as UlurinMarkAlt,
+  SalapiLockup as UlurinLockup,
 };

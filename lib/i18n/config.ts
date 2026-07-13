@@ -1,7 +1,7 @@
 export const LOCALES = ["id", "en", "vi"] as const;
 export type Locale = (typeof LOCALES)[number];
 export const DEFAULT_LOCALE: Locale = "id";
-export const LOCALE_COOKIE = "bagibagi_locale";
+export const LOCALE_COOKIE = "ulurin_locale";
 
 export const LOCALE_META: Record<
   Locale,

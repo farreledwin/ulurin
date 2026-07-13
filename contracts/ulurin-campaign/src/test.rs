@@ -20,12 +20,12 @@ fn token_setup<'a>(
     )
 }
 
-fn app_setup(env: &Env) -> (BagibagiCampaignClient<'_>, Address, TokenClient<'_>) {
+fn app_setup(env: &Env) -> (UlurinCampaignClient<'_>, Address, TokenClient<'_>) {
     env.mock_all_auths();
     let admin = Address::generate(env);
     let (token_id, _token_admin, token) = token_setup(env, &admin);
-    let contract_id = env.register(BagibagiCampaign, ());
-    let app = BagibagiCampaignClient::new(env, &contract_id);
+    let contract_id = env.register(UlurinCampaign, ());
+    let app = UlurinCampaignClient::new(env, &contract_id);
     app.initialize(&admin, &token_id);
     (app, admin, token)
 }
@@ -42,8 +42,8 @@ fn donation_split_and_allowance_release() {
     let (token_id, token_admin, token) = token_setup(&env, &admin);
     token_admin.mint(&donor, &1_000);
 
-    let contract_id = env.register(BagibagiCampaign, ());
-    let app = BagibagiCampaignClient::new(&env, &contract_id);
+    let contract_id = env.register(UlurinCampaign, ());
+    let app = UlurinCampaignClient::new(&env, &contract_id);
     app.initialize(&admin, &token_id);
     app.set_tier(&organizer, &2);
 

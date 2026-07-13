@@ -4,8 +4,8 @@ set -euo pipefail
 export PATH="$HOME/.cargo/bin:/usr/local/bin:$PATH"
 
 NET="${STELLAR_NETWORK:-testnet}"
-SOURCE="${STELLAR_SOURCE:-bagibagi-deployer}"
-TOKEN="${BAGIBAGI_TOKEN_CONTRACT:-}"
+SOURCE="${STELLAR_SOURCE:-ulurin-deployer}"
+TOKEN="${ULURIN_TOKEN_CONTRACT:-}"
 export STELLAR_INCLUSION_FEE="${STELLAR_INCLUSION_FEE:-100000}"
 
 if ! command -v stellar >/dev/null 2>&1; then
@@ -30,9 +30,9 @@ if [ -z "$TOKEN" ]; then
 fi
 
 echo "=== build ==="
-stellar contract build --package bagibagi-campaign
+stellar contract build --package ulurin-campaign
 
-W="${CARGO_TARGET_DIR:-target}/wasm32v1-none/release/bagibagi_campaign.wasm"
+W="${CARGO_TARGET_DIR:-target}/wasm32v1-none/release/ulurin_campaign.wasm"
 if [ ! -f "$W" ]; then
   echo "WASM not found at $W" >&2
   exit 1
@@ -47,8 +47,8 @@ stellar contract invoke --id "$CID" --source "$SOURCE" --network "$NET" -- \
 
 cat <<EOF
 
-BAGIBAGI_CAMPAIGN_CONTRACT=$CID
-BAGIBAGI_TOKEN_CONTRACT=$TOKEN
-BAGIBAGI_ADMIN=$ADMIN
+ULURIN_CAMPAIGN_CONTRACT=$CID
+ULURIN_TOKEN_CONTRACT=$TOKEN
+ULURIN_ADMIN=$ADMIN
 STELLAR_NETWORK=$NET
 EOF

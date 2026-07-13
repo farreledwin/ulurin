@@ -3,7 +3,7 @@ import CircleDetailScreen from "@/components/screens/CircleDetailScreen";
 import { getCircle } from "@/lib/circles/seed";
 
 export const metadata = {
-  title: "Campaign · Bagibagi preview",
+  title: "Campaign · Ulurin preview",
 };
 
 // Next 16: route segment params arrive as a Promise; await before use.

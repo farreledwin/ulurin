@@ -1,5 +1,5 @@
 [package]
-name = "bagibagi-campaign"
+name = "ulurin-campaign"
 version = { workspace = true }
 edition = { workspace = true }
 license = { workspace = true }

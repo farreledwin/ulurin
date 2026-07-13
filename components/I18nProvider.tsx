@@ -18,7 +18,7 @@ import { DICTS } from "@/lib/i18n/dictionaries";
 
 // Display-currency preference, stored apart from the language. null means
 // "follow the language" — the default the app shipped with.
-const CURRENCY_PREF_KEY = "bagibagi_currency";
+const CURRENCY_PREF_KEY = "ulurin_currency";
 
 type Ctx = {
   locale: Locale;

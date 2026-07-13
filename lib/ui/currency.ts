@@ -1,4 +1,4 @@
-﻿// Bagibagi, display currency. The transaction rail is USDC, but the app is
+﻿// Ulurin, display currency. The transaction rail is USDC, but the app is
 // crypto-invisible: the user only ever sees their local currency plus a small
 // PLAIN-DOLLAR anchor ("≈ $10.60"), never the token name "USDC". The literal
 // "USDC" + tx hash live only in the on-chain receipt / "View on Stellar" layer.

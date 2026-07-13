@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-// Content-Security-Policy tuned to Bagibagi's current origins. The app is built from
+// Content-Security-Policy tuned to Ulurin's current origins. The app is built from
 // 100% inline style attributes + Next.js inline hydration scripts, so
 // 'unsafe-inline' is required for style-src and script-src — a nonce-based CSP
 // would need middleware + per-request nonce threading (a larger change, tracked

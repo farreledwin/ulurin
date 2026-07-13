@@ -16,13 +16,13 @@ export const RPC_URL =
   process.env.STELLAR_RPC_URL ?? "https://soroban-testnet.stellar.org";
 export const FRIENDBOT = "https://friendbot.stellar.org";
 export const CONTRACT_ID =
-  process.env.BAGIBAGI_CAMPAIGN_CONTRACT ??
+  process.env.ULURIN_CAMPAIGN_CONTRACT ??
   "CARFPJ3NBQJNRLVFYJKRZNSFWWXE6HPY6FOMUVK4AU5BZWSP6LESG3EA";
 export const TOKEN_ID =
-  process.env.BAGIBAGI_TOKEN_CONTRACT ??
+  process.env.ULURIN_TOKEN_CONTRACT ??
   "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC";
 export const DEFAULT_CAMPAIGN_ID = Number(
-  process.env.BAGIBAGI_DEFAULT_CAMPAIGN_ID ?? "1",
+  process.env.ULURIN_DEFAULT_CAMPAIGN_ID ?? "1",
 );
 
 const MAX_TESTNET_STROOPS = 10_000_000;
@@ -49,19 +49,19 @@ export type OnchainCampaignState = {
 
 export function testnetReady() {
   return Boolean(
-    process.env.BAGIBAGI_ADMIN_SECRET &&
-      process.env.BAGIBAGI_ORGANIZER_SECRET &&
-      process.env.BAGIBAGI_DONOR_SECRET &&
-      process.env.BAGIBAGI_BENEFICIARY_SECRET,
+    process.env.ULURIN_ADMIN_SECRET &&
+      process.env.ULURIN_ORGANIZER_SECRET &&
+      process.env.ULURIN_DONOR_SECRET &&
+      process.env.ULURIN_BENEFICIARY_SECRET,
   );
 }
 
 export function publicKeys() {
   return {
-    admin: keypair("BAGIBAGI_ADMIN_SECRET").publicKey(),
-    organizer: keypair("BAGIBAGI_ORGANIZER_SECRET").publicKey(),
-    donor: keypair("BAGIBAGI_DONOR_SECRET").publicKey(),
-    beneficiary: keypair("BAGIBAGI_BENEFICIARY_SECRET").publicKey(),
+    admin: keypair("ULURIN_ADMIN_SECRET").publicKey(),
+    organizer: keypair("ULURIN_ORGANIZER_SECRET").publicKey(),
+    donor: keypair("ULURIN_DONOR_SECRET").publicKey(),
+    beneficiary: keypair("ULURIN_BENEFICIARY_SECRET").publicKey(),
   };
 }
 
@@ -76,8 +76,8 @@ export async function fundDemoAccounts() {
 }
 
 export async function setOrganizerTier(tier: number): Promise<OnchainResult> {
-  const organizer = keypair("BAGIBAGI_ORGANIZER_SECRET").publicKey();
-  return invoke("BAGIBAGI_ADMIN_SECRET", "set_tier", [
+  const organizer = keypair("ULURIN_ORGANIZER_SECRET").publicKey();
+  return invoke("ULURIN_ADMIN_SECRET", "set_tier", [
     sc.addr(organizer),
     sc.u32(clampTier(tier)),
   ]);
@@ -87,11 +87,11 @@ export async function createCampaignOnchain(
   allowancePct: number,
   tier: number,
 ): Promise<OnchainResult> {
-  const organizer = keypair("BAGIBAGI_ORGANIZER_SECRET").publicKey();
-  const beneficiary = keypair("BAGIBAGI_BENEFICIARY_SECRET").publicKey();
+  const organizer = keypair("ULURIN_ORGANIZER_SECRET").publicKey();
+  const beneficiary = keypair("ULURIN_BENEFICIARY_SECRET").publicKey();
   const tierResult = await setOrganizerTier(tier);
   if (!tierResult.ok) return tierResult;
-  return invoke("BAGIBAGI_ORGANIZER_SECRET", "create_campaign", [
+  return invoke("ULURIN_ORGANIZER_SECRET", "create_campaign", [
     sc.addr(organizer),
     sc.addr(beneficiary),
     sc.u32(Math.max(0, Math.min(1_000, Math.round(allowancePct * 100)))),
@@ -102,8 +102,8 @@ export async function donateOnchain(
   campaignId: number,
   displayAmount: number,
 ): Promise<OnchainResult> {
-  const donor = keypair("BAGIBAGI_DONOR_SECRET").publicKey();
-  return invoke("BAGIBAGI_DONOR_SECRET", "donate", [
+  const donor = keypair("ULURIN_DONOR_SECRET").publicKey();
+  return invoke("ULURIN_DONOR_SECRET", "donate", [
     sc.addr(donor),
     sc.u32(safeCampaignId(campaignId)),
     sc.i128(displayAmountToStroops(displayAmount)),
@@ -116,8 +116,8 @@ export async function withdrawBeneficiaryOnchain(
   const state = await getCampaignState(campaignId);
   const amount = BigInt(state.beneficiaryAvailableStroops);
   if (amount <= 0n) return { ok: false, error: "No beneficiary balance to withdraw." };
-  const beneficiary = keypair("BAGIBAGI_BENEFICIARY_SECRET").publicKey();
-  return invoke("BAGIBAGI_BENEFICIARY_SECRET", "withdraw_beneficiary", [
+  const beneficiary = keypair("ULURIN_BENEFICIARY_SECRET").publicKey();
+  return invoke("ULURIN_BENEFICIARY_SECRET", "withdraw_beneficiary", [
     sc.u32(safeCampaignId(campaignId)),
     sc.addr(beneficiary),
     sc.i128(amount),
@@ -129,11 +129,11 @@ export async function uploadProofOnchain(
   proofText: string,
 ): Promise<OnchainResult> {
   const { createHash } = await import("node:crypto");
-  const organizer = keypair("BAGIBAGI_ORGANIZER_SECRET").publicKey();
+  const organizer = keypair("ULURIN_ORGANIZER_SECRET").publicKey();
   const proof = createHash("sha256")
-    .update(proofText || `bagibagi-proof-${Date.now()}`)
+    .update(proofText || `ulurin-proof-${Date.now()}`)
     .digest();
-  return invoke("BAGIBAGI_ORGANIZER_SECRET", "upload_proof", [
+  return invoke("ULURIN_ORGANIZER_SECRET", "upload_proof", [
     sc.u32(safeCampaignId(campaignId)),
     sc.addr(organizer),
     sc.bytes(proof),
@@ -146,7 +146,7 @@ export async function releaseAllowanceOnchain(
   const state = await getCampaignState(campaignId);
   const amount = BigInt(state.allowanceEscrowStroops);
   if (amount <= 0n) return { ok: false, error: "No allowance escrow to release." };
-  return invoke("BAGIBAGI_ADMIN_SECRET", "release_allowance", [
+  return invoke("ULURIN_ADMIN_SECRET", "release_allowance", [
     sc.u32(safeCampaignId(campaignId)),
     sc.i128(amount),
   ]);

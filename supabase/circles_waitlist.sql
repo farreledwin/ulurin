@@ -1,7 +1,7 @@
 -- Run once in Supabase → SQL Editor → New query → Run.
--- Bagibagi waitlist (public launch preview). Captures pledges from the
+-- Ulurin waitlist (public launch preview). Captures pledges from the
 -- /circles/[id]/donate and /circles/create flows so we can notify supporters
--- the moment Bagibagi ships at public launch. NO money is moved, NO
+-- the moment Ulurin ships at public launch. NO money is moved, NO
 -- on-chain transaction is created. RLS is ON with NO policies; only the
 -- server's service-role key can read/write. Email is the only PII collected.
 

@@ -1,6 +1,6 @@
 "use client";
 
-// Shared honesty marker for every Bagibagi screen (stage 1).
+// Shared honesty marker for every Ulurin screen (stage 1).
 // A persistent "Preview, public launch" pill with a tappable info icon. Tapping
 // opens the SAME stage explainer modal that the Stage 2 pill uses, so a
 // reviewer reading either pill gets the full day-30 / stage 1 / stage 2 map.

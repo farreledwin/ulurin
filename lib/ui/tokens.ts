@@ -1,4 +1,4 @@
-﻿// Bagibagi design tokens, ported verbatim from the Claude Design delivery
+﻿// Ulurin design tokens, ported verbatim from the Claude Design delivery
 // (salapi/tokens.jsx). Single source of truth for the design-system port.
 
 // Mobile-first density scale. The whole app composes against these to keep

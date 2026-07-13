@@ -1,4 +1,4 @@
-// Bagibagi - Operational Allowance (public launch STAGE 2 preview).
+// Ulurin - Operational Allowance (public launch STAGE 2 preview).
 // Mirrors SOW v2 Spotlight Section 8 "Honest creator economy". This is NOT a
 // day-30 feature, NOT on-chain today. No contract deployed, no on-chain
 // receipt. The types here only drive the preview UI so a reviewer can see

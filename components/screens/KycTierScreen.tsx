@@ -1,6 +1,6 @@
 "use client";
 
-// Bagibagi - KYC tier sheet (public launch STAGE 2 preview).
+// Ulurin - KYC tier sheet (public launch STAGE 2 preview).
 // Visual progression Tier 0 -> Tier 1 -> Tier 2. SOW Section 8 trust gate 2.
 // "Verify identity" CTA is intentionally non-functional in this preview - we
 // DO NOT collect any actual ID document or personal data here. Real KYC ships

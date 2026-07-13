@@ -1,6 +1,6 @@
 "use client";
 
-// Bagibagi - Organizer dashboard.
+// Ulurin - Organizer dashboard.
 // Shows the preview organizer dashboard and a small testnet contract panel for
 // campaign #1: refresh, withdraw beneficiary balance, upload proof, and release
 // allowance using server-managed demo signers.
@@ -8,10 +8,10 @@
 import { useEffect, useMemo, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import {
-  bagibagiGetCampaign,
-  bagibagiReleaseAllowance,
-  bagibagiUploadProof,
-  bagibagiWithdrawBeneficiary,
+  ulurinGetCampaign,
+  ulurinReleaseAllowance,
+  ulurinUploadProof,
+  ulurinWithdrawBeneficiary,
 } from "@/app/actions";
 import {
   T,
@@ -150,7 +150,7 @@ export default function CircleManageScreen({ circle }: { circle: Circle }) {
   const [chainLink, setChainLink] = useState("");
 
   async function loadOnchainState() {
-    const r = await bagibagiGetCampaign();
+    const r = await ulurinGetCampaign();
     if (r.ok) setChainState(r.state);
     else setChainMsg(r.error);
   }
@@ -165,13 +165,13 @@ export default function CircleManageScreen({ circle }: { circle: Circle }) {
       }
       const result =
         action === "withdraw"
-          ? await bagibagiWithdrawBeneficiary()
+          ? await ulurinWithdrawBeneficiary()
           : action === "proof"
-            ? await bagibagiUploadProof({
+            ? await ulurinUploadProof({
                 campaignId: 1,
                 proofText: `Proof uploaded from ${circle.id}`,
               })
-            : await bagibagiReleaseAllowance();
+            : await ulurinReleaseAllowance();
       if (result.ok) {
         setChainMsg(`${action} tx: ${result.hash.slice(0, 10)}...`);
         setChainLink(result.link);

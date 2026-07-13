@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import CirclesDonateScreen from "@/components/screens/CirclesDonateScreen";
 import { getCircle } from "@/lib/circles/seed";
 
-export const metadata = { title: "Donate · Bagibagi preview" };
+export const metadata = { title: "Donate · Ulurin preview" };
 
 export default async function CirclesDonatePage({
   params,

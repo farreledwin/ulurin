@@ -1,6 +1,6 @@
-// Bagibagi — types for the public launch PREVIEW surface.
+// Ulurin — types for the public launch PREVIEW surface.
 // NO on-chain artifacts. NO live contributions. Every value here is preview
-// data so a reviewer at Bagibagi preview can see the vision rendered.
+// data so a reviewer at Ulurin preview can see the vision rendered.
 // The real Circles surface (open verification, moderation, dispute handling,
 // on-chain receipts) launches at public launch. See SOW v2 Spotlight Section 7.
 // The optional `allowance` field reflects SOW Section 8 "Honest creator

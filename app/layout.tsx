@@ -10,20 +10,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bagibagi, marketplace donasi transparan Indonesia",
+  title: "Ulurin, marketplace donasi transparan Indonesia",
   description:
     "Marketplace donasi Indonesia dengan allowance operasional 0%-10% yang transparan.",
-  appleWebApp: { capable: true, title: "Bagibagi", statusBarStyle: "default" },
+  appleWebApp: { capable: true, title: "Ulurin", statusBarStyle: "default" },
   openGraph: {
     type: "website",
-    siteName: "Bagibagi",
-    title: "Bagibagi, marketplace donasi transparan Indonesia",
+    siteName: "Ulurin",
+    title: "Ulurin, marketplace donasi transparan Indonesia",
     description:
       "Temukan campaign, mulai circle, dan tampilkan pembagian donasi sebelum donatur berjanji.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bagibagi",
+    title: "Ulurin",
     description:
       "Marketplace donasi transparan dengan allowance organizer opsional 0%-10%.",
   },

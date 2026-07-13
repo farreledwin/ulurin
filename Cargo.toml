@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["contracts/bagibagi-campaign"]
+members = ["contracts/ulurin-campaign"]
 
 [workspace.package]
 version = "0.1.0"

@@ -1,10 +1,10 @@
 "use client";
 
 /* ─────────────────────────────────────────────────────────────────────────────
- * Bagibagi — Discover screen (PREVIEW, public launch).
+ * Ulurin — Discover screen (PREVIEW, public launch).
  *
  * SCOPE
- *   Bagibagi is public launch vision, NOT day-30 on-chain scope. There is
+ *   Ulurin is public launch vision, NOT day-30 on-chain scope. There is
  *   no new Soroban contract deployed for Circles. Every screen carries a
  *   visible "Preview, public launch" pill plus an info modal that points to
  *   SOW v2 Spotlight Section 7.

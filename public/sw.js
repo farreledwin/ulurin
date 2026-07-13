@@ -1,6 +1,6 @@
 // Minimal, conservative service worker — enables PWA install + an offline
 // fallback without interfering with Next.js RSC/navigation.
-const CACHE = "bagibagi-v1";
+const CACHE = "ulurin-v1";
 const ASSETS = ["/icon.svg", "/icon-maskable.svg", "/manifest.webmanifest"];
 
 self.addEventListener("install", (e) => {
@@ -29,9 +29,9 @@ self.addEventListener("fetch", (event) => {
       fetch(request).catch(
         () =>
           new Response(
-            "<!doctype html><meta charset=utf-8><title>Bagibagi - offline</title>" +
+            "<!doctype html><meta charset=utf-8><title>Ulurin - offline</title>" +
               "<body style='font-family:system-ui;padding:2rem;text-align:center'>" +
-              "<h1>You're offline</h1><p>Reconnect to use Bagibagi.</p>",
+              "<h1>You're offline</h1><p>Reconnect to use Ulurin.</p>",
             { headers: { "Content-Type": "text/html" } }
           )
       )

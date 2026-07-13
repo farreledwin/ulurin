@@ -3,7 +3,7 @@ import CircleManageScreen from "@/components/screens/CircleManageScreen";
 import { getCircle } from "@/lib/circles/seed";
 
 export const metadata = {
-  title: "Manage campaign · Bagibagi preview",
+  title: "Manage campaign · Ulurin preview",
 };
 
 export default async function CircleManagePage({

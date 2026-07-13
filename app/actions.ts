@@ -14,9 +14,9 @@ import {
   testnetReady,
   uploadProofOnchain,
   withdrawBeneficiaryOnchain,
-} from "@/lib/server/bagibagi";
+} from "@/lib/server/ulurin";
 
-// Preview only: no money moves. This stores a pledge so Bagibagi can notify
+// Preview only: no money moves. This stores a pledge so Ulurin can notify
 // donors when the real donation rail is ready.
 export async function joinCirclesWaitlist(input: {
   email: string;
@@ -52,7 +52,7 @@ export async function joinCirclesWaitlist(input: {
   const marketingOk = Boolean(input.marketingOk);
 
   if (!supabaseAdminConfigured()) {
-    console.log("[bagibagi/waitlist] preview, no Supabase configured", {
+    console.log("[ulurin/waitlist] preview, no Supabase configured", {
       email,
       circleId,
       rupiahPledge,
@@ -74,17 +74,17 @@ export async function joinCirclesWaitlist(input: {
       locale,
     });
     if (error) {
-      console.error("[bagibagi/waitlist] insert failed:", error.message);
+      console.error("[ulurin/waitlist] insert failed:", error.message);
       return { ok: false, error: "Couldn't save right now. Please try again." };
     }
     return { ok: true };
   } catch (error) {
-    console.error("[bagibagi/waitlist] unexpected error:", error);
+    console.error("[ulurin/waitlist] unexpected error:", error);
     return { ok: false, error: "Couldn't save right now. Please try again." };
   }
 }
 
-export async function bagibagiTestnetConfig() {
+export async function ulurinTestnetConfig() {
   return {
     ready: testnetReady(),
     contractId: CONTRACT_ID,
@@ -94,7 +94,7 @@ export async function bagibagiTestnetConfig() {
   };
 }
 
-export async function bagibagiFundDemoAccounts() {
+export async function ulurinFundDemoAccounts() {
   try {
     const keys = await fundDemoAccounts();
     return { ok: true as const, keys };
@@ -106,7 +106,7 @@ export async function bagibagiFundDemoAccounts() {
   }
 }
 
-export async function bagibagiGetCampaign(campaignId = DEFAULT_CAMPAIGN_ID) {
+export async function ulurinGetCampaign(campaignId = DEFAULT_CAMPAIGN_ID) {
   try {
     return { ok: true as const, state: await getCampaignState(campaignId) };
   } catch (error) {
@@ -117,31 +117,31 @@ export async function bagibagiGetCampaign(campaignId = DEFAULT_CAMPAIGN_ID) {
   }
 }
 
-export async function bagibagiCreateCampaign(input: {
+export async function ulurinCreateCampaign(input: {
   allowancePct: number;
   tier: number;
 }) {
   return createCampaignOnchain(input.allowancePct, input.tier);
 }
 
-export async function bagibagiDonate(input: {
+export async function ulurinDonate(input: {
   campaignId: number;
   displayAmount: number;
 }) {
   return donateOnchain(input.campaignId, input.displayAmount);
 }
 
-export async function bagibagiWithdrawBeneficiary(campaignId = DEFAULT_CAMPAIGN_ID) {
+export async function ulurinWithdrawBeneficiary(campaignId = DEFAULT_CAMPAIGN_ID) {
   return withdrawBeneficiaryOnchain(campaignId);
 }
 
-export async function bagibagiUploadProof(input: {
+export async function ulurinUploadProof(input: {
   campaignId: number;
   proofText: string;
 }) {
   return uploadProofOnchain(input.campaignId, input.proofText);
 }
 
-export async function bagibagiReleaseAllowance(campaignId = DEFAULT_CAMPAIGN_ID) {
+export async function ulurinReleaseAllowance(campaignId = DEFAULT_CAMPAIGN_ID) {
   return releaseAllowanceOnchain(campaignId);
 }

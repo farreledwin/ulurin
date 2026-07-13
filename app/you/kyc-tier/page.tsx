@@ -1,7 +1,7 @@
 import KycTierScreen from "@/components/screens/KycTierScreen";
 
 export const metadata = {
-  title: "Allowance tier · Bagibagi preview",
+  title: "Allowance tier · Ulurin preview",
 };
 
 export default function KycTierPage() {

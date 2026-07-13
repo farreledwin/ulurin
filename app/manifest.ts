@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Bagibagi",
-    short_name: "Bagibagi",
+    name: "Ulurin",
+    short_name: "Ulurin",
     description:
       "Donation marketplace with transparent 0%-10% organizer allowance.",
     start_url: "/",

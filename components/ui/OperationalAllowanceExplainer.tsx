@@ -1,6 +1,6 @@
 "use client";
 
-// Shared honesty markers for Bagibagi' Operational Allowance preview
+// Shared honesty markers for Ulurin' Operational Allowance preview
 // (public launch STAGE 2). Mirrors SOW v2 Spotlight Section 8 "Honest creator
 // economy". NONE of this is on-chain today.
 //
@@ -152,7 +152,7 @@ export function StageExplainerModalShared({
           tag="NOW"
           tagBg={T.moneyInTint}
           tagFg={T.moneyIn}
-          title="Bagibagi preview"
+          title="Ulurin preview"
           body="Marketplace, campaign creation, donor breakdown, pledge waitlist, and organizer dashboard are available in this repo. No real money moves yet."
           live
         />

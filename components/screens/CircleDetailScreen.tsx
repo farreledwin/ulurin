@@ -1,6 +1,6 @@
 "use client";
 
-// Bagibagi — Circle detail screen (PREVIEW, public launch), V10 revamp.
+// Ulurin — Circle detail screen (PREVIEW, public launch), V10 revamp.
 // Immersive photo hero (title overlaid), face avatars, green progress, and a
 // trust-chip strip — consistent with the photo-forward home. Story / Recent /
 // Transparency tabs. The Donate CTA routes to the /circles/[id]/donate waitlist

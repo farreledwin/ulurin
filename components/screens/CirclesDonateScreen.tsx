@@ -1,8 +1,8 @@
 "use client";
 
-// Bagibagi — Donate flow.
+// Ulurin — Donate flow.
 // Keeps the original waitlist pledge flow, and now adds a testnet rail that
-// submits a real donation to the deployed Bagibagi campaign contract using
+// submits a real donation to the deployed Ulurin campaign contract using
 // server-managed demo signers.
 //
 // V10 revamp: matches the photo-forward Circle Detail it routes from — a photo
@@ -14,9 +14,9 @@
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import {
-  bagibagiDonate,
-  bagibagiFundDemoAccounts,
-  bagibagiGetCampaign,
+  ulurinDonate,
+  ulurinFundDemoAccounts,
+  ulurinGetCampaign,
   joinCirclesWaitlist,
 } from "@/app/actions";
 import { useGoBack } from "@/lib/ui/useGoBack";
@@ -172,7 +172,7 @@ export default function CirclesDonateScreen({ circle }: { circle: Circle }) {
   }
 
   async function loadOnchainState() {
-    const state = await bagibagiGetCampaign();
+    const state = await ulurinGetCampaign();
     if (state.ok) setChainState(state.state);
     else setChainMsg(state.error);
   }
@@ -181,7 +181,7 @@ export default function CirclesDonateScreen({ circle }: { circle: Circle }) {
     setChainMsg("");
     setChainLink("");
     startChain(async () => {
-      const r = await bagibagiFundDemoAccounts();
+      const r = await ulurinFundDemoAccounts();
       setChainMsg(r.ok ? "Demo testnet accounts funded." : r.error);
     });
   }
@@ -190,7 +190,7 @@ export default function CirclesDonateScreen({ circle }: { circle: Circle }) {
     setChainMsg("");
     setChainLink("");
     startChain(async () => {
-      const r = await bagibagiDonate({ campaignId: 1, displayAmount: amount });
+      const r = await ulurinDonate({ campaignId: 1, displayAmount: amount });
       if (r.ok) {
         setChainMsg(`Testnet donation sent: ${r.hash.slice(0, 10)}...`);
         setChainLink(r.link);

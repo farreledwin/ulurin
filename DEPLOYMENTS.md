@@ -1,8 +1,8 @@
-# Bagibagi Testnet Deployments
+# Ulurin Testnet Deployments
 
 Network: Stellar Testnet
 
-## Bagibagi Campaign Contract
+## Ulurin Campaign Contract
 
 | Item | Value |
 |---|---|

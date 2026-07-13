@@ -1,6 +1,6 @@
 ﻿"use client";
 
-// Bagibagi design-system primitives, faithful port of salapi/primitives.jsx
+// Ulurin design-system primitives, faithful port of salapi/primitives.jsx
 // + tokens.jsx marks. Additive (does not touch components/ui/index.tsx).
 // New screens compose THESE to match the Claude Design pixel language.
 
@@ -10,15 +10,15 @@ import { Ico } from "@/components/ui/icons";
 import { useT } from "@/components/I18nProvider";
 import { formatParts, formatUsdc } from "@/lib/ui/currency";
 import {
-  BagibagiLockup,
+  UlurinLockup,
   TestnetPillV2,
 } from "@/components/ui/brand";
 
 export { T, Ico };
 export {
-  BagibagiMark,
-  BagibagiMarkAlt,
-  BagibagiLockup,
+  UlurinMark,
+  UlurinMarkAlt,
+  UlurinLockup,
   MakerLockup,
   StellarMark,
   PoweredByStellarV2,
@@ -27,16 +27,16 @@ export {
   GRAD,
 } from "@/components/ui/brand";
 
-// Brand wordmark, now the real mark + "Bagibagi." lockup (V4). Signature kept
+// Brand wordmark, now the real mark + "Ulurin." lockup (V4). Signature kept
 // so every existing call site rolls forward unchanged.
 export function Wordmark({ size = 22, c = T.ink, dot = T.action }: { size?: number; c?: string; dot?: string }) {
-  return <BagibagiLockup size={size} c={c} dot={dot} />;
+  return <UlurinLockup size={size} c={c} dot={dot} />;
 }
 
 export function PoweredByStellar({ c = T.slate, size = 11 }: { c?: string; size?: number }) {
   return (
     <span style={{ color: c, fontSize: size, fontFamily: T.fontSans, letterSpacing: 0.02 }}>
-      Bagibagi preview
+      Ulurin preview
     </span>
   );
 }

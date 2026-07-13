@@ -1,6 +1,6 @@
 #![no_std]
 
-//! Bagibagi campaign vault.
+//! Ulurin campaign vault.
 //! One contract manages many campaigns. Donors pay into the contract, donation
 //! amounts are split immediately into beneficiary balance and organizer
 //! allowance escrow, and the allowance can only be released after proof upload.
@@ -51,10 +51,10 @@ pub enum Error {
 }
 
 #[contract]
-pub struct BagibagiCampaign;
+pub struct UlurinCampaign;
 
 #[contractimpl]
-impl BagibagiCampaign {
+impl UlurinCampaign {
     pub fn initialize(env: Env, admin: Address, token: Address) -> Result<(), Error> {
         if env.storage().instance().has(&DataKey::Admin) {
             return Err(Error::AlreadyInitialized);

@@ -1,4 +1,4 @@
-// Bagibagi — Indonesia-first preview seed data.
+// Ulurin — Indonesia-first preview seed data.
 // NOT real causes, NOT live, NOT on-chain. Numbers are IDR-first app units;
 // the Money component renders them in the user's selected display currency.
 
@@ -12,7 +12,7 @@ export const SEED_CIRCLES: Circle[] = [
     organizerLocation: "Jakarta Utara, ID",
     category: "disaster",
     story:
-      "Banjir besar di RW 06 membuat 200 keluarga mengungsi ke balai warga. Listrik mati tiga hari. Kami membuka dapur umum 24 jam untuk warga yang masih bertahan di rumah dan di pengungsian.\n\nSetiap rupiah yang masuk lewat Bagibagi harus terlihat transparan saat public launch. Untuk sekarang ini adalah pratinjau: kontribusi belum dipungut.\n\nTerima kasih untuk teman-teman di seluruh nusantara dan diaspora.",
+      "Banjir besar di RW 06 membuat 200 keluarga mengungsi ke balai warga. Listrik mati tiga hari. Kami membuka dapur umum 24 jam untuk warga yang masih bertahan di rumah dan di pengungsian.\n\nSetiap rupiah yang masuk lewat Ulurin harus terlihat transparan saat public launch. Untuk sekarang ini adalah pratinjau: kontribusi belum dipungut.\n\nTerima kasih untuk teman-teman di seluruh nusantara dan diaspora.",
     raisedAmount: 96_750_000,
     targetAmount: 200_000_000,
     donorCount: 421,
@@ -32,7 +32,7 @@ export const SEED_CIRCLES: Circle[] = [
     organizerLocation: "Bandung, ID",
     category: "medical",
     story:
-      "Pak Rahmat, 58 tahun, baru didiagnosis gagal ginjal stadium akhir. BPJS membantu sebagian biaya, tapi keluarga masih perlu menutup transportasi, obat pendamping, dan biaya sesi tambahan selama menunggu jadwal rujukan.\n\nKami akan mengunggah struk dan update setiap milestone saat Bagibagi live. Di pratinjau ini, kamu bisa melihat bagaimana pembagian donasi dan allowance operasional ditampilkan sebelum donatur berkomitmen.",
+      "Pak Rahmat, 58 tahun, baru didiagnosis gagal ginjal stadium akhir. BPJS membantu sebagian biaya, tapi keluarga masih perlu menutup transportasi, obat pendamping, dan biaya sesi tambahan selama menunggu jadwal rujukan.\n\nKami akan mengunggah struk dan update setiap milestone saat Ulurin live. Di pratinjau ini, kamu bisa melihat bagaimana pembagian donasi dan allowance operasional ditampilkan sebelum donatur berkomitmen.",
     raisedAmount: 62_300_000,
     targetAmount: 180_000_000,
     donorCount: 87,
@@ -60,7 +60,7 @@ export const SEED_CIRCLES: Circle[] = [
     organizerLocation: "Gunungkidul, ID",
     category: "education",
     story:
-      "Sekolah dasar di desa kami hanya punya beberapa rak buku lama. Anak-anak bergantian membaca buku yang sama setiap minggu. Ruang kosong di balai dusun sudah disiapkan; kami butuh rak, buku bacaan, cat, dan kipas.\n\nIni campaign jangka menengah. Setiap pembelian buku dan material akan dipublikasikan sebagai bukti saat Bagibagi live.",
+      "Sekolah dasar di desa kami hanya punya beberapa rak buku lama. Anak-anak bergantian membaca buku yang sama setiap minggu. Ruang kosong di balai dusun sudah disiapkan; kami butuh rak, buku bacaan, cat, dan kipas.\n\nIni campaign jangka menengah. Setiap pembelian buku dan material akan dipublikasikan sebagai bukti saat Ulurin live.",
     raisedAmount: 38_900_000,
     targetAmount: 150_000_000,
     donorCount: 54,
@@ -87,7 +87,7 @@ export const SEED_CIRCLES: Circle[] = [
     organizerLocation: "Bekasi, ID",
     category: "family",
     story:
-      "Motor Pak Deni hilang saat ia mengantar pesanan malam. Motor itu satu-satunya alat kerja keluarga. Tanpa motor, penghasilan harian berhenti dan cicilan sekolah dua anaknya ikut terancam.\n\nDana akan dipakai untuk DP motor pengganti, helm, dan biaya administrasi. Bukti pembelian akan dipublikasikan saat Bagibagi live.",
+      "Motor Pak Deni hilang saat ia mengantar pesanan malam. Motor itu satu-satunya alat kerja keluarga. Tanpa motor, penghasilan harian berhenti dan cicilan sekolah dua anaknya ikut terancam.\n\nDana akan dipakai untuk DP motor pengganti, helm, dan biaya administrasi. Bukti pembelian akan dipublikasikan saat Ulurin live.",
     raisedAmount: 47_200_000,
     targetAmount: 75_000_000,
     donorCount: 138,
@@ -106,7 +106,7 @@ export const SEED_CIRCLES: Circle[] = [
     organizerLocation: "Demak, ID",
     category: "community",
     story:
-      "Tim kecil kami menambal lubang jalan yang sering membuat pengendara jatuh. Biaya aspal dingin, rompi, cone, dan transport selama ini patungan sendiri.\n\nBagibagi cocok untuk kerja seperti ini: donor melihat biaya operasional sejak awal, sementara setiap pembelian material dan lokasi pengerjaan bisa dilaporkan terbuka.",
+      "Tim kecil kami menambal lubang jalan yang sering membuat pengendara jatuh. Biaya aspal dingin, rompi, cone, dan transport selama ini patungan sendiri.\n\nUlurin cocok untuk kerja seperti ini: donor melihat biaya operasional sejak awal, sementara setiap pembelian material dan lokasi pengerjaan bisa dilaporkan terbuka.",
     raisedAmount: 24_400_000,
     targetAmount: 60_000_000,
     donorCount: 92,
@@ -133,7 +133,7 @@ export const SEED_CIRCLES: Circle[] = [
     organizerLocation: "Yogyakarta, ID",
     category: "creator",
     story:
-      "Saya membuat zine kecil untuk mengenalkan aksara Nusantara ke anak-anak sekolah dasar. Target berikutnya: cetak 1.000 eksemplar dan kirim gratis ke taman baca di Jawa, Bali, dan Nusa Tenggara.\n\nDi Bagibagi, kreator sosial bisa menjelaskan biaya kerja secara terbuka. Penerima tetap prioritas, allowance operasional hanya berjalan jika dikonfigurasi dan berbukti.",
+      "Saya membuat zine kecil untuk mengenalkan aksara Nusantara ke anak-anak sekolah dasar. Target berikutnya: cetak 1.000 eksemplar dan kirim gratis ke taman baca di Jawa, Bali, dan Nusa Tenggara.\n\nDi Ulurin, kreator sosial bisa menjelaskan biaya kerja secara terbuka. Penerima tetap prioritas, allowance operasional hanya berjalan jika dikonfigurasi dan berbukti.",
     raisedAmount: 31_800_000,
     targetAmount: 80_000_000,
     donorCount: 116,

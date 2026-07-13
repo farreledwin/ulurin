@@ -1,4 +1,4 @@
-// Bagibagi UI copy in 3 languages. Savings-circle uses the LOCAL name:
+// Ulurin UI copy in 3 languages. Savings-circle uses the LOCAL name:
 // Arisan (ID) · Hụi (VI) · Savings circle (EN).
 // VI strings are solid but should get a final native-speaker pass.
 import type { Locale } from "./config";
@@ -42,7 +42,7 @@ const en = {
     tileSav: "Smart savings",
     tileDis: "Disaster relief",
     tileSend: "Send by @",
-    tileCircles: "Bagibagi",
+    tileCircles: "Ulurin",
     disHeroRaised: "raised",
     disHeroTrust: "Every rupiah recorded publicly.",
     disHeroCta: "Open public dashboard",
@@ -64,7 +64,7 @@ const en = {
     donate: "Donate",
   },
   install: {
-    title: "Install Bagibagi",
+    title: "Install Ulurin",
     body: "Add to your home screen. Works offline.",
     cta: "Install",
     dismiss: "Dismiss",
@@ -93,7 +93,7 @@ const en = {
   },
   receive: {
     title: "Receive",
-    sub: "Share your @username. Anyone on Bagibagi can send you rupiah.",
+    sub: "Share your @username. Anyone on Ulurin can send you rupiah.",
     railNote: "Stellar testnet · crypto invisible",
     scan: "Scan to send",
     share: "Share",
@@ -107,11 +107,11 @@ const en = {
   },
   offline: {
     title: "You're offline",
-    body: "Reconnect to use Bagibagi. Your money is safe on-chain.",
+    body: "Reconnect to use Ulurin. Your money is safe on-chain.",
   },
   topup: {
     title: "Top up",
-    eyebrow: "Into your Bagibagi wallet",
+    eyebrow: "Into your Ulurin wallet",
     question: "How much do you want to top up?",
     limits: "Min {min} · Max {max} / day",
     amountAria: "Top up amount",
@@ -144,7 +144,7 @@ const en = {
   },
   withdraw: {
     title: "Withdraw",
-    eyebrow: "From your Bagibagi balance",
+    eyebrow: "From your Ulurin balance",
     question: "How much do you want to withdraw?",
     available: "Available to withdraw",
     amountAria: "Withdraw amount",
@@ -213,7 +213,7 @@ const en = {
     savingsStatGoal: "{pct}% saved",
     savingsStatStart: "Start a goal",
     saved: "Saved",
-    circlesName: "Bagibagi",
+    circlesName: "Ulurin",
     circlesCaption: "Open community fund-raising on transparent rails.",
     circlesCta: "See the preview",
   },
@@ -268,10 +268,10 @@ const en = {
     title: "Settings",
     you: "You",
     youSub: "Your profile and preferences",
-    salapiUser: "Bagibagi user",
+    salapiUser: "Ulurin user",
     username: "Username",
     noUsername: "No username yet",
-    usernameSub: "Your name on Bagibagi, for receiving",
+    usernameSub: "Your name on Ulurin, for receiving",
     claimPrompt: "Claim a name so people can send to you",
     change: "Change",
     claim: "Claim",
@@ -305,7 +305,7 @@ const en = {
     language: "Language",
     about: "About",
     aboutText:
-      "Bagibagi, a crypto-invisible financial app for Indonesia, built on the Stellar blockchain. Testnet demo.",
+      "Ulurin, a crypto-invisible financial app for Indonesia, built on the Stellar blockchain. Testnet demo.",
     version: "Version",
     forSEA: "For Southeast Asia.",
     preferences: "Preferences",
@@ -316,7 +316,7 @@ const en = {
     notifications: "Notifications",
     notificationsSub: "Transaction and circle updates",
     helpCenter: "Help center",
-    helpCenterSub: "Guides and how Bagibagi works",
+    helpCenterSub: "Guides and how Ulurin works",
     privacy: "Privacy",
     privacySub: "How your data is handled",
     tierShort: "Tier 0 · not verified yet",
@@ -329,7 +329,7 @@ const en = {
     title: "KYC tier",
     heroTitle: "Your verification tier",
     heroBody:
-      "KYC tier caps the operational allowance you can set when organizing a Bagibagi campaign. The cap is encoded into the smart contract at circle creation, immutable once the first donation lands.",
+      "KYC tier caps the operational allowance you can set when organizing a Ulurin campaign. The cap is encoded into the smart contract at circle creation, immutable once the first donation lands.",
     whyLink: "Why an honest allowance exists",
     currently: "Currently",
     ceiling: "ceiling",
@@ -338,15 +338,15 @@ const en = {
     tier1Name: "Basic ID",
     tier2Name: "Enhanced KYC + 3 closes",
     tier0Required:
-      "Default for every new Bagibagi account. No documents collected.",
+      "Default for every new Ulurin account. No documents collected.",
     tier1Required:
       "Government ID with photo. Face-match selfie. Recipient account ownership confirmation.",
     tier2Required:
       "Tier 1 verification plus three prior circles closed with verified delivery and zero unresolved disputes.",
     tier0Unlocks:
-      "Use Bagibagi normally: send by username, top up, save, join the transparent donation vault. Operational allowance on any circle you organize is 0 percent.",
+      "Use Ulurin normally: send by username, top up, save, join the transparent donation vault. Operational allowance on any circle you organize is 0 percent.",
     tier1Unlocks:
-      "Organize a Bagibagi campaign with operational allowance up to 5 percent of donations. Allowance held in escrow until proof of delivery uploaded.",
+      "Organize a Ulurin campaign with operational allowance up to 5 percent of donations. Allowance held in escrow until proof of delivery uploaded.",
     tier2Unlocks:
       "Operational allowance up to 10 percent (the cap). Reputation visible to every future donor.",
     requiredLabel: "Required",
@@ -362,7 +362,7 @@ const en = {
     toast:
       "Real KYC ships at public launch. We do not collect ID data in this preview.",
     privacyNote:
-      "Your KYC documents stay encrypted on Bagibagi servers. They are not stored on-chain, ever.",
+      "Your KYC documents stay encrypted on Ulurin servers. They are not stored on-chain, ever.",
   },
   savings: {
     title: "Smart Savings",
@@ -466,7 +466,7 @@ const en = {
     viewOnStellar: "View on Stellar",
     reminderTitle: "Round reminder",
     reminderBody:
-      "Bagibagi nudges everyone before the round closes — so no one has to chase a friend.",
+      "Ulurin nudges everyone before the round closes — so no one has to chase a friend.",
   },
   transparency: {
     publicNoLogin: "Public · no login",
@@ -486,7 +486,7 @@ const en = {
     trailLabel: "Verifiable trail · Stellar testnet",
     disasterContract: "Disaster contract",
     readOnly: "Read-only · anyone can verify",
-    contractsLabel: "Contracts powering Bagibagi",
+    contractsLabel: "Contracts powering Ulurin",
     contractsBody: "Six Soroban contracts live on Stellar Testnet. Tap any row to inspect it on Stellar Expert.",
     activeRelief: "Active relief",
     poolName: "Disaster Relief Pool",
@@ -511,7 +511,7 @@ const en = {
       "Today the relief gate is one transparent admin signature. At public launch, several independent signers co-sign every disbursement.",
   },
   signin: {
-    welcome: "Welcome to Bagibagi.",
+    welcome: "Welcome to Ulurin.",
     subtitle: "Sign in to continue.",
     google: "Continue with Google",
     redirecting: "Redirecting to Google…",
@@ -529,7 +529,7 @@ const en = {
     h1Line1: "Money for everyone.",
     h1Line2: "Technology, invisible.",
     tagline:
-      "Open Bagibagi anywhere. Phone, tablet, or laptop. The same calm app, just bigger. Money in, money out. No wallets, no chains, no jargon.",
+      "Open Ulurin anywhere. Phone, tablet, or laptop. The same calm app, just bigger. Money in, money out. No wallets, no chains, no jargon.",
     installTitle: "Add to your home screen",
     installSub: "for faster opens and offline.",
   },
@@ -542,7 +542,7 @@ const en = {
     caseEyebrow: "Documented case, Indonesia 2017",
     closing:
       "The failure was not that he wanted operational means. The failure was that the donation rail offered no honest way to take it.",
-    gatesHeading: "The five trust gates of Bagibagi's Operational Allowance",
+    gatesHeading: "The five trust gates of Ulurin's Operational Allowance",
     gates: {
       split: {
         title: "Donor sees the split",
@@ -566,7 +566,7 @@ const en = {
       },
     },
     scope:
-      "Operational Allowance ships at public launch stage 2, after Bagibagi itself launches.",
+      "Operational Allowance ships at public launch stage 2, after Ulurin itself launches.",
     source: "Sources: BBC Indonesia, NU Online, Tempo (2017).",
     gotIt: "Got it",
     close: "Close",
@@ -614,7 +614,7 @@ const en = {
     tier2: "Tier 2",
     // Discover screen.
     visionEyebrow: "Donation marketplace",
-    discoverTitle: "Bagibagi",
+    discoverTitle: "Ulurin",
     discoverSub:
       "Open community fundraising where doing good can become real work. Organizers can set a transparent 0%-10% operational allowance.",
     diff1Title: "Trust in the split, not the pitch",
@@ -695,18 +695,18 @@ const en = {
     toggleAnon: "Donate anonymously",
     toggleAnonSub: "Hide your name from the recent donations feed.",
     toggleUpdates: "Email me launch updates",
-    toggleUpdatesSub: "No spam. We email you when Bagibagi goes live.",
+    toggleUpdatesSub: "No spam. We email you when Ulurin goes live.",
     previewBannerStrong: "Preview only.",
     previewBannerBody:
-      "Bagibagi donations will be on-chain at public launch. Your pledge today joins the launch waitlist; no charge is made.",
+      "Ulurin donations will be on-chain at public launch. Your pledge today joins the launch waitlist; no charge is made.",
     continueWaitlist: "Continue to waitlist",
     badEmail: "Please enter a valid email so we can notify you.",
     saveFailed: "Couldn't save your pledge. Please try again.",
-    waitlistHeadline1: "Preview only. Bagibagi",
+    waitlistHeadline1: "Preview only. Ulurin",
     waitlistHeadline2: "donations will be on-chain at public launch.",
     pledgeLine1: "Pledge {amount} to",
     pledgeLine2:
-      ". We'll email you the moment Bagibagi launches so you can complete it then.",
+      ". We'll email you the moment Ulurin launches so you can complete it then.",
     notifyWhenLive: "Notify me when live",
     addToLaunchList: "Add me to the launch list",
     joinTerms:
@@ -785,14 +785,14 @@ const en = {
     verifyRecipient: "Recipient account",
     verifyRecipientSub: "Confirm payout account ownership",
     verifyVouch: "Community vouch",
-    verifyVouchSub: "Two existing Bagibagi users vouch",
+    verifyVouchSub: "Two existing Ulurin users vouch",
     buildAwardChip: "public launch",
     verifySkipNote:
       "For this preview we skip verification. Your draft will be invited first at public launch and you'll go through the real verification then.",
     nextShare: "Next: share preview",
     shareReadyTitle: "Your circle preview is ready",
     shareReadyBody:
-      "Drop your email and we'll invite you to launch your circle for real the moment Bagibagi goes live at public launch.",
+      "Drop your email and we'll invite you to launch your circle for real the moment Ulurin goes live at public launch.",
     shareLinkLabel: "Share link (preview)",
     shareLinkNote:
       "Link is illustrative; real share URLs activate at public launch.",
@@ -1000,7 +1000,7 @@ const id: Dict = {
     tileSav: "Nabung",
     tileDis: "Bantu bencana",
     tileSend: "Kirim @",
-    tileCircles: "Bagibagi",
+    tileCircles: "Ulurin",
     disHeroRaised: "terkumpul",
     disHeroTrust: "Tiap rupiah tercatat publik.",
     disHeroCta: "Buka dashboard publik",
@@ -1022,7 +1022,7 @@ const id: Dict = {
     donate: "Donasi",
   },
   install: {
-    title: "Pasang Bagibagi",
+    title: "Pasang Ulurin",
     body: "Tambahkan ke layar utama. Bisa dipakai offline.",
     cta: "Pasang",
     dismiss: "Tutup",
@@ -1051,7 +1051,7 @@ const id: Dict = {
   },
   receive: {
     title: "Terima",
-    sub: "Bagikan @username kamu. Siapa pun di Bagibagi bisa mengirim ke kamu.",
+    sub: "Bagikan @username kamu. Siapa pun di Ulurin bisa mengirim ke kamu.",
     railNote: "Stellar testnet · crypto invisible",
     scan: "Pindai untuk mengirim",
     share: "Bagikan",
@@ -1065,11 +1065,11 @@ const id: Dict = {
   },
   offline: {
     title: "Kamu offline",
-    body: "Sambungkan lagi untuk pakai Bagibagi. Uang kamu aman di on-chain.",
+    body: "Sambungkan lagi untuk pakai Ulurin. Uang kamu aman di on-chain.",
   },
   topup: {
     title: "Isi saldo",
-    eyebrow: "Ke wallet Bagibagi kamu",
+    eyebrow: "Ke wallet Ulurin kamu",
     question: "Berapa yang ingin kamu isi?",
     limits: "Min {min} · Maks {max} / hari",
     amountAria: "Jumlah isi saldo",
@@ -1102,7 +1102,7 @@ const id: Dict = {
   },
   withdraw: {
     title: "Tarik dana",
-    eyebrow: "Dari saldo Bagibagi kamu",
+    eyebrow: "Dari saldo Ulurin kamu",
     question: "Berapa yang ingin kamu tarik?",
     available: "Tersedia untuk ditarik",
     amountAria: "Jumlah penarikan",
@@ -1173,7 +1173,7 @@ const id: Dict = {
     savingsStatGoal: "{pct}% tertabung",
     savingsStatStart: "Mulai tujuan",
     saved: "Tertabung",
-    circlesName: "Bagibagi",
+    circlesName: "Ulurin",
     circlesCaption: "Galang dana komunitas terbuka di rel yang transparan.",
     circlesCta: "Lihat pratinjau",
   },
@@ -1228,10 +1228,10 @@ const id: Dict = {
     title: "Pengaturan",
     you: "Kamu",
     youSub: "Profil dan preferensimu",
-    salapiUser: "Pengguna Bagibagi",
+    salapiUser: "Pengguna Ulurin",
     username: "Username",
     noUsername: "Belum ada username",
-    usernameSub: "Namamu di Bagibagi, dipakai buat nerima kiriman",
+    usernameSub: "Namamu di Ulurin, dipakai buat nerima kiriman",
     claimPrompt: "Klaim nama supaya orang bisa kirim ke kamu",
     change: "Ubah",
     claim: "Klaim",
@@ -1265,7 +1265,7 @@ const id: Dict = {
     language: "Bahasa",
     about: "Tentang",
     aboutText:
-      "Bagibagi, aplikasi keuangan crypto-invisible untuk Indonesia, dibangun di blockchain Stellar. Demo testnet.",
+      "Ulurin, aplikasi keuangan crypto-invisible untuk Indonesia, dibangun di blockchain Stellar. Demo testnet.",
     version: "Versi",
     forSEA: "Untuk Asia Tenggara.",
     preferences: "Preferensi",
@@ -1276,7 +1276,7 @@ const id: Dict = {
     notifications: "Notifikasi",
     notificationsSub: "Update transaksi & arisan",
     helpCenter: "Pusat bantuan",
-    helpCenterSub: "Panduan & cara kerja Bagibagi",
+    helpCenterSub: "Panduan & cara kerja Ulurin",
     privacy: "Privasi",
     privacySub: "Cara data kamu dikelola",
     tierShort: "Tier 0 · belum KYC",
@@ -1289,7 +1289,7 @@ const id: Dict = {
     title: "Tier KYC",
     heroTitle: "Tier verifikasi kamu",
     heroBody:
-      "Tier KYC membatasi operational allowance yang bisa kamu tetapkan saat mengorganisir Bagibagi campaign. Batas itu tertanam di smart contract saat circle dibuat, tidak bisa diubah begitu donasi pertama masuk.",
+      "Tier KYC membatasi operational allowance yang bisa kamu tetapkan saat mengorganisir Ulurin campaign. Batas itu tertanam di smart contract saat circle dibuat, tidak bisa diubah begitu donasi pertama masuk.",
     whyLink: "Kenapa ada allowance yang jujur",
     currently: "Saat ini",
     ceiling: "ceiling",
@@ -1298,15 +1298,15 @@ const id: Dict = {
     tier1Name: "ID dasar",
     tier2Name: "KYC lanjutan + 3 circle tutup",
     tier0Required:
-      "Default untuk setiap akun Bagibagi baru. Tidak ada dokumen yang dikumpulkan.",
+      "Default untuk setiap akun Ulurin baru. Tidak ada dokumen yang dikumpulkan.",
     tier1Required:
       "ID pemerintah berfoto. Selfie face-match. Konfirmasi kepemilikan akun penerima.",
     tier2Required:
       "Verifikasi Tier 1 plus tiga circle sebelumnya yang tutup dengan bukti penyaluran dan tanpa sengketa yang belum selesai.",
     tier0Unlocks:
-      "Pakai Bagibagi seperti biasa: kirim via username, isi saldo, menabung, gabung transparent donation vault. Operational allowance di circle mana pun yang kamu organisir adalah 0 persen.",
+      "Pakai Ulurin seperti biasa: kirim via username, isi saldo, menabung, gabung transparent donation vault. Operational allowance di circle mana pun yang kamu organisir adalah 0 persen.",
     tier1Unlocks:
-      "Organisir Bagibagi campaign dengan operational allowance sampai 5 persen dari donasi. Allowance ditahan di escrow sampai bukti penyaluran diunggah.",
+      "Organisir Ulurin campaign dengan operational allowance sampai 5 persen dari donasi. Allowance ditahan di escrow sampai bukti penyaluran diunggah.",
     tier2Unlocks:
       "Operational allowance sampai 10 persen (batasnya). Reputasi terlihat oleh setiap donor berikutnya.",
     requiredLabel: "Dibutuhkan",
@@ -1322,7 +1322,7 @@ const id: Dict = {
     toast:
       "KYC sungguhan hadir di public launch. Kami tidak mengumpulkan data ID di pratinjau ini.",
     privacyNote:
-      "Dokumen KYC kamu disimpan terenkripsi di server Bagibagi. Tidak pernah disimpan on-chain.",
+      "Dokumen KYC kamu disimpan terenkripsi di server Ulurin. Tidak pernah disimpan on-chain.",
   },
   savings: {
     title: "Tabungan Pintar",
@@ -1426,7 +1426,7 @@ const id: Dict = {
     viewOnStellar: "Lihat di Stellar",
     reminderTitle: "Pengingat ronde",
     reminderBody:
-      "Bagibagi mengingatkan semua orang sebelum ronde ditutup — jadi tak ada yang perlu mengejar teman.",
+      "Ulurin mengingatkan semua orang sebelum ronde ditutup — jadi tak ada yang perlu mengejar teman.",
   },
   transparency: {
     publicNoLogin: "Publik · tanpa login",
@@ -1446,7 +1446,7 @@ const id: Dict = {
     trailLabel: "Jejak terverifikasi · Stellar testnet",
     disasterContract: "Kontrak bencana",
     readOnly: "Hanya-baca · siapa pun bisa memverifikasi",
-    contractsLabel: "Kontrak di balik Bagibagi",
+    contractsLabel: "Kontrak di balik Ulurin",
     contractsBody: "Enam Soroban contract live di Stellar Testnet. Ketuk baris mana pun untuk verifikasi langsung di Stellar Expert.",
     activeRelief: "Bantuan aktif",
     poolName: "Pool Bantuan Bencana",
@@ -1471,7 +1471,7 @@ const id: Dict = {
       "Saat ini gerbang bantuan adalah satu tanda tangan admin yang transparan. Di public launch, beberapa penanda tangan independen ikut menandatangani tiap pencairan.",
   },
   signin: {
-    welcome: "Selamat datang di Bagibagi.",
+    welcome: "Selamat datang di Ulurin.",
     subtitle: "Masuk untuk melanjutkan.",
     google: "Lanjutkan dengan Google",
     redirecting: "Mengalihkan ke Google…",
@@ -1489,7 +1489,7 @@ const id: Dict = {
     h1Line1: "Uang untuk semua orang.",
     h1Line2: "Teknologi, tak terlihat.",
     tagline:
-      "Buka Bagibagi di mana saja. HP, tablet, atau laptop. App yang sama, lebih lega. Uang masuk, uang keluar. Tanpa wallet, tanpa chain, tanpa jargon.",
+      "Buka Ulurin di mana saja. HP, tablet, atau laptop. App yang sama, lebih lega. Uang masuk, uang keluar. Tanpa wallet, tanpa chain, tanpa jargon.",
     installTitle: "Tambahkan ke layar utama",
     installSub: "biar lebih cepat dan bisa dipakai offline.",
   },
@@ -1502,7 +1502,7 @@ const id: Dict = {
     caseEyebrow: "Kasus terdokumentasi, Indonesia 2017",
     closing:
       "Kegagalannya bukan karena ia ingin sarana operasional. Kegagalannya adalah rel donasi tidak menawarkan cara jujur untuk mengambilnya.",
-    gatesHeading: "Lima gerbang kepercayaan Operational Allowance Bagibagi",
+    gatesHeading: "Lima gerbang kepercayaan Operational Allowance Ulurin",
     gates: {
       split: {
         title: "Donor melihat pembagian",
@@ -1526,7 +1526,7 @@ const id: Dict = {
       },
     },
     scope:
-      "Operational Allowance dirilis di public launch tahap 2, setelah Bagibagi sendiri diluncurkan.",
+      "Operational Allowance dirilis di public launch tahap 2, setelah Ulurin sendiri diluncurkan.",
     source: "Sumber: BBC Indonesia, NU Online, Tempo (2017).",
     gotIt: "Mengerti",
     close: "Tutup",
@@ -1570,7 +1570,7 @@ const id: Dict = {
     tier1: "Tier 1",
     tier2: "Tier 2",
     visionEyebrow: "Visi public launch",
-    discoverTitle: "Bagibagi",
+    discoverTitle: "Ulurin",
     discoverSub:
       "Galang dana komunitas terbuka di rel yang transparan. Primitive transparent donation vault, dibuka untuk tujuan apa pun dari siapa pun yang tepercaya. Tanpa batas dengan satu login Google.",
     diff1Title: "Percaya pada kontrak, bukan merek",
@@ -1581,7 +1581,7 @@ const id: Dict = {
       "Diaspora ID mengirim Rp 327T+ ke kampung halaman tiap tahun. Satu rel. Tanpa antrean FX, tanpa gerbang bank.",
     diff3Title: "Tidak pernah menguangkan kemurahan hati",
     diff3Body:
-      "Bagibagi mengenakan biaya rel tetap, bukan persentase dari tujuan. Kreator menyimpan lebih banyak.",
+      "Ulurin mengenakan biaya rel tetap, bukan persentase dari tujuan. Kreator menyimpan lebih banyak.",
     daysLeft: "{n} hari lagi",
     closing: "Akan ditutup",
     closingSoon: "Segera ditutup",
@@ -1592,7 +1592,7 @@ const id: Dict = {
     startOwnBody: "Tetapkan target, bagikan tautan, dapatkan struk saat peluncuran.",
     startOwnCta: "Mulai",
     honestyFooter:
-      "day-one preview merilis transparent donation vault yang live di Stellar testnet. Bagibagi rilis di public launch. Lihat SOW v2 Spotlight Section 7.",
+      "day-one preview merilis transparent donation vault yang live di Stellar testnet. Ulurin rilis di public launch. Lihat SOW v2 Spotlight Section 7.",
     seePrimitive: "Lihat primitive yang live: transparent donation vault",
     previewNotOnChain: "Pratinjau, belum on-chain",
     organizer: "organizer",
@@ -1611,7 +1611,7 @@ const id: Dict = {
     receiptsBody:
       "Struk on-chain akan muncul di sini saat peluncuran public launch (mekanisme struk on-chain yang sama yang menjalankan transparent donation vault hari ini). Setiap kontribusi dan pencairan akan menjadi transaksi Stellar publik, bisa diverifikasi siapa saja di stellar.expert.",
     receiptsVaultNote:
-      "transparent donation vault adalah primitive live yang menjadi fondasi Bagibagi. Ia menjalankan mekanisme kontribusi / struk publik yang sama hari ini, sudah di Stellar testnet.",
+      "transparent donation vault adalah primitive live yang menjadi fondasi Ulurin. Ia menjalankan mekanisme kontribusi / struk publik yang sama hari ini, sudah di Stellar testnet.",
     openVaultCta: "Buka transparent donation vault (live di testnet)",
     breakdownLabel: "Rincian donasi",
     stage2: "Tahap 2",
@@ -1640,7 +1640,7 @@ const id: Dict = {
     methodGcashSub: "E-wallet Indonesia, pratinjau",
     methodQris: "QRIS",
     methodQrisSub: "Indonesia, bank atau e-wallet apa pun, pratinjau",
-    methodBalance: "Saldo Bagibagi",
+    methodBalance: "Saldo Ulurin",
     methodBalanceSub: "Isi saldo dulu, pratinjau",
     paymentMethod: "Metode pembayaran",
     pledging: "Kamu menjanjikan",
@@ -1649,14 +1649,14 @@ const id: Dict = {
     toggleAnon: "Donasi secara anonim",
     toggleAnonSub: "Sembunyikan namamu dari feed donasi terbaru.",
     toggleUpdates: "Emailkan saya kabar peluncuran Circles",
-    toggleUpdatesSub: "Tanpa spam. Kami mengemail kamu saat Bagibagi live.",
+    toggleUpdatesSub: "Tanpa spam. Kami mengemail kamu saat Ulurin live.",
     previewBannerStrong: "Pratinjau saja.",
     previewBannerBody:
-      "Donasi Bagibagi akan on-chain di public launch. Pledge kamu hari ini bergabung ke daftar tunggu peluncuran; tidak ada biaya.",
+      "Donasi Ulurin akan on-chain di public launch. Pledge kamu hari ini bergabung ke daftar tunggu peluncuran; tidak ada biaya.",
     continueWaitlist: "Lanjut ke daftar tunggu",
     badEmail: "Masukkan email yang valid supaya kami bisa memberitahumu.",
     saveFailed: "Pledge kamu gagal disimpan. Silakan coba lagi.",
-    waitlistHeadline1: "Pratinjau saja. Donasi Bagibagi",
+    waitlistHeadline1: "Pratinjau saja. Donasi Ulurin",
     waitlistHeadline2: "akan on-chain di public launch.",
     pledgeLine1: "Janjikan {amount} ke",
     pledgeLine2:
@@ -1738,14 +1738,14 @@ const id: Dict = {
     verifyRecipient: "Akun penerima",
     verifyRecipientSub: "Konfirmasi kepemilikan akun pencairan",
     verifyVouch: "Jaminan komunitas",
-    verifyVouchSub: "Dua pengguna Bagibagi yang ada memberi jaminan",
+    verifyVouchSub: "Dua pengguna Ulurin yang ada memberi jaminan",
     buildAwardChip: "public launch",
     verifySkipNote:
       "Untuk pratinjau ini kami melewati verifikasi. Draf kamu akan diundang lebih dulu saat peluncuran public launch dan kamu akan menjalani verifikasi asli saat itu.",
     nextShare: "Berikutnya: bagikan pratinjau",
     shareReadyTitle: "Pratinjau circle kamu siap",
     shareReadyBody:
-      "Masukkan emailmu dan kami akan mengundangmu meluncurkan circle kamu secara nyata begitu Bagibagi live di public launch.",
+      "Masukkan emailmu dan kami akan mengundangmu meluncurkan circle kamu secara nyata begitu Ulurin live di public launch.",
     shareLinkLabel: "Tautan bagikan (pratinjau)",
     shareLinkNote:
       "Tautan bersifat ilustratif; URL bagikan asli aktif di public launch.",
@@ -1951,7 +1951,7 @@ const vi: Dict = {
     tileSav: "Tiết kiệm",
     tileDis: "Cứu trợ",
     tileSend: "Gửi @",
-    tileCircles: "Bagibagi",
+    tileCircles: "Ulurin",
     disHeroRaised: "đã quyên góp",
     disHeroTrust: "Mọi đồng được ghi công khai.",
     disHeroCta: "Mở bảng điều khiển công khai",
@@ -1973,7 +1973,7 @@ const vi: Dict = {
     donate: "Quyên góp",
   },
   install: {
-    title: "Cài đặt Bagibagi",
+    title: "Cài đặt Ulurin",
     body: "Thêm vào màn hình chính. Dùng được offline.",
     cta: "Cài đặt",
     dismiss: "Đóng",
@@ -2002,7 +2002,7 @@ const vi: Dict = {
   },
   receive: {
     title: "Nhận",
-    sub: "Chia sẻ @username của bạn. Bất kỳ ai trên Bagibagi đều có thể gửi cho bạn.",
+    sub: "Chia sẻ @username của bạn. Bất kỳ ai trên Ulurin đều có thể gửi cho bạn.",
     railNote: "Stellar testnet · ẩn crypto",
     scan: "Quét để gửi",
     share: "Chia sẻ",
@@ -2016,11 +2016,11 @@ const vi: Dict = {
   },
   offline: {
     title: "Bạn đang ngoại tuyến",
-    body: "Kết nối lại để dùng Bagibagi. Tiền của bạn an toàn trên chuỗi.",
+    body: "Kết nối lại để dùng Ulurin. Tiền của bạn an toàn trên chuỗi.",
   },
   topup: {
     title: "Nạp tiền",
-    eyebrow: "Vào ví Bagibagi của bạn",
+    eyebrow: "Vào ví Ulurin của bạn",
     question: "Bạn muốn nạp bao nhiêu?",
     limits: "Tối thiểu {min} · Tối đa {max} / ngày",
     amountAria: "Số tiền nạp",
@@ -2053,7 +2053,7 @@ const vi: Dict = {
   },
   withdraw: {
     title: "Rút tiền",
-    eyebrow: "Từ số dư Bagibagi của bạn",
+    eyebrow: "Từ số dư Ulurin của bạn",
     question: "Bạn muốn rút bao nhiêu?",
     available: "Có thể rút",
     amountAria: "Số tiền rút",
@@ -2124,7 +2124,7 @@ const vi: Dict = {
     savingsStatGoal: "Đã tiết kiệm {pct}%",
     savingsStatStart: "Tạo mục tiêu",
     saved: "Đã tiết kiệm",
-    circlesName: "Bagibagi",
+    circlesName: "Ulurin",
     circlesCaption: "Gây quỹ cộng đồng mở trên rail minh bạch.",
     circlesCta: "Xem bản xem trước",
   },
@@ -2179,10 +2179,10 @@ const vi: Dict = {
     title: "Cài đặt",
     you: "Bạn",
     youSub: "Hồ sơ và tuỳ chọn của bạn",
-    salapiUser: "Người dùng Bagibagi",
+    salapiUser: "Người dùng Ulurin",
     username: "Tên người dùng",
     noUsername: "Chưa có tên người dùng",
-    usernameSub: "Tên của bạn trên Bagibagi, để nhận tiền",
+    usernameSub: "Tên của bạn trên Ulurin, để nhận tiền",
     claimPrompt: "Đăng ký một tên để mọi người gửi cho bạn",
     change: "Đổi",
     claim: "Đăng ký",
@@ -2216,7 +2216,7 @@ const vi: Dict = {
     language: "Ngôn ngữ",
     about: "Giới thiệu",
     aboutText:
-      "Bagibagi, ứng dụng tài chính ẩn-crypto cho Indonesia và Indonesia, xây trên blockchain Stellar. Demo testnet.",
+      "Ulurin, ứng dụng tài chính ẩn-crypto cho Indonesia và Indonesia, xây trên blockchain Stellar. Demo testnet.",
     version: "Phiên bản",
     forSEA: "Cho Đông Nam Á.",
     preferences: "Tùy chọn",
@@ -2227,7 +2227,7 @@ const vi: Dict = {
     notifications: "Thông báo",
     notificationsSub: "Cập nhật giao dịch và hụi",
     helpCenter: "Trung tâm trợ giúp",
-    helpCenterSub: "Hướng dẫn và cách Bagibagi hoạt động",
+    helpCenterSub: "Hướng dẫn và cách Ulurin hoạt động",
     privacy: "Quyền riêng tư",
     privacySub: "Cách dữ liệu của bạn được xử lý",
     tierShort: "Tier 0 · chưa xác minh",
@@ -2240,7 +2240,7 @@ const vi: Dict = {
     title: "Cấp KYC",
     heroTitle: "Cấp xác minh của bạn",
     heroBody:
-      "Cấp KYC giới hạn operational allowance bạn có thể đặt khi tổ chức một Bagibagi campaign. Mức trần được ghi vào smart contract khi tạo circle, không đổi được khi khoản quyên góp đầu tiên về.",
+      "Cấp KYC giới hạn operational allowance bạn có thể đặt khi tổ chức một Ulurin campaign. Mức trần được ghi vào smart contract khi tạo circle, không đổi được khi khoản quyên góp đầu tiên về.",
     whyLink: "Vì sao cần một allowance minh bạch",
     currently: "Hiện tại",
     ceiling: "trần",
@@ -2249,15 +2249,15 @@ const vi: Dict = {
     tier1Name: "ID cơ bản",
     tier2Name: "KYC nâng cao + 3 circle đã đóng",
     tier0Required:
-      "Mặc định cho mọi tài khoản Bagibagi mới. Không thu thập giấy tờ.",
+      "Mặc định cho mọi tài khoản Ulurin mới. Không thu thập giấy tờ.",
     tier1Required:
       "Giấy tờ tuỳ thân có ảnh. Selfie khớp khuôn mặt. Xác nhận quyền sở hữu tài khoản người nhận.",
     tier2Required:
       "Xác minh Tier 1 cộng ba circle trước đã đóng có xác minh giao nhận và không có tranh chấp tồn đọng.",
     tier0Unlocks:
-      "Dùng Bagibagi bình thường: gửi bằng username, nạp tiền, tiết kiệm, tham gia transparent donation vault. Operational allowance cho mọi circle bạn tổ chức là 0 phần trăm.",
+      "Dùng Ulurin bình thường: gửi bằng username, nạp tiền, tiết kiệm, tham gia transparent donation vault. Operational allowance cho mọi circle bạn tổ chức là 0 phần trăm.",
     tier1Unlocks:
-      "Tổ chức một Bagibagi campaign với operational allowance tới 5 phần trăm khoản quyên góp. Allowance giữ trong ký quỹ tới khi tải lên bằng chứng giao nhận.",
+      "Tổ chức một Ulurin campaign với operational allowance tới 5 phần trăm khoản quyên góp. Allowance giữ trong ký quỹ tới khi tải lên bằng chứng giao nhận.",
     tier2Unlocks:
       "Operational allowance tới 10 phần trăm (mức trần). Uy tín hiển thị cho mọi donor tương lai.",
     requiredLabel: "Yêu cầu",
@@ -2273,7 +2273,7 @@ const vi: Dict = {
     toast:
       "KYC thật ra mắt ở public launch. Chúng tôi không thu thập dữ liệu ID trong bản xem trước này.",
     privacyNote:
-      "Tài liệu KYC của bạn được mã hoá trên máy chủ Bagibagi. Không bao giờ lưu on-chain.",
+      "Tài liệu KYC của bạn được mã hoá trên máy chủ Ulurin. Không bao giờ lưu on-chain.",
   },
   savings: {
     title: "Tiết kiệm thông minh",
@@ -2377,7 +2377,7 @@ const vi: Dict = {
     viewOnStellar: "Xem trên Stellar",
     reminderTitle: "Nhắc nhở lượt",
     reminderBody:
-      "Bagibagi nhắc mọi người trước khi lượt đóng — không ai phải đi đòi bạn bè.",
+      "Ulurin nhắc mọi người trước khi lượt đóng — không ai phải đi đòi bạn bè.",
   },
   transparency: {
     publicNoLogin: "Công khai · không đăng nhập",
@@ -2397,7 +2397,7 @@ const vi: Dict = {
     trailLabel: "Dấu vết xác minh · Stellar testnet",
     disasterContract: "Hợp đồng thiên tai",
     readOnly: "Chỉ đọc · ai cũng xác minh được",
-    contractsLabel: "Hợp đồng vận hành Bagibagi",
+    contractsLabel: "Hợp đồng vận hành Ulurin",
     contractsBody: "Sáu hợp đồng Soroban đang chạy trên Stellar Testnet. Chạm bất kỳ dòng nào để xác minh ngay trên Stellar Expert.",
     activeRelief: "Cứu trợ đang mở",
     poolName: "Quỹ Cứu Trợ Thiên Tai",
@@ -2422,7 +2422,7 @@ const vi: Dict = {
       "Hiện tại cổng cứu trợ là một chữ ký quản trị minh bạch. Ở public launch, nhiều người ký độc lập cùng ký mỗi lần giải ngân.",
   },
   signin: {
-    welcome: "Chào mừng đến Bagibagi.",
+    welcome: "Chào mừng đến Ulurin.",
     subtitle: "Đăng nhập để tiếp tục.",
     google: "Tiếp tục với Google",
     redirecting: "Đang chuyển tới Google…",
@@ -2440,7 +2440,7 @@ const vi: Dict = {
     h1Line1: "Tiền cho tất cả mọi người.",
     h1Line2: "Công nghệ, vô hình.",
     tagline:
-      "Mở Bagibagi ở bất cứ đâu. Điện thoại, máy tính bảng, hay laptop. Cùng một ứng dụng êm, chỉ lớn hơn. Tiền vào, tiền ra. Không ví, không chain, không thuật ngữ.",
+      "Mở Ulurin ở bất cứ đâu. Điện thoại, máy tính bảng, hay laptop. Cùng một ứng dụng êm, chỉ lớn hơn. Tiền vào, tiền ra. Không ví, không chain, không thuật ngữ.",
     installTitle: "Thêm vào màn hình chính",
     installSub: "để mở nhanh hơn và dùng offline.",
   },
@@ -2453,7 +2453,7 @@ const vi: Dict = {
     caseEyebrow: "Trường hợp ghi nhận, Indonesia 2017",
     closing:
       "Thất bại không phải vì anh muốn có phương tiện vận hành. Thất bại là vì cơ chế quyên góp không có cách minh bạch để lấy nó.",
-    gatesHeading: "Năm cánh cổng tin cậy của Operational Allowance ở Bagibagi",
+    gatesHeading: "Năm cánh cổng tin cậy của Operational Allowance ở Ulurin",
     gates: {
       split: {
         title: "Người ủng hộ thấy rõ phân chia",
@@ -2477,7 +2477,7 @@ const vi: Dict = {
       },
     },
     scope:
-      "Operational Allowance ra mắt ở public launch giai đoạn 2, sau khi chính Bagibagi được phát hành.",
+      "Operational Allowance ra mắt ở public launch giai đoạn 2, sau khi chính Ulurin được phát hành.",
     source: "Nguồn: BBC Indonesia, NU Online, Tempo (2017).",
     gotIt: "Đã hiểu",
     close: "Đóng",
@@ -2521,7 +2521,7 @@ const vi: Dict = {
     tier1: "Cấp 1",
     tier2: "Cấp 2",
     visionEyebrow: "Tầm nhìn public launch",
-    discoverTitle: "Bagibagi",
+    discoverTitle: "Ulurin",
     discoverSub:
       "Gây quỹ cộng đồng mở trên rail minh bạch. Primitive transparent donation vault, mở cho mọi mục đích từ bất kỳ người đáng tin nào. Không biên giới với một lần đăng nhập Google.",
     diff1Title: "Tin vào hợp đồng, không phải thương hiệu",
@@ -2532,7 +2532,7 @@ const vi: Dict = {
       "Di diaspora Indonesia gửi về quê hơn 53 tỷ USD mỗi năm. Một rail. Không hàng đợi ngoại tệ, không cổng ngân hàng.",
     diff3Title: "Không bao giờ kiếm tiền trên lòng hảo tâm",
     diff3Body:
-      "Bagibagi thu phí rail cố định, không phải phần trăm của mục đích. Nhà sáng tạo giữ lại nhiều hơn.",
+      "Ulurin thu phí rail cố định, không phải phần trăm của mục đích. Nhà sáng tạo giữ lại nhiều hơn.",
     daysLeft: "Còn {n} ngày",
     closing: "Sắp đóng",
     closingSoon: "Sắp đóng",
@@ -2543,7 +2543,7 @@ const vi: Dict = {
     startOwnBody: "Đặt mục tiêu, chia sẻ liên kết, nhận biên nhận khi ra mắt.",
     startOwnCta: "Bắt đầu",
     honestyFooter:
-      "day-one preview phát hành transparent donation vault chạy trực tiếp trên Stellar testnet. Bagibagi ra mắt ở public launch. Xem SOW v2 Spotlight Section 7.",
+      "day-one preview phát hành transparent donation vault chạy trực tiếp trên Stellar testnet. Ulurin ra mắt ở public launch. Xem SOW v2 Spotlight Section 7.",
     seePrimitive: "Xem primitive đang chạy: transparent donation vault",
     previewNotOnChain: "Bản xem trước, chưa on-chain",
     organizer: "người tổ chức",
@@ -2562,7 +2562,7 @@ const vi: Dict = {
     receiptsBody:
       "Biên nhận on-chain sẽ xuất hiện ở đây khi ra mắt public launch (cùng cơ chế biên nhận on-chain đang vận hành transparent donation vault hôm nay). Mọi đóng góp và giải ngân sẽ là giao dịch Stellar công khai, ai cũng xác minh được trên stellar.expert.",
     receiptsVaultNote:
-      "transparent donation vault là primitive đang chạy mà Bagibagi được xây trên đó. Nó vận hành cùng cơ chế đóng góp / biên nhận công khai hôm nay, đã ở trên Stellar testnet.",
+      "transparent donation vault là primitive đang chạy mà Ulurin được xây trên đó. Nó vận hành cùng cơ chế đóng góp / biên nhận công khai hôm nay, đã ở trên Stellar testnet.",
     openVaultCta: "Mở transparent donation vault (chạy trên testnet)",
     breakdownLabel: "Phân tích quyên góp",
     stage2: "Giai đoạn 2",
@@ -2591,7 +2591,7 @@ const vi: Dict = {
     methodGcashSub: "Ví điện tử Indonesia, xem trước",
     methodQris: "QRIS",
     methodQrisSub: "Indonesia, bất kỳ ngân hàng hay ví điện tử nào, xem trước",
-    methodBalance: "Số dư Bagibagi",
+    methodBalance: "Số dư Ulurin",
     methodBalanceSub: "Nạp tiền trước, xem trước",
     paymentMethod: "Phương thức thanh toán",
     pledging: "Bạn đang cam kết",
@@ -2600,14 +2600,14 @@ const vi: Dict = {
     toggleAnon: "Quyên góp ẩn danh",
     toggleAnonSub: "Ẩn tên bạn khỏi feed quyên góp gần đây.",
     toggleUpdates: "Email cho tôi tin ra mắt Circles",
-    toggleUpdatesSub: "Không spam. Chúng tôi email bạn khi Bagibagi chạy.",
+    toggleUpdatesSub: "Không spam. Chúng tôi email bạn khi Ulurin chạy.",
     previewBannerStrong: "Chỉ xem trước.",
     previewBannerBody:
-      "Quyên góp Bagibagi sẽ on-chain ở public launch. Lời cam kết hôm nay của bạn gia nhập danh sách chờ ra mắt; không tính phí.",
+      "Quyên góp Ulurin sẽ on-chain ở public launch. Lời cam kết hôm nay của bạn gia nhập danh sách chờ ra mắt; không tính phí.",
     continueWaitlist: "Tiếp tục tới danh sách chờ",
     badEmail: "Vui lòng nhập email hợp lệ để chúng tôi báo cho bạn.",
     saveFailed: "Không lưu được lời cam kết của bạn. Vui lòng thử lại.",
-    waitlistHeadline1: "Chỉ xem trước. Quyên góp Bagibagi",
+    waitlistHeadline1: "Chỉ xem trước. Quyên góp Ulurin",
     waitlistHeadline2: "sẽ on-chain ở public launch.",
     pledgeLine1: "Cam kết {amount} cho",
     pledgeLine2:
@@ -2689,14 +2689,14 @@ const vi: Dict = {
     verifyRecipient: "Tài khoản người nhận",
     verifyRecipientSub: "Xác nhận quyền sở hữu tài khoản nhận tiền",
     verifyVouch: "Bảo lãnh cộng đồng",
-    verifyVouchSub: "Hai người dùng Bagibagi hiện có bảo lãnh",
+    verifyVouchSub: "Hai người dùng Ulurin hiện có bảo lãnh",
     buildAwardChip: "public launch",
     verifySkipNote:
       "Cho bản xem trước này chúng tôi bỏ qua xác minh. Bản nháp của bạn sẽ được mời trước khi ra mắt public launch và bạn sẽ qua xác minh thật khi đó.",
     nextShare: "Tiếp: chia sẻ bản xem trước",
     shareReadyTitle: "Bản xem trước circle của bạn đã sẵn sàng",
     shareReadyBody:
-      "Nhập email và chúng tôi sẽ mời bạn ra mắt circle thật sự ngay khi Bagibagi chạy ở public launch.",
+      "Nhập email và chúng tôi sẽ mời bạn ra mắt circle thật sự ngay khi Ulurin chạy ở public launch.",
     shareLinkLabel: "Liên kết chia sẻ (xem trước)",
     shareLinkNote:
       "Liên kết chỉ minh họa; URL chia sẻ thật kích hoạt ở public launch.",

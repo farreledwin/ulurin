@@ -4,8 +4,8 @@ import { progressPct, type Circle } from "@/lib/circles/types";
 import { formatParts } from "@/lib/ui/currency";
 
 export const metadata = {
-  title: "Bagibagi Web",
-  description: "Versi web desktop Bagibagi untuk marketplace donasi Indonesia.",
+  title: "Ulurin Web",
+  description: "Versi web desktop Ulurin untuk marketplace donasi Indonesia.",
 };
 
 const categoryLabel: Record<Circle["category"], string> = {
@@ -83,7 +83,7 @@ export default function WebPage() {
     <div className="web-page">
       <header className="web-nav">
         <Link href="/web" className="web-brand">
-          <span>Bagibagi</span>
+          <span>Ulurin</span>
           <small>Indonesia</small>
         </Link>
         <nav>
@@ -99,7 +99,7 @@ export default function WebPage() {
             <p className="web-kicker">Marketplace donasi transparan</p>
             <h1>Setiap rupiah terlihat sebelum dan sesudah donasi.</h1>
             <p className="web-lead">
-              Bagibagi menampilkan pembagian penerima, allowance operasional,
+              Ulurin menampilkan pembagian penerima, allowance operasional,
               bukti penyaluran, dan jejak testnet Stellar dalam satu web app
               yang nyaman dipakai di desktop.
             </p>
