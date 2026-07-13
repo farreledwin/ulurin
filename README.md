@@ -10,6 +10,25 @@ contract, and every rupiah is traceable on Stellar.
 
 📖 **Full concept** (vision, market analysis, workflow, roadmap): [Bahasa Indonesia](docs/KONSEP.md) · [English](docs/KONSEP.en.md)
 
+## Business Pain Points
+
+Ulurin is built around several product hypotheses that this MVP is intended
+to validate:
+
+| Pain point | Who feels it | Ulurin's response |
+|---|---|---|
+| Donors see a campaign story and total raised, but often cannot verify how funds are split or used. | Donors | Show the beneficiary/organizer split before donating and keep the fund flow auditable. |
+| Organizing aid requires sourcing cases, verification, coordination, updates, and reporting, but this work is commonly unpaid or compensated through unclear deductions. | Organizers | Make a capped 0%-10% operational allowance explicit instead of hiding it inside campaign costs. |
+| Volunteer-only fundraising is difficult to sustain, leading to burnout, inconsistent reporting, and abandoned follow-up. | Organizers and beneficiaries | Treat verified organizing as work that can earn transparent, proof-gated compensation. |
+| Photos, receipts, and distribution updates are scattered across chats, social media, and cloud drives. | Donors and organizers | Attach proof to the campaign flow before organizer allowance is released. |
+| New and trusted organizers are often treated the same, with no clear progression from zero-fee volunteering to professional operation. | Organizers and platform operators | Use verification tiers to cap the allowance at 0%, 5%, or 10%. |
+| Beneficiary funds and organizer income can be mixed in one account, making reconciliation and accountability difficult. | Beneficiaries, organizers, and auditors | Separate beneficiary balances from organizer allowance escrow in the smart contract. |
+
+The core business bet is that **transparency and fair compensation can grow
+together**: donors get clearer accountability, beneficiaries get sustainable
+support, and credible organizers get a path to make social-impact work a
+profession.
+
 ---
 
 ## The problem: the money flows, the proof disappears
