@@ -1,4 +1,4 @@
-# Ulurin
+# Bagibagi
 
 **Helping others, made an honest profession.** A donation platform where the
 organizer's cut is disclosed up front, capped at 0-10%, enforced by a smart
@@ -12,10 +12,10 @@ contract, and every rupiah is traceable on Stellar.
 
 ## Business Pain Points
 
-Ulurin is built around several product hypotheses that this MVP is intended
+Bagibagi is built around several product hypotheses that this MVP is intended
 to validate:
 
-| Pain point | Who feels it | Ulurin's response |
+| Pain point | Who feels it | Bagibagi's response |
 |---|---|---|
 | Donors see a campaign story and total raised, but often cannot verify how funds are split or used. | Donors | Show the beneficiary/organizer split before donating and keep the fund flow auditable. |
 | Organizing aid requires sourcing cases, verification, coordination, updates, and reporting, but this work is commonly unpaid or compensated through unclear deductions. | Organizers | Make a capped 0%-10% operational allowance explicit instead of hiding it inside campaign costs. |
@@ -49,7 +49,7 @@ hidden, uncapped, and unproven.**
   · [Kompas](https://nasional.kompas.com/read/2022/07/06/13183861/izin-act-dicabut-karena-dugaan-penyelewengan-dana-bagaimana-aturan-donasi-di))
 
 **The problem was never being paid to do good, it was being paid in secret,
-without a limit, without proof.** That is exactly what Ulurin fixes.
+without a limit, without proof.** That is exactly what Bagibagi fixes.
 
 ## The solution
 
@@ -81,7 +81,7 @@ living by helping others, and every good deed can be *proven*, not just trusted.
 ## Who it's for
 
 Across Indonesia there's a recurring pattern: people who *already* do the good work,
-rich in followers or goodwill, but whose income comes and goes with sponsors. Ulurin
+rich in followers or goodwill, but whose income comes and goes with sponsors. Bagibagi
 turns that trust into **steady, transparent income**, so doing good can be a livelihood
 instead of a sponsor-dependent hustle.
 
@@ -100,13 +100,13 @@ Orphanages, animal shelters, elderly homes, cancer/rehab foundations, legal-aid 
 Fast, large-scale emergency fundraising, the format closest to Stellar Aid Assist's transparent crisis-aid model.
 
 > These movements are cited as **public examples/inspiration, not partners or users
-> of Ulurin.**
+> of Bagibagi.**
 
 ## Why it's different from Kitabisa / GoFundMe
 
 - The disclosed 0-10% cut is the **organizer's income**, doing good as a job. On
   Kitabisa/GoFundMe the fundraiser usually works unpaid and only the platform earns;
-  here the person doing the work gets paid, in the open. Ulurin also takes a **small,
+  here the person doing the work gets paid, in the open. Bagibagi also takes a **small,
   transparent platform fee**, shown in every donation split, never hidden.
 - Trust is **on-chain proof**, not "trust the report."
 - Stories are **native** (short video and/or photo: the *Cerita Kebaikan* feed), not
@@ -197,5 +197,5 @@ npm run dev
   where enabled.
 - Sourced figures link to their primary reporting. "Potential" figures are official
   estimates (BAZNAS/Bappenas), not amounts actually collected.
-- Ulurin is inspired by Stellar Aid Assist's transparency; it does **not** claim
+- Bagibagi is inspired by Stellar Aid Assist's transparency; it does **not** claim
   affiliation with the SDF, Aid Assist, SDP, UNHCR, or IRC.
