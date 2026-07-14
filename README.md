@@ -55,6 +55,9 @@ without a limit, without proof.** That is exactly what Ulurin fixes.
 
 - **Cut disclosed before you give.** Donors see the split (beneficiary / organizer
   allowance / platform fee) before confirming, informed consent, not a hidden fee.
+- **Platform support is explicit.** The web preview uses a 2% platform fee added
+  on top of the donation for payment infrastructure, moderation, security, and
+  public receipts. The current testnet contract does not collect this fee yet.
 - **Capped 0-10%, enforced on-chain.** The allowance is a contract parameter, not
   a promise. It cannot be changed silently. It grounds the centuries-old principle
   of the *amil* (who may take up to 12.5% under DSN-MUI) in a modern, capped,

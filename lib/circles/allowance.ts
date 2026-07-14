@@ -26,6 +26,26 @@ export const KYC_TIER_NAME: Record<KycTier, string> = {
   2: "Enhanced KYC + 3 closes",
 };
 
+// Planned production checkout support fee. It is added on top of the donation,
+// so it never reduces the beneficiary or creator share. The current testnet
+// contract only settles beneficiary + creator allowance and does not collect it.
+export const PLATFORM_FEE_PCT = 2;
+
+export function donationBreakdown(amount: number, creatorPct: number) {
+  const donation = Number.isFinite(amount) && amount > 0 ? Math.floor(amount) : 0;
+  const pct = Math.max(0, Math.min(10, creatorPct));
+  const creator = Math.round((donation * pct) / 100);
+  const beneficiary = donation - creator;
+  const platformFee = Math.round((donation * PLATFORM_FEE_PCT) / 100);
+  return {
+    donation,
+    beneficiary,
+    creator,
+    platformFee,
+    checkoutTotal: donation + platformFee,
+  };
+}
+
 export type AllowanceConfig = {
   // Percentage of each donation routed to the organizer's operational
   // allowance (capped at the tier ceiling). 0 = no allowance, the day-30
@@ -61,11 +81,8 @@ export function splitDonation(
   amount: number,
   allowancePct: number
 ): { beneficiary: number; allowance: number } {
-  if (!(amount > 0)) return { beneficiary: 0, allowance: 0 };
-  const pct = Math.max(0, Math.min(10, allowancePct));
-  const allowance = Math.round((amount * pct) / 100);
-  const beneficiary = amount - allowance;
-  return { beneficiary, allowance };
+  const { beneficiary, creator } = donationBreakdown(amount, allowancePct);
+  return { beneficiary, allowance: creator };
 }
 
 // "Of every X" preview sample formatted in the user's locale with a value

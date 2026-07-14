@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SEED_CIRCLES } from "@/lib/circles/seed";
 import { progressPct, type Circle } from "@/lib/circles/types";
+import { PLATFORM_FEE_PCT } from "@/lib/circles/allowance";
 import { formatParts } from "@/lib/ui/currency";
 
 export const metadata = {
@@ -36,7 +37,7 @@ function CampaignCard({ circle, featured = false }: { circle: Circle; featured?:
   const photo = photoFor[circle.category];
   return (
     <Link
-      href={`/circles/${circle.id}`}
+      href={`/web/circles/${circle.id}`}
       className={featured ? "web-card web-featured-card" : "web-card"}
     >
       <div
@@ -66,7 +67,7 @@ function CampaignCard({ circle, featured = false }: { circle: Circle; featured?:
         <div className="web-meta-row">
           <span>{circle.donorCount} donatur</span>
           <span>{pct}% terkumpul</span>
-          <span>{allowance}% operasional</span>
+          <span>{allowance}% kreator · {PLATFORM_FEE_PCT}% platform</span>
         </div>
       </div>
     </Link>
@@ -87,9 +88,10 @@ export default function WebPage() {
           <small>Indonesia</small>
         </Link>
         <nav>
+          <Link href="/web/feed">Cerita Kebaikan</Link>
           <a href="#campaigns">Campaign</a>
           <a href="#transparency">Transparansi</a>
-          <Link href="/circles/create">Mulai campaign</Link>
+          <Link href="/web/circles/create">Mulai campaign</Link>
         </nav>
       </header>
 
@@ -105,7 +107,7 @@ export default function WebPage() {
             </p>
             <div className="web-actions">
               <Link href="#campaigns">Lihat campaign</Link>
-              <Link href="/circles/create">Buat campaign</Link>
+              <Link href="/web/circles/create">Buat campaign</Link>
             </div>
           </div>
           <div className="web-hero-panel">
@@ -130,9 +132,21 @@ export default function WebPage() {
             <small>berdasarkan tier KYC</small>
           </div>
           <div>
-            <span>Status</span>
-            <strong>Testnet</strong>
-            <small>belum uang mainnet</small>
+            <span>Fee platform</span>
+            <strong>{PLATFORM_FEE_PCT}%</strong>
+            <small>ditambahkan saat checkout produksi</small>
+          </div>
+        </section>
+
+        <section className="web-feed-entry-home">
+          <div>
+            <p className="web-kicker">Cerita Kebaikan</p>
+            <h2>Temukan campaign dalam feed visual.</h2>
+            <p>
+              Kenali kreator, kebutuhan penerima, progress dana, dan pembagian
+              biaya dalam satu cerita penuh.
+            </p>
+            <Link href="/web/feed">Buka feed</Link>
           </div>
         </section>
 
@@ -142,7 +156,7 @@ export default function WebPage() {
               <p className="web-kicker">Campaign aktif</p>
               <h2>Pilih tujuan yang ingin kamu bantu</h2>
             </div>
-            <Link href="/circles">Buka versi mobile</Link>
+            <Link href="/web/transparency">Pelajari transparansi</Link>
           </div>
           <div className="web-grid">
             {others.map((circle) => (
