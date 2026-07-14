@@ -148,6 +148,8 @@ Fast, large-scale emergency fundraising, the format closest to Stellar Aid Assis
 
 One multi-campaign vault (`contracts/ulurin-campaign`) with the core mechanics:
 
+**Stellar Testnet contract:** [`CARFPJ3NBQJNRLVFYJKRZNSFWWXE6HPY6FOMUVK4AU5BZWSP6LESG3EA`](https://stellar.expert/explorer/testnet/contract/CARFPJ3NBQJNRLVFYJKRZNSFWWXE6HPY6FOMUVK4AU5BZWSP6LESG3EA) ([deployment details](DEPLOYMENTS.md))
+
 - `initialize(admin, token)`, set up the contract with a settlement token
 - `set_tier(organizer, tier)`, verification tier caps the allowance:
   - Tier 0 → 0% · Tier 1 → up to 5% · Tier 2 → up to 10%
