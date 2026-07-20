@@ -44,26 +44,3 @@ export function DashboardLogin({ onSignIn }) {
     </div>
   );
 }
-
-// Shown when a valid Google login lands, but the email is not the one linked to
-// this demo account. Honest and specific — no pretending they got in.
-export function DashboardDenied({ email, onSignOut }) {
-  return (
-    <div className="dash-gate page-gutter">
-      <div className="dash-gate__card">
-        <span className="dash-gate__eyebrow">Akses terbatas</span>
-        <h1>Email ini belum ditautkan.</h1>
-        <p>
-          Kamu masuk sebagai <strong>{email || "akun tanpa email"}</strong>, tapi akun demo ini tertaut ke email
-          lain. Minta pemilik menautkan email-mu, atau masuk dengan email yang benar.
-        </p>
-        <button type="button" className="button button--outline-dark" onClick={onSignOut}>
-          Keluar &amp; ganti akun
-        </button>
-        <Link className="dash-gate__back" to="/">
-          <ArrowLeft size={15} /> Kembali ke beranda
-        </Link>
-      </div>
-    </div>
-  );
-}

@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { AppShell } from "./components/AppShell.jsx";
+import { useApp } from "./context/AppContext.jsx";
 import { CampaignPage } from "./pages/CampaignPage.jsx";
 import { CompletedCampaignPage } from "./pages/CompletedCampaignPage.jsx";
 import { CreateCampaignPage } from "./pages/CreateCampaignPage.jsx";
@@ -14,6 +15,15 @@ import { ReceiptPage } from "./pages/ReceiptPage.jsx";
 import { StoryFeedPage } from "./pages/StoryFeedPage.jsx";
 import { TierPage } from "./pages/TierPage.jsx";
 import { TransparencyPage } from "./pages/TransparencyPage.jsx";
+
+// Creator-only routes: any signed-in account gets a wallet at /dashboard, but the
+// campaign-create and proof-upload actions stay owner-only. A non-owner (or a
+// logged-out visitor) is bounced to /dashboard — their wallet, or the login gate.
+function OwnerRoute({ children }) {
+  const { session } = useApp();
+  if (!session?.owner) return <Navigate to="/dashboard" replace />;
+  return children;
+}
 
 export function App() {
   const location = useLocation();
@@ -34,8 +44,8 @@ export function App() {
         <Route path="/transparansi" element={<TransparencyPage />} />
         <Route path="/tier" element={<TierPage />} />
         <Route path="/dashboard" element={<CreatorDashboardPage />} />
-        <Route path="/dashboard/buat" element={<CreateCampaignPage />} />
-        <Route path="/dashboard/bukti/:slug" element={<ProofPage />} />
+        <Route path="/dashboard/buat" element={<OwnerRoute><CreateCampaignPage /></OwnerRoute>} />
+        <Route path="/dashboard/bukti/:slug" element={<OwnerRoute><ProofPage /></OwnerRoute>} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </AppShell>
