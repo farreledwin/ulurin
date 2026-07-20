@@ -1,7 +1,7 @@
 import { ArrowRight, ArrowSquareOut, BookmarkSimple, CaretRight, Clock, Plus, SealCheck, SignOut, Star } from "@phosphor-icons/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { DashboardDenied, DashboardLogin } from "../components/DashboardGate.jsx";
+import { DashboardLogin } from "../components/DashboardGate.jsx";
 import { ReleaseStatus } from "../components/ReleaseStatus.jsx";
 import { WalletBalanceCard } from "../components/WalletBalanceCard.jsx";
 import { useApp } from "../context/AppContext.jsx";
@@ -83,34 +83,48 @@ export function CreatorDashboardPage() {
   const [showAllTx, setShowAllTx] = useState(false);
   const visibleTx = showAllTx ? ledger : ledger.slice(0, 5);
 
-  // The dashboard is gated behind a real Google login tied to one allowlisted
-  // email (server-checked). No session -> sign in; wrong email -> honest denial.
+  // Any signed-in Google account gets its own wallet + the shared transparency
+  // views; the creator-only surfaces (profile persona, campaigns, create, track
+  // record) render only for the linked owner, so a non-owner sees their own
+  // identity and wallet — never a borrowed creator profile.
   if (!session) return <DashboardLogin onSignIn={signIn} />;
-  if (!session.owner) return <DashboardDenied email={session.email} onSignOut={signOut} />;
+  const isOwner = Boolean(session.owner);
+  const initial = (session.email || "U").trim().charAt(0).toUpperCase();
+  const displayName = (session.email?.split("@")[0] || "Kamu").replace(/[._-]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 
   return (
     <div className="dash2">
       {/* HERO — profile, centred, avatar dominant */}
       <header className="dash2-hero">
-        <span
-          className="dash2-hero__avatar"
-          style={{ backgroundImage: `url(${organizer.avatar})` }}
-          aria-hidden="true"
-        />
-        <span className="dash2-hero__eyebrow">Selamat datang</span>
-        <h1>{organizer.name}</h1>
-        <div className="dash2-hero__chips">
-          {/* Read the tier and cap from the data, never assert them. */}
-          <Link className="dash2-chip" to="/tier">
-            Tier {organizer.tier} <span className="dash2-chip__dim">· maks {creatorCeilingPct(organizer.tier)}%</span>
-          </Link>
-          <Link className="dash2-chip" to={`/creator/${organizer.slug}#ulasan-donatur`}>
-            <Star size={13} weight="fill" /> {organizer.rating}
-          </Link>
-          <Link className="dash2-chip" to={`/creator/${organizer.slug}`}>
-            Profil 92%
-          </Link>
-        </div>
+        {isOwner ? (
+          <>
+            <span
+              className="dash2-hero__avatar"
+              style={{ backgroundImage: `url(${organizer.avatar})` }}
+              aria-hidden="true"
+            />
+            <span className="dash2-hero__eyebrow">Selamat datang</span>
+            <h1>{organizer.name}</h1>
+            <div className="dash2-hero__chips">
+              {/* Read the tier and cap from the data, never assert them. */}
+              <Link className="dash2-chip" to="/tier">
+                Tier {organizer.tier} <span className="dash2-chip__dim">· maks {creatorCeilingPct(organizer.tier)}%</span>
+              </Link>
+              <Link className="dash2-chip" to={`/creator/${organizer.slug}#ulasan-donatur`}>
+                <Star size={13} weight="fill" /> {organizer.rating}
+              </Link>
+              <Link className="dash2-chip" to={`/creator/${organizer.slug}`}>
+                Profil 92%
+              </Link>
+            </div>
+          </>
+        ) : (
+          <>
+            <span className="dash2-hero__avatar dash2-hero__avatar--initial" aria-hidden="true">{initial}</span>
+            <span className="dash2-hero__eyebrow">Wallet kamu · testnet</span>
+            <h1>{displayName}</h1>
+          </>
+        )}
         <div className="dash2-hero__account">
           <span>Masuk sebagai {session.email || "akun Google"}</span>
           <button type="button" onClick={signOut}><SignOut size={13} weight="bold" /> Keluar</button>
@@ -121,6 +135,8 @@ export function CreatorDashboardPage() {
         <WalletBalanceCard key={session.publicKey} session={session} />
       </header>
 
+      {isOwner ? (
+        <>
       {/* ACTIVE CAMPAIGN — overlaps the hero, real photo */}
       <section className="dash2-campaign">
         <Link className="dash2-campaign__photo" to={`/campaign/${campaign.slug}`}>
@@ -161,6 +177,8 @@ export function CreatorDashboardPage() {
         </div>
         <ReleaseStatus slug={campaign.slug} />
       </section>
+        </>
+      ) : null}
 
       {/* TRANSAKSI VAULT — the vault's real on-chain settlements (NOT the user's
           own wallet above); every hash opens a real tx on Stellar Expert. */}
@@ -198,6 +216,8 @@ export function CreatorDashboardPage() {
         </p>
       </section>
 
+      {isOwner ? (
+        <>
       {/* RIWAYAT — the creator's finished work, each a door to its receipt */}
       <section className="dash2-section">
         <div className="dash2-section__head">
@@ -228,6 +248,8 @@ export function CreatorDashboardPage() {
           Lihat semua {organizer.completed} campaign selesai <ArrowRight size={14} />
         </Link>
       </section>
+        </>
+      ) : null}
 
       {/* KABAR — updates from campaigns the donor supported; the empty state is honest */}
       <section className="dash2-section">

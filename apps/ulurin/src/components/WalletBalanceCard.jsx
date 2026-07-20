@@ -149,8 +149,8 @@ export function WalletBalanceCard({ session }) {
   // The Stellar wallet is the signed-in Google account's own address, and the
   // balance is its REAL on-chain USDC (from api/wallet.js) shown in Rupiah. The
   // Xendit deposit/withdraw sandbox simulates the fiat rails on top of it. This
-  // card is only ever rendered for a signed-in owner (the dashboard gates on it),
-  // so `session` is always present.
+  // card renders for ANY signed-in account (owner or not) — the dashboard's
+  // `if (!session) return` guarantees `session` is always present here.
   const addr = session.publicKey;
   const { settle, setToast, signOut } = useApp();
   const { rate, source, live } = useUsdcRate();
