@@ -22,9 +22,9 @@ Ulurin adalah platform donasi tempat orang yang bekerja di lapangan boleh dibaya
 > - **Aplikasinya:** [ulurin-test.vercel.app](https://ulurin-test.vercel.app) —
 >   alur donasi bisa menyelesaikan donasi testnet sungguhan lewat vault dan
 >   memberi struk yang hash-nya bisa dibuka siapa pun di explorer.
-> - **Skema fee yang ditegakkan kontrak:** 3% platform + imbalan kreator
+> - **Skema fee yang ditegakkan kontrak:** 2% platform + imbalan kreator
 >   dibatasi tier verifikasi 0% / 3% / 5%, sehingga campaign termahal yang
->   mungkin adalah 8% — sengaja dua poin di bawah batas hukum. Lihat
+>   mungkin adalah 7% — sengaja tiga poin di bawah batas hukum. Lihat
 >   [`/tier`](https://ulurin-test.vercel.app/tier) untuk alasan tiap anak
 >   tangga berhenti di tempatnya.
 > - **Build Android:** aplikasi yang sama, terverifikasi membaca state vault
@@ -106,7 +106,7 @@ Sebelum konfirmasi, donatur melihat:
 - bagian untuk Penerima Manfaat;
 - **Imbalan Kreator 0–5%**, dibatasi tier verifikasi;
 - alasan dengan bahasa biasa, misalnya verifikasi, transport, koordinasi, dokumentasi, operasional, dan penghargaan wajar atas tenaga kreator;
-- **platform fee Ulurin 3%** sebagai baris tersendiri;
+- **platform fee Ulurin 2%** sebagai baris tersendiri;
 - syarat dan waktu pencairan setiap bagian.
 
 Donatur tidak harus memahami wallet, token, atau smart contract. Mereka hanya perlu memahami nominal rupiah, siapa yang menerima, dan alasannya.

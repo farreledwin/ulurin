@@ -12,7 +12,7 @@
 
 **Solution:** one platform with two discovery entrances: a Cerita Kebaikan story feed and a campaign marketplace. Both show the full allocation before payment, separate beneficiary funds from the Creator Reward, enforce the financial rules in a smart contract, and build creator reputation from campaigns actually completed.
 
-**Business model:** a **3% Ulurin platform fee**, displayed as a separate line and deducted from the donation, never added on top (decided 2026-07-16 — see DECISIONS.md). The **0–5% Creator Reward**, capped by verification tier, compensates the person doing fieldwork; it is not platform revenue. The most expensive possible campaign is 8%, two points under PP No. 29/1980's 10% cap.
+**Business model:** a **2% Ulurin platform fee**, displayed as a separate line and deducted from the donation, never added on top (see DECISIONS.md for the 3%→2% trail). The **0–5% Creator Reward**, capped by verification tier, compensates the person doing fieldwork; it is not platform revenue. The most expensive possible campaign is 7%, three points under PP No. 29/1980's 10% cap.
 
 **Core thesis:** honesty and income are not opposites. Pricing the organizer's work openly is what allows a donor to distinguish legitimate work costs from misuse.
 
@@ -183,7 +183,7 @@ The live activity strip shows confirmed events only and respects named, amount-h
 
 ### Initial revenue
 
-The **3% platform fee** funds payment operations, KYC, campaign review, content moderation, evidence review, disputes, security, infrastructure, customer support, and compliance.
+The **2% platform fee** funds payment operations, KYC, campaign review, content moderation, evidence review, disputes, security, infrastructure, customer support, and compliance.
 
 It remains undecided whether 5% is added on top of the donor-entered amount or deducted from it. The choice affects beneficiary proceeds, UX, contract behavior, accounting, and legal treatment.
 
@@ -307,7 +307,7 @@ Before application development, the team still needs to agree on:
 - IDR–Stellar-asset partners and reconciliation;
 - rules for minors, medical information, location, media retention, and consent withdrawal;
 - rating manipulation resistance;
-- 3% platform-fee unit economics.
+- 2% platform-fee unit economics.
 - recurring-campaign state machine: scheduler, retries, pause, per-cycle evidence, and service termination.
 
 The complete list is maintained in [Decisions and Open Questions](DECISIONS.md).

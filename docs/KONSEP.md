@@ -12,7 +12,7 @@
 
 **Solusi:** satu platform dengan dua pintu discovery, yaitu feed Cerita Kebaikan dan marketplace campaign. Keduanya memperlihatkan pembagian dana sebelum pembayaran, memisahkan bagian penerima dari Imbalan Kreator, mengunci aturan itu di smart contract, lalu membangun reputasi kreator dari campaign yang benar-benar diselesaikan.
 
-**Model bisnis:** platform fee Ulurin **3%**, ditampilkan sebagai baris tersendiri dan dipotong dari donasi, bukan ditambahkan di atasnya (diputuskan 16 Juli 2026 — lihat DECISIONS.md). Imbalan Kreator **0–5%** sesuai tier verifikasi adalah kompensasi orang yang melakukan kerja lapangan, bukan pendapatan platform. Campaign termahal yang mungkin adalah 8%, dua poin di bawah batas 10% PP No. 29/1980.
+**Model bisnis:** platform fee Ulurin **2%**, ditampilkan sebagai baris tersendiri dan dipotong dari donasi, bukan ditambahkan di atasnya (lihat DECISIONS.md untuk jejak 3%→2%). Imbalan Kreator **0–5%** sesuai tier verifikasi adalah kompensasi orang yang melakukan kerja lapangan, bukan pendapatan platform. Campaign termahal yang mungkin adalah 7%, tiga poin di bawah batas 10% PP No. 29/1980.
 
 **Tesis besarnya:** kejujuran dan penghasilan tidak saling bertentangan. Justru ketika pekerjaan penggalang diberi harga secara terbuka, donatur dapat membedakan biaya kerja yang sah dari penyalahgunaan.
 
@@ -183,7 +183,7 @@ Berita berjalan hanya menampilkan event terkonfirmasi dan menghormati pilihan na
 
 ### Sumber pendapatan awal
 
-**Platform fee 3%** mendanai payment operations, KYC, review campaign, moderasi konten, review bukti, sengketa, keamanan, infrastruktur, dukungan pelanggan, dan kepatuhan.
+**Platform fee 2%** mendanai payment operations, KYC, review campaign, moderasi konten, review bukti, sengketa, keamanan, infrastruktur, dukungan pelanggan, dan kepatuhan.
 
 Belum diputuskan apakah 5% ditambahkan di atas nominal yang dimasukkan donatur atau dipotong dari total tersebut. Keputusan ini memengaruhi bagian penerima, UX, kontrak, pembukuan, serta perlakuan legal.
 
@@ -307,7 +307,7 @@ Sebelum pembangunan aplikasi, tim masih harus menyepakati:
 - partner IDR–aset Stellar dan proses rekonsiliasi;
 - kebijakan anak, medis, lokasi, retensi media, dan penghapusan consent;
 - ketahanan rating terhadap manipulasi;
-- kelayakan unit economics platform fee 3%.
+- kelayakan unit economics platform fee 2%.
 - state machine campaign rutin: scheduler, retry, pause, bukti per siklus, dan penghentian layanan.
 
 Daftar lengkapnya berada di [Decisions and Open Questions](DECISIONS.md).

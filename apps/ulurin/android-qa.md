@@ -48,7 +48,7 @@ is enabled because the contract's `proof_uploaded` is true, which is also read
 state rather than local state.
 
 Derived dashboard figures rendered correctly on device too: `Total pembiayaan
-8% · 5% imbalan + 3% platform, batas 10%`, and `Tier 2 · maks 5% imbalan`.
+7% · 5% imbalan + 2% platform, batas 10%`, and `Tier 2 · maks 5% imbalan`.
 
 ### Checks
 

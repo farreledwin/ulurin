@@ -26,7 +26,7 @@ Donatur melihat sebelum membayar:
 
 - target jumlah aksi dan lokasi;
 - anggaran truk, bahan bakar, alat pelindung, alat kerja, konsumsi relawan, serta pengelolaan sampah;
-- 3% platform fee;
+- 2% platform fee;
 - Imbalan Kreator 0–5% dan penjelasan pekerjaannya;
 - wallet proyek/organisasi yang menerima alokasi kegiatan;
 - bukti yang wajib tersedia pada akhir setiap aksi dan akhir bulan.
@@ -94,7 +94,7 @@ Campaign rutin berbeda dari keadaan darurat. Panti asuhan tidak “selesai” se
 
 **Kebutuhan berulang:** beras, lauk, sayur, gas, air, kemasan, alat masak, transport, sewa, dan tenaga dapur. [Rumah Cinta Qur'an](https://rumahcintaquran.or.id/rumah-makan-gratis/) menjalankan program makan gratis untuk dhuafa, musafir, dan orang yang membutuhkan. Masjid Baitul Huda Antapani juga diberitakan menyediakan ratusan porsi gratis setiap hari melalui dukungan lintas komunitas. ([Arrahimedia](https://www.arrahimedia.or.id/2025/02/masjid-baitul-huda-antapani-sediakan.html))
 
-**Campaign Ulurin:** “Sediakan makan siang selama 30 hari.” Donatur melihat target porsi, biaya per kelompok kebutuhan, jadwal, Imbalan Kreator, serta 3% platform fee. Update mencatat jumlah porsi dan penggunaan bahan; dokumentasi tidak harus memperlihatkan wajah penerima.
+**Campaign Ulurin:** “Sediakan makan siang selama 30 hari.” Donatur melihat target porsi, biaya per kelompok kebutuhan, jadwal, Imbalan Kreator, serta 2% platform fee. Update mencatat jumlah porsi dan penggunaan bahan; dokumentasi tidak harus memperlihatkan wajah penerima.
 
 ### Shelter hewan
 

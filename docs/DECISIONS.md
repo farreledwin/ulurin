@@ -20,16 +20,17 @@ This document prevents the next build from silently inheriting contradictions fr
   deployed vault, not only in the UI)*.
 - Tier 0 cannot receive a creator reward.
 - The creator must explain transport, verification, coordination, documentation, operations, and personal compensation in plain language.
-- The platform fee is **3%** *(decided 2026-07-16 — supersedes the 5%
-  direction, which itself replaced the 2% in the earlier public prototype)*.
-  The reasoning: at 5%, the top of the tier ladder lands exactly on PP No.
-  29/1980's 10% cap with zero headroom, so any cost a regulator counts that we
-  did not — a payment-gateway charge, say — puts a tier-2 campaign over. At 3%
-  the most expensive possible campaign is 8%, the binding limit is the tier
+- The platform fee is **2%** *(lowered from the 3% decided 2026-07-16, via
+  `set_platform_bps(200)` on the live vault — see DEPLOYMENTS.md; the 3% had
+  superseded a 5% direction, which itself replaced the 2% in the earlier public
+  prototype)*. The reasoning: at 5%, the top of the tier ladder lands exactly on
+  PP No. 29/1980's 10% cap with zero headroom, so any cost a regulator counts
+  that we did not — a payment-gateway charge, say — puts a tier-2 campaign over.
+  At 2% the most expensive possible campaign is 7%, the binding limit is the tier
   rather than the law, and rejection errors tell creators something actionable
   (`TierTooLow`) instead of something terminal (`TotalFinancingExceeded`). It
-  is one constructor argument on the vault; revisit it as a treasury decision,
-  not a code change.
+  is one live vault parameter (`set_platform_bps`); revisit it as a treasury
+  decision, not a code change.
 
 ### Release order
 
@@ -65,8 +66,8 @@ on-top charge ever permitted is a genuine payment-gateway pass-through at
 cost, with zero margin, never entering the fee percentages.
 
 Still open within this decision: whether payment-provider charges count toward
-the statutory 10% alongside our fees. No public authority addresses it. The 2
-points of headroom in the schedule (3% platform + 5% top-tier creator = 8%)
+the statutory 10% alongside our fees. No public authority addresses it. The 3
+points of headroom in the schedule (2% platform + 5% top-tier creator = 7%)
 exist precisely because this is
 unresolved — ask counsel this question specifically.
 
@@ -133,9 +134,9 @@ Define consent withdrawal, minors, medical information, exact location, document
 
 Decide weighting, minimum sample display, sybil resistance, edited reviews, campaign-versus-creator scoring, dispute effects, and the right of reply. A star average alone can create false certainty.
 
-### 13. Can the 3% platform fee sustain the operation?
+### 13. Can the 2% platform fee sustain the operation?
 
-*(Restated 2026-07-16 when the fee moved from 5% to 3% — the question gets harder, not easier, and stays open.)*
+*(Restated 2026-07-16 when the fee moved from 5% to 3%, later lowered to 2% — the question gets harder, not easier, and stays open.)*
 
 Model real costs for payment processing, payout, KYC, moderation, manual proof review, fraud, refunds, customer support, blockchain operations, compliance, and tax at Rp10,000, Rp50,000, and larger donation sizes.
 
