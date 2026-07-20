@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["contracts/ulurin-campaign"]
+members = ["contracts/ulurin-vault"]
 
 [workspace.package]
 version = "0.1.0"
@@ -8,7 +8,7 @@ edition = "2021"
 license = "MIT"
 
 [workspace.dependencies]
-soroban-sdk = "22"
+soroban-sdk = "27"
 
 [profile.release]
 opt-level = "z"

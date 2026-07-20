@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ulurin — Login Google, wallet Stellar muncul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Manrope:wght@500;700;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #0b1713; --forest: #145c47; --forest-deep: #0f4436; --mint: #36c98f;
+    --mint-soft: #d9f5e8; --ivory: #f5f0e6; --paper: #fffdf8; --coral-text: #952b18;
+    --body-text: #3f4a45; --muted: #5f6b66; --line: rgba(11,23,19,0.14);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Manrope", system-ui, sans-serif; background: var(--ivory); color: var(--ink); min-height: 100vh; display: grid; place-items: center; padding: 24px; }
+  .card { background: var(--paper); border: 1px solid var(--line); box-shadow: 0 22px 70px rgba(7,18,14,0.14); border-radius: 18px; max-width: 460px; width: 100%; padding: 34px 30px; }
+  .eyebrow { font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 800; color: var(--coral-text); }
+  h1 { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: 34px; line-height: 1.1; margin: 6px 0 8px; }
+  h1 em { color: var(--forest); font-style: italic; }
+  .sub { font-size: 15px; line-height: 1.45; color: var(--body-text); margin-bottom: 22px; }
+  #gbtn { display: flex; justify-content: center; margin-bottom: 14px; min-height: 44px; }
+  .result { border-top: 1px solid var(--line); padding-top: 18px; margin-top: 4px; }
+  .result.hide { display: none; }
+  .label { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: var(--muted); }
+  .addr { font-family: "JetBrains Mono", monospace; font-size: 14px; word-break: break-all; background: var(--mint-soft); border: 1px solid rgba(20,92,71,0.28); border-radius: 10px; padding: 12px 14px; margin: 8px 0 10px; color: var(--forest-deep); }
+  .who { font-size: 14px; color: var(--body-text); margin-bottom: 12px; }
+  .who strong { color: var(--ink); }
+  a.explore { display: inline-flex; align-items: center; gap: 7px; font-weight: 700; color: var(--forest); text-decoration: none; font-size: 14px; }
+  a.explore:hover { text-decoration: underline; }
+  .note { margin-top: 20px; font-size: 12.5px; line-height: 1.45; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 14px; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; background: var(--ink); color: var(--mint); font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; }
+  .err { color: var(--coral-text); font-size: 14px; line-height: 1.4; }
+  .setup { background: #fff6f2; border: 1px solid rgba(149,43,24,0.25); border-radius: 10px; padding: 12px 14px; font-size: 13px; color: var(--coral-text); line-height: 1.45; }
+  code { font-family: "JetBrains Mono", monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="eyebrow">Ulurin &middot; Demo</div>
+    <h1>Login Google, <em>wallet Stellar</em> langsung muncul.</h1>
+    <p class="sub">Nggak ada seed phrase. Login pakai Google, akun Stellar testnet-mu otomatis dibuat dan didanai. Kamu tinggal donasi, kunci diurus server (custodial demo).</p>
+
+    <div id="gbtn"></div>
+    <div id="setup" class="setup hide"></div>
+
+    <section id="result" class="result hide">
+      <span class="badge"><span>&#9679;</span> Wallet testnet aktif</span>
+      <div class="who" id="who"></div>
+      <div class="label">Alamat Stellar kamu</div>
+      <div class="addr" id="addr"></div>
+      <a class="explore" id="explore" href="#" target="_blank" rel="noopener noreferrer">Lihat di stellar.expert &rarr;</a>
+    </section>
+
+    <div id="error" class="err"></div>
+
+    <p class="note">Custodial demo di Stellar testnet: server yang pegang kunci, bukan self-custody. Di produksi, model non-custodial (misalnya Privy) memberi UX yang sama tanpa server memegang kunci. Bukan uang sungguhan.</p>
+  </main>
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script>
+    // ISI INI dengan Google OAuth Client ID kamu (Google Cloud Console ->
+    // Credentials -> OAuth client -> Web). Tambahkan origin situs ini ke
+    // "Authorized JavaScript origins". Server juga butuh env GOOGLE_CLIENT_ID
+    // (nilai yang sama) + WALLET_MASTER_SECRET.
+    const GOOGLE_CLIENT_ID = "1073731117596-gdm4r3ucopg3oq00ieav4khrtiem3so0.apps.googleusercontent.com";
+
+    const $ = (id) => document.getElementById(id);
+
+    function showError(msg) { $("error").textContent = msg; }
+
+    async function onCredential(response) {
+      showError("");
+      try {
+        const res = await fetch("/api/wallet", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ credential: response.credential }),
+        });
+        const data = await res.json();
+        if (!res.ok) { showError(data.error || "Gagal membuat wallet."); return; }
+        // textContent, not innerHTML: never render a server string as markup.
+        $("who").textContent = data.email ? `Masuk sebagai ${data.email}` : "Masuk.";
+        $("addr").textContent = data.publicKey;
+        $("explore").href = data.explorer;
+        $("result").classList.remove("hide");
+      } catch (e) {
+        showError("Tidak bisa menghubungi server.");
+      }
+    }
+
+    window.onload = () => {
+      if (!window.google || GOOGLE_CLIENT_ID.startsWith("GANTI")) {
+        $("setup").classList.remove("hide");
+        $("setup").innerHTML =
+          "Belum dikonfigurasi. Isi <code>GOOGLE_CLIENT_ID</code> di file ini, lalu set env server <code>GOOGLE_CLIENT_ID</code> dan <code>WALLET_MASTER_SECRET</code>.";
+        return;
+      }
+      google.accounts.id.initialize({ client_id: GOOGLE_CLIENT_ID, callback: onCredential });
+      google.accounts.id.renderButton($("gbtn"), { theme: "outline", size: "large", text: "continue_with", shape: "pill" });
+    };
+  </script>
+</body>
+</html>

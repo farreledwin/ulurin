@@ -1,0 +1,96 @@
+/* The testnet path on the donate form. Deliberately quieter than the coral
+   Xendit CTA: the payment rail is the product, this is the proof underneath it.
+   Own file rather than styles.css so the chain layer stays liftable. */
+
+.donate-chain {
+  margin-top: 22px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+  display: grid;
+  gap: 16px;
+}
+
+.donate-chain__head span {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--forest);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.donate-chain__head h2 {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+
+.donate-chain__head p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--stone);
+}
+
+.donate-chain__rate {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  margin: 0;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.donate-chain__rate > div {
+  background: var(--paper);
+  padding: 12px 14px;
+}
+
+.donate-chain__rate dt {
+  font-size: 11px;
+  color: var(--stone);
+  margin-bottom: 3px;
+}
+
+.donate-chain__rate dd {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.donate-chain__note,
+.donate-chain__error {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.55;
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+}
+
+.donate-chain__note {
+  color: var(--stone);
+}
+
+.donate-chain__error {
+  color: var(--coral-deep);
+  font-weight: 600;
+}
+
+.donate-chain__note svg,
+.donate-chain__error svg {
+  flex-shrink: 0;
+  transform: translateY(2px);
+}
+
+@media (max-width: 560px) {
+  .donate-chain__rate {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,7 +1,0 @@
-.git
-.next
-.vercel
-.env*
-node_modules
-target
-tsconfig.tsbuildinfo

@@ -1,0 +1,50 @@
+# Two jobs because they guard different things and fail for different reasons.
+#
+# The contract job is hermetic: 18 Rust tests over the money path, the 10% cap,
+# and the tier ladder, plus a check that the wasm still builds. If this fails,
+# the product's core claim is broken.
+#
+# The app job runs the JS suite and the production build. Heads up for whoever
+# debugs a red run: src/lib/stellar.test.js talks to the LIVE testnet vault on
+# purpose — it exists to fail when the deployed contract stops matching what
+# the UI believes. That means testnet being down can redden this job without
+# any code being wrong. Check https://status.stellar.org before bisecting.
+
+name: ci
+
+on:
+  push:
+    branches: [codex/build-ulurin-experience, main]
+  pull_request:
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32v1-none
+      - uses: Swatinem/rust-cache@v2
+      - name: Test the vault
+        run: cargo test --workspace --locked
+      - name: Build the wasm
+        run: cargo build --target wasm32v1-none --release -p ulurin-vault --locked
+
+  app:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/ulurin
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/ulurin/package-lock.json
+      - run: npm ci
+      - name: Test (includes live reads against the deployed vault)
+        run: npm test
+      - name: Production build
+        run: npm run build

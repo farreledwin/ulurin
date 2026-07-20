@@ -1,0 +1,210 @@
+/* The tier ladder. Three cards meant to be read across, so the rungs compare —
+   the argument is the progression, not any single tier. */
+
+.tier-page {
+  padding-top: 44px;
+  padding-bottom: 72px;
+  display: grid;
+  gap: 32px;
+}
+
+.tier-header {
+  max-width: 62ch;
+}
+
+.tier-header span {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--forest);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.tier-header h1 {
+  font-family: var(--display);
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0 0 14px;
+}
+
+.tier-header p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--stone);
+}
+
+.tier-ladder {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.tier-card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--paper);
+  padding: 24px;
+  display: grid;
+  gap: 20px;
+  align-content: start;
+}
+
+/* The creator's own rung, marked so the ladder reads as a position rather than
+   a price list. */
+.tier-card--current {
+  border-color: var(--forest);
+  box-shadow: 0 0 0 1px var(--forest);
+}
+
+.tier-card__number {
+  font-family: var(--display);
+  font-size: 46px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--stone-light);
+  display: block;
+}
+
+.tier-card--current .tier-card__number {
+  color: var(--forest);
+}
+
+.tier-card__kicker {
+  display: inline-block;
+  margin: 10px 0 8px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--forest);
+  background: var(--mint-soft);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.tier-card h2 {
+  font-size: 19px;
+  font-weight: 600;
+  margin: 0 0 3px;
+}
+
+.tier-card header p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--stone);
+  line-height: 1.5;
+}
+
+.tier-card__block span {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--stone);
+  display: block;
+  margin-bottom: 9px;
+}
+
+.tier-card__block ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 7px;
+}
+
+.tier-card__block li {
+  font-size: 13px;
+  line-height: 1.5;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.tier-card__block li svg {
+  flex-shrink: 0;
+  transform: translateY(1px);
+  color: var(--forest);
+}
+
+.tier-card footer {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.tier-card__total {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--stone);
+}
+
+.tier-card__total strong {
+  color: var(--ink);
+}
+
+.tier-card__state {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--forest);
+}
+
+.tier-law {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--ivory);
+  padding: 26px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.tier-law svg {
+  flex-shrink: 0;
+  color: var(--forest);
+  transform: translateY(2px);
+}
+
+.tier-law h2 {
+  font-family: var(--display);
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+
+.tier-law p {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--stone);
+  max-width: 72ch;
+}
+
+.tier-preview-note {
+  margin: 0;
+  font-size: 12px;
+  color: var(--stone);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  line-height: 1.6;
+}
+
+.tier-preview-note svg {
+  flex-shrink: 0;
+  transform: translateY(2px);
+}
+
+.tier-back {
+  justify-self: start;
+}
+
+@media (max-width: 900px) {
+  .tier-ladder {
+    grid-template-columns: 1fr;
+  }
+
+  .tier-law {
+    flex-direction: column;
+  }
+}

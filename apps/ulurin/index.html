@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b1713" />
+    <meta
+      name="description"
+      content="Ulurin membuat bantuan transparan dan kerja Kreator Kebaikan dapat dibayar secara jujur."
+    />
+    <link rel="icon" href="/icons/ulurin-192.png" />
+    <title>Ulurin | Berbuat baik sebagai pekerjaan utama</title>
+    <script>
+      // Stamp the resolved theme on <html> BEFORE first paint so there is no
+      // light->dark flash. "ulurin-theme" (light|dark) overrides the OS; when
+      // absent, follow prefers-color-scheme. AppContext keeps this in sync after.
+      (function () {
+        try {
+          var stored = localStorage.getItem("ulurin-theme");
+          // Match loadThemePref(): only "light"/"dark" are honored; any other
+          // (absent, corrupted, stale) value falls through to the OS preference —
+          // so the pre-paint theme never disagrees with React on mount.
+          var dark = stored === "dark" ? true : stored === "light" ? false : matchMedia("(prefers-color-scheme: dark)").matches;
+          var root = document.documentElement;
+          root.dataset.theme = dark ? "dark" : "light";
+          root.style.colorScheme = dark ? "dark" : "light";
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
