@@ -21,9 +21,9 @@ Ulurin is a donation platform where the person doing the fieldwork can be paid o
 > - **The app:** [ulurin-test.vercel.app](https://ulurin-test.vercel.app) — the
 >   donate flow can settle a real testnet donation through the vault and hand
 >   back a receipt whose hash anyone can open on the explorer.
-> - **The fee schedule the contract enforces:** 3% platform + creator reward
+> - **The fee schedule the contract enforces:** 2% platform + creator reward
 >   capped by verification tier at 0% / 3% / 5%, so the most expensive possible
->   campaign is 8% — two points under the statutory cap on purpose. See
+>   campaign is 7% — three points under the statutory cap on purpose. See
 >   [`/tier`](https://ulurin-test.vercel.app/tier) for why each rung stops
 >   where it does.
 > - **The Android build:** the same app, verified reading live vault state from
@@ -111,7 +111,7 @@ Before a donor confirms, Ulurin shows:
 - the amount intended for the beneficiary;
 - the creator's disclosed reward, capped from **0% to 5%** by verification tier;
 - a plain-language explanation of what that reward covers, such as verification, transport, coordination, documentation, and fair compensation for the work;
-- the **3% Ulurin platform fee**, shown as its own line rather than buried in the campaign amount;
+- the **2% Ulurin platform fee**, shown as its own line rather than buried in the campaign amount;
 - when each portion can be released.
 
 The donor does not need to understand wallets, tokens, or smart contracts. They need to understand rupiah, who receives it, and why.

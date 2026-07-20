@@ -5,9 +5,8 @@ import { campaigns, completedCampaigns } from "./campaigns.js";
 // The seed data is what donors see before they give, so these tests keep it
 // internally consistent: every split sums to 100, stays under the statutory
 // cap, respects the organizer's tier, and uses the one PLATFORM_FEE_PCT the UI
-// advertises. They do NOT check the seed against the deployed vault — that
-// binding lives (skipped) in stellar.test.js while PLATFORM_FEE_PCT is held at
-// 2% ahead of the vault's 3% pending a redeploy. See finance.js.
+// advertises. The binding of PLATFORM_FEE_PCT to the deployed vault's live
+// config().platformBps (now 200 bps / 2%) lives in stellar.test.js. See finance.js.
 
 describe.each(campaigns.map((c) => [c.slug, c]))("%s", (_slug, campaign) => {
   const { split, organizer } = campaign;

@@ -1,13 +1,11 @@
-// PLATFORM_FEE_PCT is the fee the UI's static surfaces advertise. It is set to
-// 2 AHEAD of the deployed vault: config() still returns [1000, 300] (3%),
-// pending a deferred redeploy to --platform_bps 200. So until that redeploy,
-// the campaign cards / donate preview show 2% while the live vault charges 3% —
-// a deliberate, temporary divergence, NOT a mirror. The one surface that reads
-// the vault live (ReleaseStatus) shows the real on-chain 3%, so it stays honest.
-// This divergence is not auto-guarded: stellar.test.js asserts the vault's 300
-// in isolation and campaigns.test.js only checks the seed against THIS constant
-// (2 === 2). The binding guard that would catch it lives skipped in
-// stellar.test.js — un-skip it after the redeploy, when it turns green.
+// PLATFORM_FEE_PCT is the fee the UI's static surfaces advertise, and it MATCHES
+// the deployed vault: config() returns [1000, 200] (2%) after the platform fee
+// was lowered from 3% via set_platform_bps(200) (see DEPLOYMENTS.md). There is no
+// longer any divergence — stellar.test.js binds this constant to the live
+// config().platformBps ("PLATFORM_FEE_PCT matches the on-chain platform fee"), so
+// the UI and the chain can no longer drift apart in silence. Campaigns 1-2, opened
+// under the old 300 bps, keep 3% on chain as history; the live demo (campaign 3)
+// and every new campaign settle at 2%.
 //
 // PP No. 29/1980 Pasal 6(1) caps total financing of a collection at 10% of its
 // proceeds. Creator + platform is what that cap counts, so every rung below

@@ -26,7 +26,7 @@ Before paying, a donor sees:
 
 - number of activities and target locations;
 - truck, fuel, protective equipment, tools, volunteer meals, and waste-handling budget;
-- the 3% platform fee;
+- the 2% platform fee;
 - the 0–5% Creator Reward and work explanation;
 - the project/organization wallet receiving the operating allocation;
 - required proof at the end of each activity and month.
@@ -94,7 +94,7 @@ A recurring campaign is different from an emergency. An orphanage is not “fini
 
 **Recurring needs:** rice, protein, vegetables, cooking gas, water, packaging, equipment, transport, rent, and kitchen labor. [Rumah Cinta Qur'an](https://rumahcintaquran.or.id/rumah-makan-gratis/) runs a free-meal program for low-income people, travelers, and anyone who needs food. Masjid Baitul Huda Antapani was also reported to provide hundreds of free portions daily with cross-community support. ([Arrahimedia](https://www.arrahimedia.or.id/2025/02/masjid-baitul-huda-antapani-sediakan.html))
 
-**Ulurin campaign:** “Provide lunch for 30 days.” Donors see the portion target, cost categories, schedule, Creator Reward, and 3% platform fee. Updates report portions and ingredient usage; evidence does not need to expose recipient faces.
+**Ulurin campaign:** “Provide lunch for 30 days.” Donors see the portion target, cost categories, schedule, Creator Reward, and 2% platform fee. Updates report portions and ingredient usage; evidence does not need to expose recipient faces.
 
 ### Animal shelter
 

@@ -230,7 +230,7 @@ The product should never use “verified on-chain” as shorthand for claims the
 Ulurin currently proposes two explicit revenue/compensation lines:
 
 1. **Creator reward: 0–5%**, based on verification tier and chosen campaign rate.
-2. **Platform fee: 3%**, displayed before authorization.
+2. **Platform fee: 2%**, displayed before authorization.
 
 The creator reward pays for fieldwork and a sustainable livelihood. The platform fee must fund payment operations, verification, moderation, evidence review, disputes, security, infrastructure, and compliance.
 
