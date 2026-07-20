@@ -1,405 +1,313 @@
-# Ulurin: Concept & Stellar Alignment
+# Ulurin: Business and Product Concept
 
 🌐 **Language:** English (this document) · [Bahasa Indonesia](KONSEP.md)
 
-> Product concept document. Status: concept + testnet MVP.
-> Honesty rules held throughout: demo/testnet figures are labelled, no fictional
-> metrics, no "first in the world" claim, and no claim of affiliation with
-> Stellar/SDF/Stellar Aid Assist.
+> This document describes the refined Ulurin business thesis. Its status is product definition: it makes no production, real-money, traction, or partnership claim. Testnet and sandbox figures must always be labelled.
 
-> This is a full English translation of the Indonesian concept doc. Market figures,
-> cases, and cultural context (zakat, the Cak Budi and ACT scandals, grassroots
-> movements) are Indonesia-specific; the Indonesian original is the source of truth.
+## 1. Executive summary
 
----
+**In one sentence:** Ulurin makes helping others an honest profession. The Creator Reward is disclosed up front, capped at 0–5%, and released only after the required evidence state is satisfied.
 
-## 1. Summary
+**Problem:** Indonesia is extraordinarily generous, but its donation rails give donors too little visibility and give grassroots organizers no honest way to earn. Trust breaks, giving moves to fragmented personal channels, and every rupiah an organizer takes can look like misappropriation.
 
-**One sentence:** a platform where helping others becomes an honest profession.
-A *Kreator Kebaikan* (Good-Deed Creator) surfaces a real case through a story (video
-and/or photo), channels the aid, and earns a transparent, capped reward (0-10%),
-while every rupiah is provable on-chain.
+**Solution:** one platform with two discovery entrances: a Cerita Kebaikan story feed and a campaign marketplace. Both show the full allocation before payment, separate beneficiary funds from the Creator Reward, enforce the financial rules in a smart contract, and build creator reputation from campaigns actually completed.
 
-**Tagline:** *"Doing good, made a job."*
+**Business model:** a **3% Ulurin platform fee**, displayed as a separate line and deducted from the donation, never added on top (decided 2026-07-16 — see DECISIONS.md). The **0–5% Creator Reward**, capped by verification tier, compensates the person doing fieldwork; it is not platform revenue. The most expensive possible campaign is 8%, two points under PP No. 29/1980's 10% cap.
 
-**Elevator (for investors/judges):** Kitabisa and its peers have already proven that
-people will donate online, but the fundraiser works for free / goes unrecognized and
-trust is off-chain (you trust the report). Ulurin professionalizes the fundraiser
-role with a transparent, capped reward, makes it native storytelling (video/photo),
-and proves every rupiah through Stellar. We take the transparent-aid model that
-Stellar Aid Assist proved at the institutional level and bring it down to the
-grassroots: an everyday donor to a real beneficiary.
+**Core thesis:** honesty and income are not opposites. Pricing the organizer's work openly is what allows a donor to distinguish legitimate work costs from misuse.
 
-## 2. Vision & Mission
+## 2. The problem: not a lack of goodwill, but the wrong rail
 
-**Vision:** a future where doing good can be a primary job. Anyone can make a living
-by helping others, and every good deed can be proven, not merely trusted.
+### 2.1 ACT demonstrates structural failure
 
-**Mission:**
-1. Professionalize helping: a stage + transparent income for the Kreator Kebaikan.
-2. Donate without friction or doubt: moved by a story, help on the same screen, get proof instantly.
-3. Protect the beneficiary's dignity: told as a person with a plan, not an object of pity.
-4. Prove every rupiah arrives: escrow + public receipts, closing the trust wound of Cak Budi and ACT.
+Boeing entrusted **Rp138,546,388,500** to ACT for social and educational facilities in communities affected by Lion Air JT610. Only **Rp20,563,857,503** was used for the agreed programs; just 6 of 70 plans materialized. **Rp117,982,530,997** was used outside its purpose. ([Kompas](https://nasional.kompas.com/read/2022/11/15/14161711/dakwaan-bos-act-pencairan-dana-sosial-boeing-hanya-lewat-whatsapp) · [Vice](https://www.vice.com/en/article/boeing-embezzlement-lion-air-indonesia/))
 
-**Terminology (important, three layers, not interchangeable):**
-- **Philanthropreneur** = the movement/vision + the category Ulurin is building: a world where doing good is a sustainable profession. This is the company + ecosystem positioning (Ulurin = a philanthropreneur company).
-- **Kreator Kebaikan** = the person's role inside the app (who surfaces, verifies, tells the story, distributes). A Kreator Kebaikan is a philanthropreneur in practice.
-- So: our vision drives a **philanthropreneur movement**; what a person "becomes" in the app is a **Kreator Kebaikan**; Ulurin is a **philanthropreneur platform**.
+The failure was not only individual morality. The same organization held the money, decided allocations, operated affiliated entities, and controlled the reports victims could see. When custody and evidence sit with the interested party, money can be absorbed into its own building while still appearing to be legitimate aid activity.
 
-### The root problem Ulurin solves (real, sourced cases)
+### 2.2 Cak Budi demonstrates work without an honest price
 
-Mission #4 ("closing the wound of Cak Budi and ACT") is rooted in two real cases that
-prove: **the problem was never "being paid to do good", it was "hidden and
-uncapped".** That is what Ulurin solves.
+Cak Budi raised roughly **Rp1.2 billion** and bought a Fortuner and an iPhone. Those tools may genuinely have supported operations. But donors never approved a defined share for his work, and no rail limited what he could take. ([Detik](https://news.detik.com/berita/d-3488851/heboh-pengakuan-cak-budi-pakai-uang-donasi-untuk-beli-fortuner))
 
-**Cak Budi (2017), individual scale.** A well-known social-media fundraiser collected
-**~Rp 1.2 billion**, then spent it on a **Toyota Fortuner + an iPhone 7**. He admitted
-it, sold the car, and transferred the proceeds to ACT. Not a criminal, but **there
-was no honest path**: no up-front disclosure of what share was his.
-([Detik, 2017](https://news.detik.com/berita/d-3488851/heboh-pengakuan-cak-budi-pakai-uang-donasi-untuk-beli-fortuner))
+Ulurin is not based on the idea that good people should work for free. It is based on the idea that compensation must be **disclosed, capped, explained, and tied to completing the work**.
 
-**ACT (2022), institutional scale.**
-- Of **Rp 138.5 billion** in Boeing (Community Investment Fund) money for the families of the **Lion Air JT610** crash victims (Boeing 737 MAX, crashed 2018, 189 dead), only **Rp 20.5 billion** was actually used as intended (6 of 70 programs). ACT executives were sentenced to 3-3.5 years (2023). ([VOI](https://voi.id/en/news/247120) · [BenarNews](https://www.benarnews.org/english/news/indonesian/indonesia-embezzlement-01242023130425.html))
-- More broadly, the financial-intelligence agency (PPATK) found **more than 50% of Rp 1.7 trillion (US$113.9 million)** in donations flowed to entities affiliated with executives; ACT skimmed **13.7%** (above the legal **10%** foundation cap); its public-fundraising permit was revoked by the Social Affairs Ministry (Jul 2022). ([The Jakarta Post](https://www.thejakartapost.com/indonesia/2022/08/05/more-than-half-of-act-donations-went-into-execs-pockets-investigators-say.html) · [Kompas](https://nasional.kompas.com/read/2022/07/06/13183861/izin-act-dicabut-karena-dugaan-penyelewengan-dana-bagaimana-aturan-donasi-di))
+### 2.3 The law already exists
 
-**The common thread (what Ulurin answers):** both are about a **cut that was hidden,
-uncapped, unproven.** Ulurin answers exactly that: the cut is **disclosed up front +
-capped 0-10% + contract-enforced**, funds are held in **escrow**, and the **money
-flow is recorded on-chain**. This is what "closing the wound of Cak Budi and ACT" means.
+- [Law No. 9 of 1961](https://peraturan.bpk.go.id/Details/51166/uu-no-9-tahun-1961) regulates permission to collect money or goods from the public.
+- [Government Regulation No. 29 of 1980, Article 6(1)](https://peraturan.bpk.go.id/Download/56955/PP%20NO%2029%20TH%201980.pdf) caps fundraising costs at 10%.
 
-## 3. Core concept (and how it differs from Kitabisa)
+Ulurin does not invent another rule. Its value is turning a limit normally inspected through an audit into a transaction condition that can fail before money moves.
 
-Kitabisa and its peers: ads on IG/TikTok Reels, then a CTA to a website; fundraisers
-are often unpaid volunteers; trust is off-chain. **Ulurin adds three things:**
+A smart contract does not replace licensing, supervision, or law enforcement. It only makes defined financial rules harder to violate silently.
 
-- **A native-story segment** (the **Cerita Kebaikan feed = video and/or photo**, not just an ad thrown to a web form). Both video and photo are allowed; the creator picks the format that fits the case.
-- **The Kreator Kebaikan is paid transparently** (0-10%, contract-enforced): helping becomes a profession.
-- **On-chain proof** (donations + distributions recorded, checkable by anyone without logging in).
+## 3. Why this is a business opportunity
 
-MVP focus = this ONE function (creator-cut donations + video/photo story + proof).
-Later features (recurring donations, zakat, CSR curation) are held back so the focus
-and the MVP scope stay realistic.
+### 3.1 The willingness to give survived; trust moved
 
-**Who can be helped (two beneficiary types):**
-- **Individuals / cases** (one-off): free surgery, accidents, medicine, abandoned elderly, sick/abandoned animals (not only pets), **legal-aid costs for the poor / the wronged** (e.g. a victim who cannot afford a lawyer), **informal workers who lost their livelihood** (e.g. a gig driver whose motorbike was stolen, who died from overwork, or who fell ill and can no longer work, leaving the family without income), etc.
-- **Organizations / foundations** (needing recurring donors): orphanages, animal shelters, elderly homes, cancer foundations, rehab foundations, anti-sexual-violence movements (e.g. funding professional psychologists/psychiatrists), legal-aid bodies (LBH), and other social institutions.
-- **Natural disasters** (emergency campaigns): floods, earthquakes, eruptions, etc., fast large-scale fundraising. This is the format that **fits Stellar Aid Assist best** (fast + transparent crisis aid).
+A Median poll of 1,500 respondents after the ACT scandal found **44.7% no longer trusted similar institutions**, while **30.1% still did**. ([Detik](https://news.detik.com/berita/d-6210306/survei-median-pakai-gform-44-7-responden-tak-percaya-lembaga-serupa-act)) BAZNAS reported qurban collection at roughly **47% of target** when around 80% was normal at the same stage. Its deputy concluded that the desire to give would survive but move through individuals. ([JPNN](https://www.jpnn.com/news/buntut-kasus-act-baznas-prediksi-jumlah-donasi-masyarakat-berkurang))
 
-The point: a beneficiary can be an individual OR an organization, and the aid model
-can be **one-off** or **recurring**. Technical note: recurring donations need an
-off-chain scheduler (Stellar has no native scheduler) that submits scheduled on-chain
-payments, so this is a fast-follow feature, not a day-1 MVP requirement. The
-verification + escrow + on-chain-proof principle stays the same for both.
+That is Ulurin's entry point: not manufacturing generosity, but giving structure, incentives, and evidence to giving that already flows through individuals.
 
-## 3.1 Market size (evidence: why this is a big business)
+### 3.2 Size of the economic space
 
-Sourced research, accessed 2026-07-11. "Potential" figures are labelled as official estimates.
+| Indicator | Value | Defensible meaning |
+|---|---:|---|
+| National formal ZIS | **Rp40.5 trillion** in 2024 | The formal flow is already large and growing. [BAZNAS](https://baznas.go.id/assets/images/szn/LPZ%20Nasional%20Akhir%20Tahun%202024.pdf) |
+| National zakat potential | **Rp327.6 trillion/year** | A potential estimate, not revenue Ulurin can automatically capture. [Ministry of Religious Affairs](https://kemenag.go.id/nasional/potensi-mencapai-327-t-ini-tiga-fokus-kemenag-dalam-pengembangan-zakat-LobJF) |
+| Indonesian philanthropy potential | **Rp650–665 trillion/year** | A Bappenas macro estimate, not validated TAM. [CNBC Indonesia](https://www.cnbcindonesia.com/news/20250804121649-4-654804/bappenas-potensi-filantropi-ri-capai-rp-6655-triliun-per-tahun) |
+| Kitabisa | **Rp830 billion disbursed, 8 million donors** | Evidence of real demand for digital giving. [Kitabisa](https://kitabisa.com/about-us) |
+| Indonesia | **Most generous country seven years running** | Willingness to give is not the problem. [CAF](https://www.cafonline.org/home/about-us/press-office/indonesia-retains-top-place-in-world-giving-index-with-ukraine-climbing-to-second-most-generous-country) |
 
-| Figure | Amount | Year | Source |
-|---|---|---|---|
-| National ZIS collected (formal, BAZNAS + LAZ) | **Rp 40.5 trillion** (+25% YoY) | 2024 | [BAZNAS LPZ 2024](https://baznas.go.id/assets/images/szn/LPZ%20Nasional%20Akhir%20Tahun%202024.pdf) |
-| **National zakat potential** (estimate) | **Rp 327.6 trillion/yr**, only ~10% tapped | 2023-24 | [Kemenag](https://kemenag.go.id/nasional/potensi-mencapai-327-t-ini-tiga-fokus-kemenag-dalam-pengembangan-zakat-LobJF) · [Kompas](https://www.kompas.id/artikel/en-potensi-zakat-rp-327-triliun-yang-terkumpul-baru-rp-41-triliun) |
-| **Total ID philanthropy potential** (Bappenas estimate) | **Rp 650-665 trillion/yr** | 2025 | [CNBC Indonesia](https://www.cnbcindonesia.com/news/20250804121649-4-654804/bappenas-potensi-filantropi-ri-capai-rp-6655-triliun-per-tahun) |
-| Actual ZISWAF giving (survey, incl. informal) | **~Rp 343 trillion/yr** | 2026 | [PUSKAS/STF UIN Jakarta](https://www.stfuinjakarta.org/2026/06/07/press-release-survei-nasional-ziswaf-2026-angka-ziswaf-nasional-mencapai-rp343-triliun/) |
-| Kitabisa.com (disbursed) | **Rp 830 billion · 8 million donors** | 2024 | [Kitabisa](https://kitabisa.com/about-us) |
-| ACT before the scandal | **Rp 519 billion** (2020); **~Rp 2 trillion** cumulative; **Rp 450 billion skimmed** (police finding) | 2020/2022 | [Tempo](https://www.tempo.co/politik/aksi-cepat-tanggap-himpun-dana-ratusan-miliar-ini-detailnya-328957) · [Antara/Polri](https://www.antaranews.com/berita/3027249/polri-temukan-fakta-act-potong-donasi-masyarakat-rp450-miliar) |
-| Indonesia = **most generous country in the world, 7 years running** (90% donate) | context | 2024 (CAF) | [CAF World Giving Index](https://www.cafonline.org/home/about-us/press-office/indonesia-retains-top-place-in-world-giving-index-with-ukraine-climbing-to-second-most-generous-country) |
+Potential estimates must not be presented as Ulurin revenue. A more honest initial market is individual and community campaigns with visible activity, an existing audience, and recurring funding needs.
 
-**Wow-pairing for the pitch:** zakat potential **Rp 327T** vs only **~Rp 40T** tapped
-= **~90% of the market untouched**, and the formal channel is growing 25-44%/year. Of
-the ~Rp 343T actually given, **~88% is still outside the formal rails** and barely digital.
+### 3.3 Organizer labor is not priced well
 
-**Why "philanthropreneur" is real (not a fantasy), the convergence of 2 facts:**
-- Fundraisers **work for free today** (volunteers, 0% cut; e.g. berbuatbaik.id "100% of funds disbursed"). The people doing the collecting get nothing.
-- But people **have already proven they will pay creators directly**: Trakteer has **500k+ creators, 4 million supporters**; Saweria is estimated at **Rp 700 million-1 billion/month** ([teknologi.id](https://teknologi.id/business/trakteer-dan-saweria-platform-crowdfunding-terlaris-untuk-support-content-creator)).
-- Ulurin = the meeting of the two: **proven donor demand + proven willingness to pay creators + unpaid fundraiser labor.** That gap is what the philanthropreneur model professionalizes.
+Grassroots organizers perform economically valuable work: case discovery, verification, consent, travel, vendor coordination, distribution, documentation, communications, and reporting. A system that pays the platform while assuming the organizer should work for free creates two bad outcomes:
 
-**The "why blockchain" hook:** ACT, a **Rp 2 trillion** platform that **skimmed Rp 450
-billion of the public's money** (police finding). A concrete trust wound answered
-directly by transparent on-chain custody.
+1. good organizers burn out or remain sponsor-dependent;
+2. organizers who recover their costs are pushed to hide them inside campaign spending.
 
-**Honest note:** "potential" = official estimate (BAZNAS/Bappenas), not what was
-actually collected. Rumah Zakat is not cited with a figure (the data sits behind a
-PDF, unverified). Trakteer/Saweria are platform/secondary figures.
+Ulurin turns hidden income into a Creator Reward a donor can see and judge.
 
-## 3.2 Next phase: zakat (target market + why it needs to exist)
+## 4. The category: philanthropreneur
 
-General donations (video/photo story + creator cut) are the MVP. **Zakat is the
-natural expansion** once the rails and the trust are proven.
+**Philanthropreneur** is the business category and movement: people can build a livelihood by repeatedly completing accountable social-impact work.
 
-**Why zakat fits the Ulurin model perfectly:**
-- Zakat is an **obligation** (a pillar of Islam), so it is a **recurring + cultural** flow that is massive and repeats every year, with a big spike during Ramadan. Not an occasional voluntary donation.
-- **Potential Rp 327.6 trillion/year, only ~10% (~Rp 40T) formally tapped** ([Kompas](https://www.kompas.id/artikel/en-potensi-zakat-rp-327-triliun-yang-terkumpul-baru-rp-41-triliun)), so ~90% is still given directly/informally with no trace. A giant market unserved by transparent technology.
-- The **amil** (zakat collector + distributor) is entitled to a share of up to **12.5%** (DSN-MUI). That is **exactly** the "transparently paid + capped Kreator Kebaikan" model. Zakat actually demands the contract-enforced cap + transparency.
-- **Digital zakat is growing:** BAZNAS targets **30% of zakat via digital**; digitalization can raise collection efficiency by up to **45%** (academic study).
+The future Ulurin is building is larger than a donation marketplace. It is a **labor market for public good**. Today, capable helpers work after hours, spend personal money, or depend on temporary sponsors. In the future, helping can be the job itself, with income earned from a transparent and proven record of service.
 
-**Zakat target market:**
-- 200 million+ Indonesian Muslims. Scope: zakat maal, zakat fitrah, infak, sedekah, waqf.
-- High frequency + recurring (annual + Ramadan spike), across classes, already a habit.
-- **Amil/institutions** (LAZ, mosques, communities) as verified Creators who distribute transparently.
+The change should be visible in ordinary life:
 
-**Why it needs to exist going forward:** trust in formal zakat institutions is eroding
-(the ACT case skimmed Rp 450 billion), while most people give zakat directly/informally
-with no proof. Ulurin can be the **zakat rail that proves every rupiah arrives + gives
-the amil a lawful, transparent, capped reward.** Closing the trust gap and the
-digitalization gap at once.
+- thousands of trusted local movements, not one exceptional Pandawara;
+- roads repaired through planned monthly campaigns, not only after one viral clip;
+- orphanages, elderly homes, shelters, and free kitchens able to plan the next month;
+- creators who stay in the work because honest compensation prevents burnout;
+- donors who give again because each completed cycle produces evidence.
 
-**Honest note (important):** zakat = a sharia + regulatory domain. It needs **sharia
-compliance** (DSN-MUI fatwas, amil rules) and possibly **partnership/registration with
-a licensed LAZ**. Ulurin must not claim to be a zakat authority; position it as a
-**transparent zakat-distribution tool** (for/with registered amil and LAZ). This is a
-NEXT PHASE, not the 30-day MVP.
+**The flywheel:** honest pay sustains helpers. Sustained helpers complete more outcomes. Completed outcomes create evidence. Evidence builds trust. Trust drives repeat giving. Repeat giving funds more people to help professionally.
 
-## 3.3 Movement collaboration (Pandawara etc.): from occasional sponsors to recurring income
+`Honest pay -> sustained helpers -> completed outcomes -> visible proof -> stronger trust -> repeat giving -> more professional helpers`
 
-There is a recurring pattern in Indonesia: **good-deed movements rich in followers but
-with unstable income**, because they depend on sponsors/CSR that come and go. Ulurin
-can turn their trust (followers) into **recurring, transparent income.**
+Creator income should grow because completed work and donor trust grow. It must never grow because the product rewards more dramatic suffering.
 
-**Flagship example: Pandawara Group** (Bandung, founded 2022):
-- **12 million+ TikTok followers** (a Guinness record), **1.3 million+ kg of trash** removed, 221+ locations, **Forbes 30 Under 30 Asia 2025**, invited by President Prabowo (Mar 2025). ([Forbes](https://www.forbes.com/profile/pandawara-group/))
-- **But their funding is occasional, not recurring:** first their own money, then donations for operating costs (truck rental, trash bags, tools), then **per-event CSR sponsors** (BRI, Citilink, Pertamina, etc.: one event, then it's over). ([Waste4Change](https://waste4change.com/blog/pandawara-group-pemuda-inspiratif-penggiat-bebersih-sungai/))
-- Their crowdfunding is also **occasional spikes**: Dec 2025 a viral "chip in to buy a forest", with celebrity pledges of ~Rp 1.5 billion (Denny Sumargo, Denny Caknan, King Abdi), to be realized in 2026. ([Tribun Jakarta](https://jakarta.tribunnews.com/news/427199/ajakan-pandawara-patungan-beli-hutan-bersambut-2-influencer-siap-beri-rp-15-miliar-netizen-ikutan))
-- **The point (proven):** they can only buy tools/trucks/bags for clean-ups **when a sponsor shows up**. The money arrives irregularly. **Imagine it recurring** via transparent donations from their 12 million followers.
+**Kreator Kebaikan** is the role inside the product. A creator is not merely a content maker, but a person or team that:
 
-**Not just Pandawara, the pattern repeats:**
-- **Sungai Watch** (Bali/East Java, ~3.7 million kg of trash): a "$1 = 1 kg" donation model, still lobbying the Vice President for funding support. ([Suara Surabaya](https://www.suarasurabaya.net/kelanakota/2025/37-juta-kilogram-sampah-diangkut-dari-sungai-sungai-watch-soroti-rendahnya-kesadaran-warga/))
-- **Sedekah Rombongan** (15 years accompanying poor patients, 11 shelters): 100% donation per campaign, a new fundraise for every program. ([sedekahrombongan.com](https://sedekahrombongan.com/))
-- **Animal Defenders Indonesia** (animal rescue): even **covers vet bills out of their own pocket** because income is irregular. ([Komunita.id](https://komunita.id/2016/02/01/animal-defenders-indonesia-berjuang-demi-hewan-hewan-telantar/))
-- **Mosques + free community kitchens:** partnering with mosques to run free kitchens or free eateries for those in need. With **recurring donors**, "**the kitchen keeps cooking**" (every day), not only when a big one-off donor appears. A daily need = a recurring-donation model = a perfect fit.
-- **Road-hole volunteers (patching roads):** e.g. **Nanda (@relawan.jalan.rusak, Pekanbaru)** who over ~2 years patched ~**79 potholes** with **his own money + follower donations** (his viral clip 800k+ views, Dec 2025). He openly says he must appear on social media because **that is the only way to get support + protection** ("there have been threats"). There is also **Suted (@suted.sukarno)**, a **gig driver** in Demak who patches roads while **live-streaming + receiving donations** from viewers. Contrast: **Surya Insomnia** (a comedian) patches roads **on his own dime, one-off, with no donation model**, exactly the gap Ulurin fills. ([CatatanRiau](https://catatanriau.com/news/detail/28114/viral-relawan-jalan-rusak-di-pekanbaru-ditegur-rw-saat-tambal-jalan) · [Detik](https://www.detik.com/sumut/berita/d-8229844/cerita-surya-insomnia-ngaspal-jalan-berlubang-gue-iseng-sebenarnya)) *(note: follower counts are not published; we use the verified 800k+ views / 79 potholes figures.)*
+1. finds a need;
+2. verifies identity, need, and consent;
+3. tells the story with dignity;
+4. coordinates collection and distribution;
+5. uploads evidence and remains accountable to donors.
 
-**How Ulurin helps:**
-- The movement becomes a **verified Kreator Kebaikan**; its followers can **donate recurrently (subscribe)** to fund its work continuously.
-- **Two-layer proof (honest):** on-chain proves the *money flow* (collected, cut, Creator's share, disbursed); for *what was bought* (tools, trucks, trees, medicine, feed, cooking ingredients), the Creator uploads **invoices/proof** to the platform + donors get an **update notification** in the app. (See "Two-layer transparency" in section 6.)
-- The movement may take a **transparent, capped reward** as income, so "doing good becomes a primary job" (exactly the vision), no longer a cost center waiting for sponsors.
-- **Result:** trust (followers) turns into **stable monthly income.** From an occasional hustle into a sustainable livelihood.
+Content is the discovery tool. The aid outcome is the product.
 
-**Honest note:** the movements above are cited as **public examples/inspiration, NOT
-partners or users of Ulurin.** Reach figures (followers, kg of trash) are **each
-movement's own claim** (from their news sources/official pages), not independently
-audited numbers. Any collaboration requires the **movement's consent** + the same
-transparency & consent principles. Recurring donations need an off-chain scheduler
-(fast-follow, see section 7).
+## 5. Real users
 
-## 3.4 Next phase: CSR fund curation (curated good-deed funds)
+### Creator-led movements
 
-Companies routinely spend **CSR / TJSL** funds (Corporate Social & Environmental
-Responsibility, partly mandated by the Limited Liability Company Law), but distribution
-is often **ad-hoc, hard to measure for impact, and heavy on reporting.** Ulurin can be
-a **CSR curation platform:** a company parks CSR funds, Ulurin curates them into a
-portfolio of verified cases/movements, leaning toward the **recurring** ones (sustained
-impact), and every rupiah is proven on-chain.
+- **[Pandawara Group](https://www.tiktok.com/@pandawaragroup):** a five-person Bandung movement publishing river and beach clean-ups. Guinness recorded 12,137,832 TikTok followers in March 2026; Forbes reports more than 1.3 million kilograms of waste removed and included the group in 30 Under 30 Asia 2025. The Ulurin use case is recurring funding for trucks, fuel, equipment, waste handling, and field labor, with the project allocation separated from the Creator Reward. ([Guinness](https://www.guinnessworldrecords.com/world-records/782570-most-followers-on-tiktok-for-an-environmental-clean-up-group) · [Forbes](https://www.forbes.com/profile/pandawara-group/))
+- **[Nanda / @relawan.jalan.rusak](https://www.tiktok.com/@relawan.jalan.rusak):** reported to have patched roughly 79 potholes in Riau over two years, using personal money and follower support. Ulurin turns each road segment into a scoped campaign with a materials budget and before/after evidence. ([Catatan Riau](https://catatanriau.com/news/detail/28114/viral-relawan-jalan-rusak-di-pekanbaru-ditegur-rw-saat-tambal-jalan))
+- **[Suted / @suted.sukarno](https://www.tiktok.com/@suted.sukarno):** an online motorcycle-taxi driver coordinating overnight road repairs with his community in Demak and receiving viewer donations. Ulurin makes that support available outside a viral livestream and gives donors a durable completion record. ([Jateng News](https://www.jatengnews.id/2026/02/25/ojol-demak-tambal-jalan-berlubang-dini-hari-tuai-simpati-warganet/))
 
-The analogy is like a **mutual fund / investment manager** (funds are pooled then
-allocated to a chosen portfolio), **but the "return" is auditable social impact**, not
-a financial yield.
+### Recurring institutions and programs
 
-- **For the company:** CSR becomes easy, curated, and proven, with on-chain reporting for audit + ESG/branding credibility.
-- **For the movement/beneficiary:** **recurring** funding from CSR, not one-off sponsors.
-- **For Ulurin:** B2B revenue (curation/program-management fee), at large scale.
-- **Market context (sourced):** Indonesia's CSR potential is estimated at **~Rp 80-96 trillion/year** (Bappenas, 2025, [CNBC Indonesia](https://www.cnbcindonesia.com/news/20250804121649-4-654804/bappenas-potensi-filantropi-ri-capai-rp-6655-triliun-per-tahun)). But what is actually well-managed is far smaller: **state-owned-enterprise TJSL realized ~Rp 11.2 trillion** (2023). The gap between potential and managed + the long-standing complaint that CSR funds are "not managed optimally" = **exactly the gap** this curation platform fills.
+Orphanages, elderly homes, free-meal kitchens, animal shelters, patient houses, rehabilitation centres, legal-aid bodies, and independent research groups have costs that repeat every month. Their Ulurin campaign should therefore operate in cycles: recurring donor authorization, monthly beneficiary allocation, cycle-specific evidence, and a Creator Reward released only after that cycle's required proof.
 
-**Honest note:** this needs legal structure + compliance (CSR-fund usage rules, TJSL
-reporting), possibly a permit/registration as a distributing institution, and **do not
-use the term "mutual fund / investment manager" literally** (that is the financial
-regulator's domain, licensed securities products). The analogy is only to explain the
-curation model. This is a FAR next phase, not the MVP.
+The use case is not “raise once and disappear.” It is “fund next month's service, show what happened this month, and let trust compound.”
 
-## 4. Terminology (gentle, accepted across audiences)
+### Beneficiaries
 
-| Avoid | Use |
+- people or families facing illness, accidents, lost livelihoods, or injustice;
+- organizations such as shelters, care homes, health foundations, legal-aid bodies, and independent research institutes;
+- communities affected by floods, earthquakes, eruptions, and other disasters.
+
+### Donors
+
+Mobile-first donors who think in rupiah. They want a familiar payment flow, a clear allocation, a creator track record, and evidence after distribution.
+
+The complete creator, recurring-care, one-off, and emergency scenarios are documented in [Concrete Use Cases](USE-CASES.en.md).
+
+## 6. Product: two discovery modes, one source of truth
+
+### Cerita Kebaikan feed
+
+A vertical video/photo feed enables fast discovery and one-tap donation without leaving the story. Video is optional; photo and text campaigns must receive equal functional treatment.
+
+Ranking prioritizes verification quality, goal clarity, relevance, completion history, and outcome updates. It must not optimize for tears, child exploitation, or donation velocity alone.
+
+### Campaign marketplace
+
+The marketplace supports search and comparison by category, location, urgency, creator tier, funding progress, recurring need, and campaign status.
+
+Feed and marketplace read the same campaign, fee, progress, proof state, and reputation data. Numbers must never diverge between surfaces.
+
+### Transparent checkout
+
+Before payment, a donor sees:
+
+| Component | Meaning |
 |---|---|
-| fundraiser / advocate | **Kreator Kebaikan** (Good-Deed Creator) |
-| poor person / beggar | **Penerima Manfaat** (Beneficiary) |
-| begging video / selling sadness | **Cerita Kebaikan** (Good-Deed Story) |
-| taking a cut / skim | **Imbalan Kreator** (Creator Reward, transparent, capped 0-10%) |
-| money giver | **Donatur** (Donor, earns a *Donatur Terverifikasi* / Verified Donor badge) |
-| fundraise | **surface and channel good** |
+| Beneficiary allocation | Funds for the stated need. |
+| Creator Reward | 0–5%, within the tier limit and supported by a work explanation. |
+| Platform fee | 3%, shown separately. |
+| Total payment | The exact amount the donor authorizes. |
 
-**How to explain it to people (gentle language):**
-- Analogy: "Like a journalist or a social documentary-maker who is paid to surface real stories and make sure the aid arrives. The difference: the reward is transparent, capped at 10%, and every rupiah is recorded on-chain."
-- Positive phrasing: "giving a voice to the unheard", "kindness storytelling", "proving a real need so it gets funded".
+The creator must explain their reward in ordinary language: transport, verification, documentation production, coordination, operations, and personal compensation. Gentle wording must not conceal that part of the money is income.
 
-## 5. The role: Kreator Kebaikan
+### Release order
 
-The person who finds a case, verifies it, makes the Cerita Kebaikan, channels the aid,
-and reports the outcome. For that work they are entitled to a transparent, capped
-Imbalan Kreator.
+The current principle is **beneficiary first, creator last**:
 
-**Roots of legitimacy (honest framing):** in zakat, the amil (collector and
-distributor) is entitled to a share of up to 12.5% (DSN-MUI). Being paid to do good
-has been legitimate for centuries. What Ulurin adds: transparency, a cap, and on-chain
-proof. Not a claim to have invented the concept.
+1. the beneficiary allocation does not wait for the creator to finish documentation;
+2. the Creator Reward remains locked;
+3. the creator uploads the required evidence;
+4. the beneficiary and/or reviewer confirms the evidence state;
+5. only then may the Creator Reward be released.
 
-### Creator credibility: KYC (Sumsub) + track-record profile + rating
+Platform-fee release, milestones, cancellation, and refund rules still require a decision before the contract is built.
 
-Trust is not claimed, it is built and made visible.
+## 7. Reputation as a business asset
 
-- **Mandatory KYC via Sumsub.** Anyone who wants to become a Kreator Kebaikan **must pass identity verification via Sumsub** before they can open a campaign or withdraw funds. Sumsub was chosen because it is a KYC/AML provider that is **proven and common in crypto/fintech** (document verification + liveness + AML screening), so it is credible to Stellar/anchor partners, and it locks in "one verified human per account" (anti fake-account + puppeteering).
-- **The Creator profile = an open track record.** Each Creator's profile shows their **fundraising history** (which campaigns they have opened) with the **total amount raised**, plus a **history of distribution proof + invoices/receipts** they have uploaded. Prospective donors can trace the track record themselves.
-- **Donor rating + comments (like a marketplace seller).** Donors can leave a **rating and comment** after donating / seeing the outcome. A score + badges (e.g. "Verified", "X cases completed", "on-time distribution") show on the profile and each campaign. New Creators start at a low tier (limited reach/amount) and rise with their track record.
-- **The effect:** before donating, a person can immediately judge "is this Creator credible?", exactly like checking a seller's rating + history before buying. Reputation becomes an asset that is built, not claimed. It reinforces the anti-fraud guardrail.
+A creator profile shows:
 
-Note: Sumsub = a paid third-party service. For the MVP/testnet, Sumsub sandbox mode can
-be used; full KYC turns on as real money approaches (mainnet).
+- KYC tier and reward ceiling;
+- active, completed, cancelled, and disputed campaigns;
+- total raised and delivered;
+- invoice, documentation, and beneficiary-confirmation history;
+- completion rate and average time to proof;
+- ratings from donors who actually transacted;
+- Creator Reward history.
 
-## 6. Upstream-to-downstream workflow
+Only a donor with a confirmed transaction may leave one rating per campaign after an outcome or proof event. Ratings should separate outcome, communication, and evidence quality; an unexplained star average is easy to manipulate.
 
-**UPSTREAM, find and verify**
-1. The Kreator Kebaikan finds a real beneficiary: an individual (surgery, accident, medicine, abandoned elderly, sick/abandoned animals) or an organization/foundation (see section 3, e.g. orphanage, animal shelter, elderly home, cancer/rehab foundation, anti-sexual-violence movement).
-2. Verification: Beneficiary identity + proof of need (receipt/letter) + beneficiary consent.
-3. Set the funding target + Imbalan Kreator (slider 0-10%, default 0%, shown clearly to donors).
+The live activity strip shows confirmed events only and respects named, amount-hidden, or anonymous choices. Distribution and completion events should appear alongside donations so social proof does not celebrate money-in alone.
 
-**MIDDLE, tell the story and raise**
-4. The Creator makes a Cerita Kebaikan (a dignified video and/or photo: who, the need, the plan), then it enters the feed.
-5. The feed is ranked by verification + goal clarity + outcome updates. NOT by tears or donation speed.
-6. A donor watches, is moved, then one-tap donates on the same screen (amount, name/@username/Anonymous, comment). Funds enter the smart-contract escrow.
+## 8. Business model
 
-**DOWNSTREAM, distribute and prove**
-7. Funds are held in a Soroban escrow, released per milestone/proof (not instant cash-out; this kills the "skim again" pattern).
-8. The Creator distributes the aid, then uploads proof (photo/receipt/outcome video).
-9. Automatic on-chain split: the majority to the Beneficiary, the Imbalan Kreator (capped), a small platform fee. Every number is shown.
-10. Public receipt: every donation and distribution is recorded, checkable by anyone without logging in.
-11. The donor gets an outcome notification, and their comment carries a Verified Donor badge (tap to open the on-chain receipt).
+### Initial revenue
 
-### Two-layer transparency (honest, DO NOT overclaim)
+The **3% platform fee** funds payment operations, KYC, campaign review, content moderation, evidence review, disputes, security, infrastructure, customer support, and compliance.
 
-Important so we do not promise what cannot be proven on-chain:
+It remains undecided whether 5% is added on top of the donor-entered amount or deducted from it. The choice affects beneficiary proceeds, UX, contract behavior, accounting, and legal treatment.
 
-- **Layer 1, on-chain (money flow):** total donations collected, platform fee, the Creator's/foundation's share, and the amount disbursed/distributed. This is what is truly recorded on the Stellar ledger and checkable by anyone without logging in.
-- **Layer 2, off-chain (fund usage):** for **what was bought** (tools, trucks, trees, medicine, feed, etc.), the Creator **uploads invoices/receipts/photos/videos** to the platform, and the donor gets an **update notification** in the app.
+### Creator Reward is not Ulurin revenue
 
-On-chain does **NOT** automatically prove "the money bought the trees/tools"; that
-needs manually uploaded invoices/proof. The honest claim: **on-chain = money flow;
-invoice + update = proof of usage.** Do not merge the two as if on-chain did both.
+The 0–5% reward belongs to the Kreator Kebaikan. Tier 0 receives no reward. Higher tiers open 3% and 5% ceilings based on verification and track record.
 
-## 7. Key feature: one-tap donate inside the content (video/photo) + verified badge
+### Revenue expansion
 
-Frictionless conversion: moved, you can help right on the same screen (no jump to a
-website like Kitabisa). This is where Stellar shines: settling in about 9.5 seconds, a
-fee of about $0.0007, so micro-donations make sense.
+- recurring campaign services for organizations;
+- CSR/TJSL curation and reporting programs for companies;
+- transparency infrastructure for licensed amil/LAZ in a later zakat phase;
+- cross-border diaspora distribution after licensed fiat and FX rails exist.
 
-**Flow:**
-1. See the story (video/photo), tap the screen, the donation sheet appears over it (if it is a video, it keeps playing).
-2. Amount: presets (Rp 10k / 25k / 50k / custom), one tap to confirm (the wallet already exists from Google login, crypto-invisible).
-3. Choose identity: name / @username / Anonymous.
-4. Write a comment (optional).
+CSR and zakat are later phases, not a way to inflate the MVP TAM.
 
-### Imbalan Kreator transparency (the donor MUST be aware BEFORE giving)
+### Unit economics are unproven
 
-Every donor MUST see, before confirming, in plain language: what the Imbalan Kreator
-is, what percentage, and what for. This is informed consent (opt-in before giving),
-not a hidden cut.
+The 3% fee must be tested against payment processing, payout, KYC, manual review, fraud loss, chargebacks, refunds, support, tax, and licensed-partner costs, especially at Rp10,000–Rp50,000 donation sizes. High volume does not automatically mean healthy margin.
 
-- **On the campaign card:** "Creator [name] set **X%** for work costs: transport to the location, verification, video production, operations, and a reward for their effort in channeling the aid. **The rest (100-X%) goes to [beneficiary].**"
-- **In the one-tap sheet, before confirming:** "You give Rp 50,000: Rp [rest] to [beneficiary], Rp [reward] (X%) Imbalan Kreator, Rp [fee] platform fee." Each component is tappable for an explanation.
-- **The Creator must write their reason** (e.g. "5% for a 3-hour transport to the location + verification + making the video"). Transparency of PURPOSE, not just the number.
-- **The donor is aware and agrees:** there is a visible acknowledgment; if enabled, the donor can **zero out** the Imbalan Kreator.
-- **Language:** say "the Creator's work reward / operating cost", NOT "a cut". Always disclosed and capped 0-10%.
+## 9. Go-to-market
 
-Why it matters: the donor gives with eyes open. That is what separates Ulurin from
-"quietly taking a cut" (the Cak Budi/ACT cases). It reinforces guardrail #3.
+### Initial wedge: creators with evidence of work, not celebrity alone
 
-**Donation badge in comments (an honesty twist):** proven on-chain, not decoration.
-- Safe default: `Verified Donor` (no amount).
-- Optional (donor's choice): `Donated Rp 50,000`.
-- Anonymous: `Anonymous, Donor`.
-- Each badge is tappable to open its on-chain receipt ("check it yourself").
-- Control over showing the amount is in the donor's hands (default badge shows no number) to protect dignity, not to show off.
+An ideal early creator has:
 
-**Social proof:** a live counter "128 people have helped, +Rp 2.4M today" + a feed of recent donors.
+- visible existing aid activity;
+- a community or following that recognizes the work;
+- a recurring funding need;
+- willingness to undergo verification and reporting;
+- one campaign with a clearly defined outcome.
 
-### On/off-ramp technology: seamless for the user, genuinely Stellar underneath
+Ulurin can source supply through environmental communities, community kitchens, road volunteers, animal rescue, and local organizations. The creator's audience supplies the first donors; the platform should not begin with mass paid acquisition.
 
-The user does NOT feel any crypto: they pay/receive via familiar rails (QRIS,
-e-wallet, bank, through an aggregator like Xendit/Midtrans), UI in rupiah. But behind
-the scenes, the technology really is Stellar (not just "holding coins"):
+### Growth loop
 
-1. Fiat comes in, is converted to **USDC on Stellar** (the settlement asset) via an **anchor** (the Stellar **SEP-24/SEP-6** standards for deposit/withdraw).
-2. The USDC enters a **Soroban smart-contract escrow** that holds funds, enforces the 0-10% cut, and does the automatic split.
-3. Every action = **an entry on the public Stellar ledger**, that is the receipt/proof anyone can audit.
-4. Distribution, the beneficiary cashes out to rupiah via an anchor/off-ramp (e.g. a network like the one Aid Assist uses).
+1. a creator brings their community;
+2. donors see the allocation and contribute;
+3. outcome, proof, and receipt return to the donor;
+4. creator reputation improves;
+5. the next campaign earns better conversion and repeat giving;
+6. the public profile becomes a portable impact portfolio.
 
-**Why Stellar "feels used" (not just a USDC wallet):**
-- **Soroban smart contract** (escrow + cap + split) = the logic runs ON Stellar, not on our server.
-- **Public ledger** = transparency (Stellar's core selling point).
-- **Anchor standards (SEP-24/SEP-31/SEP-38)** = using Stellar's official standards for the fiat bridge.
-- **Path payment** for cross-asset (e.g. rupiah to rupiah), and the **Stellar Disbursement Platform** pattern fits recurring/bulk distribution to foundations.
+The intended moat is not a copyable smart contract. It is a network of verified creators, campaign-completion data, review operations, licensed relationships, and accumulated donor trust.
 
-**Honest note:** REAL fiat cash-in/out needs a **licensed anchor (VASP)**. Indonesia
-has no live Stellar anchor yet, so this is the hardest part. MVP/testnet: use a
-**sandbox anchor (SEP-24 demo) + Xendit test mode, USDC testnet, Soroban escrow**. Real
-fiat = needs a licensed anchor partner (roadmap, not the MVP).
+## 10. Positioning against alternatives
 
-## 8. Honesty foundations (mandatory guardrails from day 1)
+| Alternative | Strength | Ulurin's wedge |
+|---|---|---|
+| Kitabisa/donation marketplaces | Distribution, brand, and campaign experience | Organizer labor is not transparent proof-gated income; story discovery usually sends users into a separate flow. |
+| TikTok/Instagram + personal transfer | Discovery and creator intimacy | Allocation, custody, evidence, rating, and campaign history are fragmented. |
+| Saweria/Trakteer | Direct creator payments | Not designed for beneficiaries, consent, aid distribution, or outcome evidence. |
+| Traditional charities | Operations and beneficiary networks | Donors rely heavily on institutional reports and individuals do not build portable reputation. |
 
-This donation-video format carries high reputational risk (precedents: the 2023
-Indonesian "online begging" mud-bath trend taken down by the ministry; TikTok Syrian
-refugee begging whose middleman took ~70%; Kuaishou fake charity). The "gentle
-language" above is honest ONLY if these five things are real:
+Ulurin cannot win merely by “using blockchain.” It must win by making the consent–split–release–proof–reputation journey clearer than the alternatives.
 
-1. **Ranking = ethics.** Rank by verification + goal clarity + outcome updates. NOT by tears / donation speed / views. Reward completed stories (an incentive to "finish then leave", not to keep performing suffering). No "most suffering" leaderboard.
-2. **Milestone escrow + on-chain transparency** (anti "skim again"; show where every rupiah goes, something Kitabisa/ACT cannot).
-3. **Transparent and capped fee 0-10%**, the donor can zero it. This is the whole difference from the hidden-70% TikTok case.
-4. **Children are protected.** No minor as an on-camera subject or beneficiary in the feed. A hard line, a launch-blocker.
-5. **An equal non-video path.** "You can raise without putting your suffering on display." Video is opt-in, not the only way to the top of the feed.
+## 11. Stellar and Xendit
 
-Additional: identity + fund-usage verification; anti-middleman (payout only to the
-beneficiary's KYC wallet, not the operator); launch recorded (not live) so every clip
-can be reviewed before it is boosted.
+### Stellar's function
 
-## 9. Alignment with Stellar's vision-mission (from stellar.org research, 2026-07-11)
+- Soroban enforces tier ceilings and allocation separation;
+- the ledger provides evidence for transactions that actually occur on Stellar;
+- low cost supports micro-donations;
+- a public receipt connects human-readable status with transaction evidence.
 
-Researched directly: home, /foundation, /use-cases, /use-cases/stellar-for-aid,
-/case-studies, /ecosystem.
+### Xendit Sandbox's function
 
-**SDF mission (their words):** "creating equitable access to the global financial
-system through blockchain technology." North Star: everyday financial services +
-transparency. They support "builders solving the financial access problem for their
-communities."
+Xendit Sandbox exercises familiar IDR payment and payout UX. It is not a Stellar anchor, not a VASP, and does not automatically turn rupiah into USDC.
 
-**Stellar Aid Assist = Ulurin's twin downstream.** Stellar's flagship aid program.
-The six values they market match Ulurin's value prop almost exactly:
+Production requires licensed parties for custody and conversion when crypto assets are involved, plus a source of truth and reconciliation across the payment provider, application database, and Stellar.
 
-| Aid Assist value | Ulurin |
-|---|---|
-| Instant | one-tap donation, settles ~9.5s |
-| Transparent ("traceability of funds to ensure aid goes to those who need it") | public on-chain receipt |
-| Accessible (Aid Assist: "just need a mobile phone, no bank account") | crypto-invisible + Google login to **use the app & donate in-app** (without understanding crypto). Honest note: **top up / withdraw still needs a fiat rail** (bank/e-wallet/QRIS) |
-| Stable (stablecoin) | USDC underneath, rupiah in the UI |
-| Low cost (~1 cent / 10,000 tx) | micro-donations make sense |
-| Global cash-out (185 countries) | cash-out path (roadmap) |
+### Evidence boundary
 
-The difference: **Aid Assist is institutional** (an org uploads a list of recipients,
-disburses in bulk, top-down, via the Stellar Disbursement Platform). **Ulurin is
-grassroots** (individual donor to an individual case, bottom-up).
+On-chain evidence proves asset movement, applied split rules, and release time. It does not prove identity, need, invoice authenticity, delivery, or impact. Off-chain truth requires KYC, consent, review, beneficiary acknowledgement, and dispute handling.
 
-**White space (a key finding):**
-- Stellar case studies (19): all institutions/regulated finance (Franklin Templeton, DTC, WisdomTree, UNHCR, IRC, MoneyGram, payroll). Zero consumer donation apps.
-- Ecosystem (521 projects): dominated by tokenized assets, payments, DeFi, wallets. "Donation/charity" is not even a submit-project category.
-- Meaning: Stellar has INSTITUTIONAL aid (Aid Assist) but no peer-to-peer "Aid Assist for the people". Ulurin fills that gap.
+## 12. Dignity and honesty guardrails
 
-**Strongest positioning:** "Stellar Aid Assist proves transparent on-chain aid at the
-institutional level. Ulurin brings the same model to the grassroots."
+- No fictional donors, amounts, testimonials, partners, or traction.
+- Creator Reward and platform fee are visible before payment.
+- The beneficiary controls consent for story and media use.
+- Children and vulnerable people require strict safeguarding; exploitation cannot drive ranking.
+- Non-video fundraising has equal standing.
+- Evidence that fails review cannot unlock the Creator Reward.
+- The product never claims blockchain proves something it did not observe.
+- Public movement examples are labelled as inspiration, not partnerships.
 
-**Pitch hook (verbatim Stellar phrases we can echo):**
-"get money into the hands of those who need it, quickly and at low cost" ·
-"traceability of funds to ensure aid goes to those who need it" ·
-"instant and transparent digital aid at scale" ·
-"equitable access to the global financial system".
+## 13. Business stages
 
-**Honest note (same rules as our other Stellar projects):**
-- Position Ulurin as a financial-inclusion + transparent-aid app ON TOP of the Stellar rails, not a claim to build infrastructure.
-- Frame it via financial inclusion + Aid Assist, not "creator monetization" alone.
-- DO NOT claim affiliation with / use of Aid Assist/SDP/UNHCR-IRC. Just "inspired by the transparency principles Stellar Aid Assist proved" (aligned model, not affiliation).
-- **DO NOT echo "no bank account" as an Ulurin claim.** Aid Assist can, because recipients cash out in physical cash via MoneyGram, but **our on/off-ramp (top up / withdraw) still needs a fiat rail** (bank/e-wallet/QRIS). The honest version: "use the app + donate in-app without understanding crypto; cash in/out via ordinary fiat rails".
+1. **Definition and validation:** resolve fee formula, campaign states, proof policy, refunds, custody, privacy, and legal review.
+2. **Sandbox/testnet prototype:** feed + marketplace, transparent checkout, creator profile, receipts, Xendit Sandbox, and a testnet contract matching the final state machine.
+3. **Limited pilot:** a small set of curated creators and campaigns, sandbox transactions or an approved legal structure, and manual evidence review.
+4. **Real money:** only after licensing, settlement partners, custody, reconciliation, fraud operations, and consumer protection are ready.
+5. **Expansion:** recurring giving, diaspora, zakat with licensed amil/LAZ, and curated CSR/TJSL.
 
-## 10. Product roadmap (high level)
+## 14. Success metrics
 
-1. **MVP (testnet):** creator-cut donations + Cerita Kebaikan feed (video/photo) + one-tap donate + public on-chain receipt + Soroban escrow/split.
-2. **Fast-follow:** full KYC (Sumsub), Creator rating + track record, recurring donations (off-chain scheduler).
-3. **Next phase:** a zakat rail (with registered amil/LAZ), CSR/TJSL fund curation.
-4. **Needs a license:** fiat on/off-ramp via a licensed Stellar anchor (VASP) for real money.
+- conversion after showing the full fee allocation;
+- donor understanding of who receives what;
+- repeat donation and repeat campaign rates;
+- evidence completion rate and time to proof;
+- beneficiary acknowledgement;
+- dispute, cancellation, refund, and fraud rates;
+- share of creators who complete a campaign and return;
+- contribution margin after all operating costs.
 
-**Stellar research sources:** stellar.org/foundation, stellar.org/use-cases/stellar-for-aid, stellar.org/case-studies, stellar.org/ecosystem (accessed 2026-07-11).
+Large funds raised with weak evidence completion would not validate Ulurin's thesis.
+
+## 15. Open decisions
+
+Before application development, the team still needs to agree on:
+
+- ~~whether the platform fee is added or deducted~~ — decided 2026-07-16: deducted, never added on top (see DECISIONS.md #1);
+- how all fees interact with PP 29/1980's 10% ceiling — the vault already enforces the conservative aggregate reading (creator + platform ≤ 10%); the open half is whether payment-provider charges also count;
+- platform-fee release timing;
+- minimum evidence, reviewer, dispute, and appeal rules;
+- refunds after beneficiary-first release;
+- all-or-nothing, keep-what-you-raise, or milestone funding;
+- KYC tier definitions and amount limits;
+- which legal entity may raise and hold funds;
+- wallet custody, signing, recovery, and admin powers;
+- IDR–Stellar-asset partners and reconciliation;
+- rules for minors, medical information, location, media retention, and consent withdrawal;
+- rating manipulation resistance;
+- 3% platform-fee unit economics.
+- recurring-campaign state machine: scheduler, retries, pause, per-cycle evidence, and service termination.
+
+The complete list is maintained in [Decisions and Open Questions](DECISIONS.md).

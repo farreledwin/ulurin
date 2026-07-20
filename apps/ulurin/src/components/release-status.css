@@ -1,0 +1,41 @@
+/* Notes under the release list, plus the proof hash on the success screen.
+   The list itself reuses .dashboard-release-list from styles.css — the chain
+   changed where the numbers come from, not how the section looks. */
+
+.release-note {
+  margin: 12px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--stone);
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+}
+
+.release-note svg {
+  flex-shrink: 0;
+  transform: translateY(2px);
+  color: var(--forest);
+}
+
+.release-note--error {
+  color: var(--coral-deep);
+  font-weight: 600;
+}
+
+.release-note--error svg {
+  color: var(--coral-deep);
+}
+
+.proof-hash {
+  display: block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--forest-deep);
+  background: var(--mint-soft);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 4px 0 14px;
+}

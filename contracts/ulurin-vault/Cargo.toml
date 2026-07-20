@@ -1,0 +1,18 @@
+[package]
+name = "ulurin-vault"
+version = { workspace = true }
+edition = { workspace = true }
+license = { workspace = true }
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+soroban-sdk = { workspace = true }
+
+[dev-dependencies]
+# Pinned: ed25519-dalek 3.x changed the CryptoRng bound and does not compile
+# against soroban-env-host 27. Without this the test build fails on a
+# transitive dep, not on our code.
+ed25519-dalek = "=2.2.0"
+soroban-sdk = { workspace = true, features = ["testutils"] }
