@@ -62,5 +62,10 @@ jobs:
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
     steps:
       - uses: actions/checkout@v4
+      - name: Prepare deployment source
+        run: |
+          mkdir -p "$RUNNER_TEMP/ulurin-source"
+          git archive HEAD | tar -x -C "$RUNNER_TEMP/ulurin-source"
       - name: Deploy production to Vercel
+        working-directory: ${{ runner.temp }}/ulurin-source
         run: npx --yes vercel@56.4.1 deploy --prod --yes --token="$VERCEL_TOKEN"
