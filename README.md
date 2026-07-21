@@ -18,13 +18,13 @@ Ulurin is a donation platform where the person doing the fieldwork can be paid o
 >   campaign whose total financing exceeds **10%** — PP No. 29/1980 Pasal 6(1)
 >   — and keeps the creator's reward locked until a proof hash is committed.
 >   The full transaction trail is in [DEPLOYMENTS.md](DEPLOYMENTS.md).
-> - **The app:** [ulurin-test.vercel.app](https://ulurin-test.vercel.app) — the
+> - **The app:** [ulurin.vercel.app](https://ulurin.vercel.app) — the
 >   donate flow can settle a real testnet donation through the vault and hand
 >   back a receipt whose hash anyone can open on the explorer.
 > - **The fee schedule the contract enforces:** 2% platform + creator reward
 >   capped by verification tier at 0% / 3% / 5%, so the most expensive possible
 >   campaign is 7% — three points under the statutory cap on purpose. See
->   [`/tier`](https://ulurin-test.vercel.app/tier) for why each rung stops
+>   [`/tier`](https://ulurin.vercel.app/tier) for why each rung stops
 >   where it does.
 > - **The Android build:** the same app, verified reading live vault state from
 >   inside the WebView ([apps/ulurin/android-qa.md](apps/ulurin/android-qa.md)).
@@ -214,7 +214,7 @@ Ulurin should state this boundary beside every public receipt. Trust grows when 
 
 ## Product documents
 
-- **Live app:** [ulurin-test.vercel.app](https://ulurin-test.vercel.app)
+- **Live app:** [ulurin.vercel.app](https://ulurin.vercel.app)
 - **Contract source and tests:** [`contracts/ulurin-vault`](contracts/ulurin-vault) — 18 Rust tests over the money path, the cap, and the tier ladder
 - **Deployment trail:** [DEPLOYMENTS.md](DEPLOYMENTS.md) — every claim above as a checkable transaction hash
 - **Runnable local prototype:** [`apps/ulurin`](apps/ulurin)

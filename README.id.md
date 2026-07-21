@@ -19,13 +19,13 @@ Ulurin adalah platform donasi tempat orang yang bekerja di lapangan boleh dibaya
 >   pembiayaannya melewati **10%** — PP No. 29/1980 Pasal 6(1) — ditolak
 >   sebelum dibuat, dan imbalan kreator terkunci sampai hash bukti tercatat.
 >   Jejak transaksi lengkap ada di [DEPLOYMENTS.md](DEPLOYMENTS.md).
-> - **Aplikasinya:** [ulurin-test.vercel.app](https://ulurin-test.vercel.app) —
+> - **Aplikasinya:** [ulurin.vercel.app](https://ulurin.vercel.app) —
 >   alur donasi bisa menyelesaikan donasi testnet sungguhan lewat vault dan
 >   memberi struk yang hash-nya bisa dibuka siapa pun di explorer.
 > - **Skema fee yang ditegakkan kontrak:** 2% platform + imbalan kreator
 >   dibatasi tier verifikasi 0% / 3% / 5%, sehingga campaign termahal yang
 >   mungkin adalah 7% — sengaja tiga poin di bawah batas hukum. Lihat
->   [`/tier`](https://ulurin-test.vercel.app/tier) untuk alasan tiap anak
+>   [`/tier`](https://ulurin.vercel.app/tier) untuk alasan tiap anak
 >   tangga berhenti di tempatnya.
 > - **Build Android:** aplikasi yang sama, terverifikasi membaca state vault
 >   live dari dalam WebView ([apps/ulurin/android-qa.md](apps/ulurin/android-qa.md)).
@@ -209,7 +209,7 @@ Batas ini harus tampil di dekat setiap receipt publik. Produk menjadi lebih dipe
 
 ## Dokumen produk
 
-- **Aplikasi live:** [ulurin-test.vercel.app](https://ulurin-test.vercel.app)
+- **Aplikasi live:** [ulurin.vercel.app](https://ulurin.vercel.app)
 - **Source kontrak dan tesnya:** [`contracts/ulurin-vault`](contracts/ulurin-vault) — 18 tes Rust untuk jalur uang, batas 10%, dan tangga tier
 - **Jejak deployment:** [DEPLOYMENTS.md](DEPLOYMENTS.md) — setiap klaim di atas sebagai hash transaksi yang bisa diperiksa
 - **Prototype lokal yang dapat dijalankan:** [`apps/ulurin`](apps/ulurin)
